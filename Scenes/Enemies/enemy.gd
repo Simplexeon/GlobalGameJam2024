@@ -62,7 +62,11 @@ func _physics_process(delta: float) -> void:
 		StapledCollider.set_deferred("disabled", true);
 
 func _on_Stapled(staple_pos : Vector3) -> void:
-	move_dir = ((staple_pos) - global_position).normalized();
+	var player : CharacterBody3D = get_tree().get_first_node_in_group("Player");
+	var target_pos : Vector3 = staple_pos;
+	if(player != null):
+		target_pos = player.global_position;
+	move_dir = ((target_pos) - global_position).normalized();
 	move_dir -= Vector3(0, move_dir.y + StapleHeightOffset, 0);
 	move_dir = move_dir.normalized();
 	move_dir = move_dir * -1;
@@ -100,6 +104,8 @@ func moveNormal() -> void:
 	
 	velocity += target_vector;
 	look_at(next_path_pos);
+	rotation_degrees.x = 0;
+	rotation_degrees.z = 0; 
 	
 	if(!is_on_floor()):
 		velocity += Vector3(0, gravity * -1, 0);

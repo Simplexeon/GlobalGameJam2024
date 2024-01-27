@@ -39,7 +39,6 @@ target_position = Vector3(0, 2, 0)
 [node name="VertexChecker" parent="." instance=ExtResource("3_vwoxq")]
 
 [node name="UpdateVertex" type="Timer" parent="."]
-wait_time = 2.5
 autostart = true
 
 [connection signal="timeout" from="UpdateVertex" to="." method="_on_update_vertex_timeout"]

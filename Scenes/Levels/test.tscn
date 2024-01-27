@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6aus34iogfrd"]
+[gd_scene load_steps=14 format=3 uid="uid://b6aus34iogfrd"]
 
+[ext_resource type="Script" path="res://Scenes/Enemies/Graph.gd" id="1_cpa6v"]
 [ext_resource type="Material" uid="uid://bqb6uldlfnjqa" path="res://Materials/floor.tres" id="1_m82ih"]
 [ext_resource type="PackedScene" uid="uid://jmojca2l0wb4" path="res://Scenes/Player/player.tscn" id="2_2u4x0"]
+[ext_resource type="PackedScene" uid="uid://byran0hjoypru" path="res://Scenes/Graph/vertex.tscn" id="2_b2amw"]
 [ext_resource type="Texture2D" uid="uid://dqceelx43l1p8" path="res://Art/Environment/ceiling.png" id="2_pj2os"]
 [ext_resource type="PackedScene" uid="uid://g76k52yx25ke" path="res://Scenes/Objects/table.tscn" id="3_upq86"]
 [ext_resource type="Texture2D" uid="uid://dbtxu6b1rygip" path="res://Art/ProgrammerArt/wall.png" id="4_778te"]
 [ext_resource type="PackedScene" uid="uid://bhcrxly5lu5dc" path="res://Scenes/Enemies/enemy.tscn" id="6_3j5pt"]
-[ext_resource type="PackedScene" uid="uid://dbecn1whqqtei" path="res://Scenes/Graph/graph.tscn" id="7_g0fno"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kk3vg"]
 
@@ -33,7 +34,77 @@ texture_filter = 0
 
 [node name="Test" type="Node3D"]
 
-[node name="Graph" parent="." instance=ExtResource("7_g0fno")]
+[node name="Graph" type="Node3D" parent="." groups=["Graph"]]
+script = ExtResource("1_cpa6v")
+
+[node name="Vertex" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.399461, 0.5, -7.50592)
+
+[node name="Vertex2" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73096, 0.5, -4.47433)
+
+[node name="Vertex3" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.399461, 0.5, -12.5896)
+
+[node name="Vertex4" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6531, 0.5, -12.5896)
+
+[node name="Vertex5" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6531, 0.5, -4.2192)
+
+[node name="Vertex6" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, -0.000802851, 0, 1, 0, 0.000802851, 0, 1, -6.11068, 0.5, -4.2192)
+
+[node name="Vertex7" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.07542, 0.5, -7.58207)
+
+[node name="Vertex8" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95707, 0.5, -0.926303)
+
+[node name="Vertex9" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13371, 0.5, -0.926303)
+
+[node name="Vertex10" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56075, 0.5, -0.926303)
+
+[node name="Vertex11" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95242, 0.5, 1.29347)
+
+[node name="Vertex12" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03336, 0.5, 4.61559)
+
+[node name="Vertex13" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0895762, 0.5, 6.40756)
+
+[node name="Vertex14" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10452, 0.5, 5.16834)
+
+[node name="Vertex15" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30344, 0.5, 4.09658)
+
+[node name="Vertex16" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64668, 0.5, 0.189685)
+
+[node name="Vertex17" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1049, 0.5, 0.189685)
+
+[node name="Vertex18" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21256, 0.5, 8.18109)
+
+[node name="Vertex19" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45167, 0.5, 12.2716)
+
+[node name="Vertex20" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1306, 0.5, 11.7416)
+
+[node name="Vertex21" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94493, 0.5, 13.2275)
+
+[node name="Vertex22" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94493, 0.5, 1.13125)
+
+[node name="Vertex23" parent="Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.36451, 0.5, -10.6568)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -73,10 +144,10 @@ transform = Transform3D(1.29997, 0.00733233, 0.0060233, -0.0073124, 1.29997, -0.
 transform = Transform3D(1.29972, 0, -0.0267714, 0, 1.3, 0, 0.0267714, 0, 1.29972, -3.39464, 0.75, 3.14541)
 
 [node name="Table17" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -5.76516, 0.75, 6.74283)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.06995, 0.75, 7.40647)
 
 [node name="Table18" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29996, 0, -0.0096201, 0, 1.3, 0, 0.0096201, 0, 1.29996, -6.16794, 0.75, 8.54935)
+transform = Transform3D(1.29996, 0, -0.0096201, 0, 1.3, 0, 0.0096201, 0, 1.29996, -6.16794, 0.75, 9.17425)
 
 [node name="Table19" parent="Tables" instance=ExtResource("3_upq86")]
 transform = Transform3D(1.29664, 0, 0.093422, 0, 1.3, 0, -0.093422, 0, 1.29664, -9.60496, 0.75, 6.7212)
@@ -166,7 +237,7 @@ size = Vector3(0.2, 6.5, 30)
 material = SubResource("StandardMaterial3D_vrqe4")
 
 [node name="Enemy" parent="." instance=ExtResource("6_3j5pt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022521, 1.97977, -4.30833)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022521, 1.75211, -4.30833)
 
 [node name="Lights" type="Node3D" parent="."]
 
