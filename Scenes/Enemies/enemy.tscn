@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhcrxly5lu5dc"]
+[gd_scene load_steps=8 format=3 uid="uid://bhcrxly5lu5dc"]
 
 [ext_resource type="Texture2D" uid="uid://cqscpaol21y5r" path="res://Art/ProgrammerArt/adult.png" id="1_83m1v"]
 [ext_resource type="Script" path="res://Scenes/Enemies/enemy.gd" id="1_jncxg"]
 [ext_resource type="PackedScene" uid="uid://64mlfhbptu5x" path="res://Scenes/Graph/vertex_checker.tscn" id="3_efhpy"]
+[ext_resource type="Material" uid="uid://30ltx810aof8" path="res://Materials/blood.tres" id="4_7hflg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi8cg"]
 radius = 0.412075
@@ -10,6 +11,13 @@ height = 1.62672
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2fnlr"]
 size = Vector3(0.1, 1.28765, 0.1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1ot23"]
+material = ExtResource("4_7hflg")
+radius = 0.2
+height = 0.3
+radial_segments = 4
+rings = 1
 
 [node name="Enemy" type="CharacterBody3D" groups=["Enemies"]]
 disable_mode = 2
@@ -37,3 +45,18 @@ texture_filter = 0
 texture = ExtResource("1_83m1v")
 
 [node name="VertexChecker" parent="." instance=ExtResource("3_efhpy")]
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 14
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.95
+randomness = 0.35
+mesh = SubResource("SphereMesh_1ot23")
+particle_flag_rotate_y = true
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 7.0
+angular_velocity_min = -5.0
+angular_velocity_max = 5.0

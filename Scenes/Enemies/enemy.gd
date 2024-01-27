@@ -19,6 +19,7 @@ var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity");
 @onready var RegularCollider : CollisionShape3D = $NormalCollision;
 @onready var StapledCollider : CollisionShape3D = $StapledCollision;
 @onready var VertexChecker : Area3D = $VertexChecker;
+@onready var BloodParticles : CPUParticles3D = $CPUParticles3D;
 
 
 # Processes
@@ -63,6 +64,7 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	stapled = true;
 	RegularCollider.set_deferred("disabled", true);
 	StapledCollider.set_deferred("disabled", false);
+	BloodParticles.emitting = true;
 
 
 # Functions
