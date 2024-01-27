@@ -15,8 +15,8 @@ size = Vector3(0.1, 1.288, 0.01)
 
 [sub_resource type="SphereMesh" id="SphereMesh_1ot23"]
 material = ExtResource("4_7hflg")
-radius = 0.2
-height = 0.3
+radius = 0.4
+height = 0.8
 radial_segments = 4
 rings = 1
 
@@ -64,7 +64,7 @@ texture = ExtResource("3_coaxh")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 emitting = false
-amount = 14
+amount = 6
 lifetime = 3.0
 one_shot = true
 explosiveness = 0.95
