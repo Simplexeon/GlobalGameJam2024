@@ -178,5 +178,4 @@ transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749
 transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, -8.54887, 0.855408, -1.26654)
 
 [node name="Enemy" parent="." instance=ExtResource("6_3j5pt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022521, 1.76182, -4.30833)
-StapleHeightOffset = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022521, 1.00002, -4.30833)
