@@ -14,3 +14,6 @@ func _on_body_entered(_body: Node3D) -> void:
 	axis_lock_angular_y = false;
 	axis_lock_angular_z = false;
 	sleeping = true;
+
+func _on_despawn_timer_timeout() -> void:
+	queue_free();
