@@ -9,7 +9,13 @@ size = Vector3(0.1, 0.1, 0.1)
 [node name="Staple" type="RigidBody3D"]
 collision_layer = 0
 collision_mask = 5
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 mass = 0.2
+continuous_cd = true
+max_contacts_reported = 2
+contact_monitor = true
 script = ExtResource("1_n8acy")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -21,12 +27,4 @@ material = ExtResource("2_e8l5b")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 shape = SubResource("BoxShape3D_ss2ke")
 
-[node name="Hitbox" type="Area3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
-collision_layer = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-shape = SubResource("BoxShape3D_ss2ke")
-
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
