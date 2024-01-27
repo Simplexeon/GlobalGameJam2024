@@ -2,21 +2,23 @@
 
 [ext_resource type="Material" uid="uid://bqb6uldlfnjqa" path="res://Materials/floor.tres" id="1_m82ih"]
 [ext_resource type="PackedScene" uid="uid://jmojca2l0wb4" path="res://Scenes/Player/player.tscn" id="2_2u4x0"]
-[ext_resource type="Texture2D" uid="uid://m5ofj5hfnfk5" path="res://Art/ProgrammerArt/floor.png" id="2_ce01r"]
+[ext_resource type="Texture2D" uid="uid://dqceelx43l1p8" path="res://Art/Environment/ceiling.png" id="2_pj2os"]
 [ext_resource type="PackedScene" uid="uid://g76k52yx25ke" path="res://Scenes/Objects/table.tscn" id="3_upq86"]
 [ext_resource type="Texture2D" uid="uid://dbtxu6b1rygip" path="res://Art/ProgrammerArt/wall.png" id="4_778te"]
 [ext_resource type="PackedScene" uid="uid://bkfjharp8tphe" path="res://Scenes/Objects/filing_cabinet.tscn" id="5_yhxhy"]
 [ext_resource type="PackedScene" uid="uid://bhcrxly5lu5dc" path="res://Scenes/Enemies/enemy.tscn" id="6_3j5pt"]
-[ext_resource type="PackedScene" uid="uid://6mbgrnsrct06" path="res://Scenes/Graph/graph.tscn" id="7_g0fno"]
+[ext_resource type="PackedScene" uid="uid://dbecn1whqqtei" path="res://Scenes/Graph/graph.tscn" id="7_g0fno"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kk3vg"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tc3re"]
 plane = Plane(0, -1, 0, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3d88"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvqga"]
+shading_mode = 0
 specular_mode = 2
-albedo_texture = ExtResource("2_ce01r")
+albedo_color = Color(0.611765, 0.611765, 0.611765, 1)
+albedo_texture = ExtResource("2_pj2os")
 texture_filter = 0
 grow = true
 
@@ -51,7 +53,7 @@ shape = SubResource("WorldBoundaryShape3D_tc3re")
 [node name="CSGBox3D" type="CSGBox3D" parent="Floor2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55179, -0.417552, 0.495239)
 size = Vector3(21.1894, 0.182617, 28.9597)
-material = SubResource("StandardMaterial3D_i3d88")
+material = SubResource("StandardMaterial3D_vvqga")
 
 [node name="Player" parent="." instance=ExtResource("2_2u4x0")]
 
@@ -186,7 +188,7 @@ transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749
 transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, -8.54887, 0.855408, -1.26654)
 
 [node name="Enemy" parent="." instance=ExtResource("6_3j5pt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022521, 1.00002, -4.30833)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022521, 1.97977, -4.30833)
 
 [node name="Graph" parent="." instance=ExtResource("7_g0fno")]
 

@@ -4,6 +4,8 @@
 [ext_resource type="Script" path="res://Scenes/Enemies/enemy.gd" id="1_jncxg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi8cg"]
+radius = 0.412075
+height = 1.62672
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2fnlr"]
 size = Vector3(0.1, 1.28765, 0.1)
@@ -22,15 +24,16 @@ StapleSpeed = 25.0
 StapleHeightOffset = 0.1
 
 [node name="NormalCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_qi8cg")
 
 [node name="StapledCollision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.361548, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.361548, 0)
 shape = SubResource("BoxShape3D_2fnlr")
 disabled = true
 
 [node name="Body" type="Sprite3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 billboard = 2
 texture_filter = 0
 texture = ExtResource("1_83m1v")
