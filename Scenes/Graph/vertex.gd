@@ -1,6 +1,5 @@
 @tool
-extends Node3D
-
+extends Area3D
 class_name Vertex
 
 @onready var Sprite : Sprite3D = $Sprite3D;
