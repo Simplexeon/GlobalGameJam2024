@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://p22ujaayli0n"]
+
+[ext_resource type="Theme" uid="uid://d4ivmg83msm63" path="res://Themes/KillMessageTheme.tres" id="1_yblao"]
+[ext_resource type="Script" path="res://Scenes/UI/KillMessage.gd" id="2_dpqb0"]
+
+[node name="KillMessage" type="RichTextLabel"]
+custom_minimum_size = Vector2(550, 22)
+theme = ExtResource("1_yblao")
+text = " + 30 | John got stapled!"
+script = ExtResource("2_dpqb0")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

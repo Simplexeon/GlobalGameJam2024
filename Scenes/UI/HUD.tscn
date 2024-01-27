@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8c221hmycluj"]
+
+[ext_resource type="PackedScene" uid="uid://bys6r5mavj4ox" path="res://Scenes/UI/2d_hud.tscn" id="1_chg07"]
+
+[node name="HUD" type="SubViewport"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(1000, 700)
+
+[node name="2DHud" parent="." instance=ExtResource("1_chg07")]
