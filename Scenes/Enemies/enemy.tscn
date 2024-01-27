@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://30ltx810aof8" path="res://Materials/blood.tres" id="4_7hflg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi8cg"]
-radius = 0.412075
+radius = 0.291572
 height = 1.62672
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2fnlr"]
@@ -24,10 +24,11 @@ disable_mode = 2
 collision_layer = 5
 velocity = Vector3(0, -9.8, 0)
 script = ExtResource("1_jncxg")
-Speed = 300.0
+Speed = 10.0
 HP = 1
 StapleSpeed = 25.0
 StapleHeightOffset = 0.1
+FindNextPoint = 11.0
 
 [node name="NormalCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -60,3 +61,9 @@ initial_velocity_min = 5.0
 initial_velocity_max = 7.0
 angular_velocity_min = -5.0
 angular_velocity_max = 5.0
+
+[node name="UpdateMovement" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[connection signal="timeout" from="UpdateMovement" to="." method="_on_update_movement_timeout"]

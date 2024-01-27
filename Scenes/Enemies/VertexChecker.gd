@@ -1,4 +1,5 @@
 extends Area3D
+class_name VertexChecker3D
 
 # Object Vars
 var closest_vertex : Vertex = null;
