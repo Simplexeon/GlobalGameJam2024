@@ -25,6 +25,7 @@ var MoveState = moveNormal;
 @onready var StapledCollider : CollisionShape3D = $StapledCollision;
 @onready var VertexChecker : VertexChecker3D = $VertexChecker;
 @onready var BloodParticles : CPUParticles3D = $CPUParticles3D;
+@onready var HandSprite : Sprite3D = $Hands;
 var graph : Graph;
 
 
@@ -56,6 +57,8 @@ func _physics_process(delta: float) -> void:
 		stuck = true;
 		BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 		BodySprite.look_at(collision.get_normal() * 500);
+		HandSprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
+		HandSprite.look_at(collision.get_normal() * 500);
 		StapledCollider.set_deferred("disabled", true);
 
 func _on_Stapled(staple_pos : Vector3) -> void:
@@ -65,6 +68,8 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	move_dir = move_dir * -1;
 	BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 	BodySprite.look_at(move_dir);
+	HandSprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
+	HandSprite.look_at(move_dir);
 	stapled = true;
 	RegularCollider.set_deferred("disabled", true);
 	StapledCollider.set_deferred("disabled", false);
@@ -78,6 +83,7 @@ func _on_update_movement_timeout() -> void:
 	if(VertexChecker.closest_vertex.previousVertex == null):
 		return;
 	next_path_pos = VertexChecker.closest_vertex.previousVertex.global_position;
+	
 
 # Functions
 
@@ -93,6 +99,7 @@ func moveNormal() -> void:
 		_on_update_movement_timeout();
 	
 	velocity += target_vector;
+	look_at(next_path_pos);
 	
 	if(!is_on_floor()):
 		velocity += Vector3(0, gravity * -1, 0);

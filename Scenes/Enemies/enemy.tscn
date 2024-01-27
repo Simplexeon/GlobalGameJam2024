@@ -25,11 +25,11 @@ disable_mode = 2
 collision_layer = 5
 velocity = Vector3(0, -9.8, 0)
 script = ExtResource("1_jncxg")
-Speed = 10.0
+Speed = 7.0
 HP = 1
 StapleSpeed = 25.0
 StapleHeightOffset = 0.1
-FindNextPoint = 11.0
+FindNextPoint = 15.0
 
 [node name="NormalCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -47,8 +47,10 @@ texture_filter = 0
 texture = ExtResource("2_yvqox")
 
 [node name="Hands" type="Sprite3D" parent="."]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0.739334, 0)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0.739334, 0.203748)
 billboard = 1
+texture_filter = 0
+render_priority = 2
 texture = ExtResource("3_coaxh")
 
 [node name="VertexChecker" parent="." instance=ExtResource("3_efhpy")]

@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6aus34iogfrd"]
+[gd_scene load_steps=13 format=3 uid="uid://b6aus34iogfrd"]
 
 [ext_resource type="Material" uid="uid://bqb6uldlfnjqa" path="res://Materials/floor.tres" id="1_m82ih"]
 [ext_resource type="PackedScene" uid="uid://jmojca2l0wb4" path="res://Scenes/Player/player.tscn" id="2_2u4x0"]
 [ext_resource type="Texture2D" uid="uid://dqceelx43l1p8" path="res://Art/Environment/ceiling.png" id="2_pj2os"]
 [ext_resource type="PackedScene" uid="uid://g76k52yx25ke" path="res://Scenes/Objects/table.tscn" id="3_upq86"]
 [ext_resource type="Texture2D" uid="uid://dbtxu6b1rygip" path="res://Art/ProgrammerArt/wall.png" id="4_778te"]
-[ext_resource type="PackedScene" uid="uid://bkfjharp8tphe" path="res://Scenes/Objects/filing_cabinet.tscn" id="5_yhxhy"]
 [ext_resource type="PackedScene" uid="uid://bhcrxly5lu5dc" path="res://Scenes/Enemies/enemy.tscn" id="6_3j5pt"]
 [ext_resource type="PackedScene" uid="uid://dbecn1whqqtei" path="res://Scenes/Graph/graph.tscn" id="7_g0fno"]
 
@@ -165,29 +164,6 @@ shape = SubResource("BoxShape3D_xyyis")
 [node name="CSGBox3D" type="CSGBox3D" parent="Walls/Wall4"]
 size = Vector3(0.2, 6.5, 30)
 material = SubResource("StandardMaterial3D_vrqe4")
-
-[node name="FilingCabinets" type="Node3D" parent="."]
-
-[node name="FilingCabinet" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
-transform = Transform3D(0.73617, 0, 0.143364, 0, 0.75, 0, -0.143364, 0, 0.73617, -10.0336, 0.839999, 2.30067)
-
-[node name="FilingCabinet2" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
-transform = Transform3D(0.73617, 0, 0.143364, 0, 0.75, 0, -0.143364, 0, 0.73617, -8.58226, 0.723345, 3.42928)
-
-[node name="FilingCabinet3" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
-transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, 3.79282, 0.839999, -7.23149)
-
-[node name="FilingCabinet4" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
-transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, 8.06956, 0.839999, -12.9772)
-
-[node name="FilingCabinet5" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
-transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, 6.4354, 0.839999, -12.9772)
-
-[node name="FilingCabinet6" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
-transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, -6.91471, 0.855408, -1.26654)
-
-[node name="FilingCabinet7" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
-transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, -8.54887, 0.855408, -1.26654)
 
 [node name="Enemy" parent="." instance=ExtResource("6_3j5pt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022521, 1.97977, -4.30833)
