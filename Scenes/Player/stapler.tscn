@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://bf2ymjjanep7t"]
 
-[ext_resource type="Texture2D" uid="uid://l3rfw6lx578i" path="res://Art/ProgrammerArt/stapler.png" id="1_algt2"]
+[ext_resource type="Texture2D" uid="uid://u64ijn80vvf6" path="res://Art/Stapler/spritesheet (1).png" id="1_dryt6"]
 [ext_resource type="Script" path="res://Scenes/Player/stapler.gd" id="2_pqjk1"]
 
 [node name="Stapler" type="Sprite3D"]
 transform = Transform3D(0.992084, 0, -0.125576, 0, 1, 0, 0.125576, 0, 0.992084, 0.389462, -0.185559, -0.588801)
 billboard = 1
 texture_filter = 0
-texture = ExtResource("1_algt2")
+texture = ExtResource("1_dryt6")
+hframes = 6
 script = ExtResource("2_pqjk1")
 BulletSpeed = 8.0
 Cooldown = 0.3

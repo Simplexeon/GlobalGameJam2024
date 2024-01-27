@@ -1,20 +1,123 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd5vtp7ctpic5"]
+[gd_scene load_steps=9 format=3 uid="uid://bd5vtp7ctpic5"]
 
 [ext_resource type="PackedScene" uid="uid://b8c221hmycluj" path="res://Scenes/UI/HUD.tscn" id="1_67osl"]
 [ext_resource type="PackedScene" uid="uid://bf2ymjjanep7t" path="res://Scenes/Player/stapler.tscn" id="1_r48ao"]
+[ext_resource type="Texture2D" uid="uid://b146ul7oelvhh" path="res://Scenes/UI/HUD/Viewport.tres" id="3_u0ncn"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0qtr4"]
-viewport_path = NodePath("HUD")
+[sub_resource type="Animation" id="Animation_oa3fh"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stapler:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.389462, -0.185559, -0.588801)]
+}
+
+[sub_resource type="Animation" id="Animation_tbngq"]
+resource_name = "Moving"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stapler:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.5, 0.7, 0.9, 1.1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0400136, -0.381447, -0.588801), Vector3(-0.0122948, -0.269098, -0.588801), Vector3(0.238331, -0.385991, -0.588801), Vector3(0.430876, -0.247694, -0.588801), Vector3(0.204325, -0.389958, -0.588801), Vector3(0.0300298, -0.261621, -0.588801), Vector3(0.122978, -0.347357, -0.588801), Vector3(0.358679, -0.282627, -0.588801)]
+}
+
+[sub_resource type="Animation" id="Animation_arm4n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stapler:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.430876, -0.247694, -0.588801)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Stapler:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_bigob"]
+resource_name = "Shoot"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stapler:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Stapler:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.389462, -0.185559, -0.588801)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hr0bc"]
+_data = {
+"Idle": SubResource("Animation_oa3fh"),
+"Moving": SubResource("Animation_tbngq"),
+"RESET": SubResource("Animation_arm4n"),
+"Shoot": SubResource("Animation_bigob")
+}
 
 [node name="Camera" type="Camera3D"]
 
 [node name="HUD" parent="." instance=ExtResource("1_67osl")]
 
 [node name="Stapler" parent="." instance=ExtResource("1_r48ao")]
+transform = Transform3D(0.396834, 0, -0.0502304, 0, 0.4, 0, 0.0502304, 0, 0.396834, 0.389462, -0.185559, -0.588801)
 
 [node name="UIViewport" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.63545)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.71758)
 billboard = 1
 no_depth_test = true
 render_priority = 4
-texture = SubResource("ViewportTexture_0qtr4")
+texture = ExtResource("3_u0ncn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_hr0bc")
+}
+playback_default_blend_time = 0.1
+speed_scale = 0.7

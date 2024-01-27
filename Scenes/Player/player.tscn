@@ -7,7 +7,7 @@
 radius = 0.241512
 height = 0.85248
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0531486, 0)
 collision_layer = 3
 script = ExtResource("1_v68ga")
@@ -20,6 +20,7 @@ BACKWARD = "backward"
 MOUSE_SENSITIVITY = 0.1
 strafe_tilt_rotation = 4.0
 strafe_tilt_weight = 0.11487
+movement_animation_threshold = 3.0
 
 [node name="CollisionShapeNormal" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.387043, 0)
