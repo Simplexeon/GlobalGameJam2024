@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://g76k52yx25ke"]
+
+[ext_resource type="Texture2D" uid="uid://bexu0u212bmtw" path="res://Art/ProgrammerArt/tableside.png" id="1_s481d"]
+[ext_resource type="Texture2D" uid="uid://c1c6dyun5p56d" path="res://Art/ProgrammerArt/tableend.png" id="2_7cqm0"]
+[ext_resource type="Texture2D" uid="uid://b7voni600w18q" path="res://Art/ProgrammerArt/tabletop.png" id="3_h415y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywggk"]
+size = Vector3(0.2, 1.187, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1n837"]
+size = Vector3(2.4, 0.2, 1)
+
+[node name="Table" type="Node3D"]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0.668249, 2.02189)
+
+[node name="Side1" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0.63)
+texture_filter = 0
+texture = ExtResource("1_s481d")
+
+[node name="Side2" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -0.63)
+texture_filter = 0
+texture = ExtResource("1_s481d")
+
+[node name="End1" type="Sprite3D" parent="."]
+transform = Transform3D(-1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 1.28, 0, 0)
+texture_filter = 0
+texture = ExtResource("2_7cqm0")
+
+[node name="End2" type="Sprite3D" parent="."]
+transform = Transform3D(-1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, -1.28, 0, 0)
+texture_filter = 0
+texture = ExtResource("2_7cqm0")
+
+[node name="TopSprite" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, -1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0.550216, 0)
+texture_filter = 0
+texture = ExtResource("3_h415y")
+
+[node name="Leg1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18098, 0, -0.54057)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leg1"]
+shape = SubResource("BoxShape3D_ywggk")
+
+[node name="Leg2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18098, 0, 0.531285)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leg2"]
+shape = SubResource("BoxShape3D_ywggk")
+
+[node name="Leg3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17508, 0, -0.54057)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leg3"]
+shape = SubResource("BoxShape3D_ywggk")
+
+[node name="Leg4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17508, 0, 0.531285)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leg4"]
+shape = SubResource("BoxShape3D_ywggk")
+
+[node name="Top" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Top"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.500378, 0)
+shape = SubResource("BoxShape3D_1n837")

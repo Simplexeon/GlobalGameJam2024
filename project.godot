@@ -13,7 +13,14 @@ config_version=5
 config/name="GlobalGameJam2024"
 run/main_scene="res://Scenes/Levels/test.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1000
+window/size/viewport_height=700
+window/stretch/scale_mode="integer"
 
 [input]
 
@@ -40,5 +47,10 @@ right={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=true
+textures/default_filters/anisotropic_filtering_level=0
+textures/decals/filter=0
+textures/light_projectors/filter=0
