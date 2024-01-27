@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6aus34iogfrd"]
+[gd_scene load_steps=10 format=3 uid="uid://b6aus34iogfrd"]
 
 [ext_resource type="Material" uid="uid://bqb6uldlfnjqa" path="res://Materials/floor.tres" id="1_m82ih"]
 [ext_resource type="PackedScene" uid="uid://jmojca2l0wb4" path="res://Scenes/Player/player.tscn" id="2_2u4x0"]
 [ext_resource type="PackedScene" uid="uid://g76k52yx25ke" path="res://Scenes/Objects/table.tscn" id="3_upq86"]
 [ext_resource type="Texture2D" uid="uid://dbtxu6b1rygip" path="res://Art/ProgrammerArt/wall.png" id="4_778te"]
 [ext_resource type="PackedScene" uid="uid://bkfjharp8tphe" path="res://Scenes/Objects/filing_cabinet.tscn" id="5_yhxhy"]
+[ext_resource type="PackedScene" uid="uid://bhcrxly5lu5dc" path="res://Scenes/Enemies/enemy.tscn" id="6_3j5pt"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kk3vg"]
 
@@ -161,3 +162,6 @@ transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749
 
 [node name="FilingCabinet7" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
 transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, -8.54887, 0.855408, -1.26654)
+
+[node name="Enemy" parent="." instance=ExtResource("6_3j5pt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14391, -4.3193)

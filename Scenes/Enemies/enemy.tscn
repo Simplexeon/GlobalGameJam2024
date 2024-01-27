@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhcrxly5lu5dc"]
+
+[ext_resource type="Texture2D" uid="uid://cqscpaol21y5r" path="res://Art/ProgrammerArt/adult.png" id="1_83m1v"]
+[ext_resource type="Script" path="res://Scenes/Enemies/enemy.gd" id="1_jncxg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi8cg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2fnlr"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Enemy" type="CharacterBody3D" groups=["Enemies"]]
+disable_mode = 2
+collision_layer = 5
+script = ExtResource("1_jncxg")
+Speed = 300.0
+HP = 1
+StapleSpeed = 25.0
+
+[node name="NormalCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_qi8cg")
+
+[node name="StapledCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_2fnlr")
+disabled = true
+
+[node name="Body" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_83m1v")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
