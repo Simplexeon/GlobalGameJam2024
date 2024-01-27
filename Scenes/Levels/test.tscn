@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dbtxu6b1rygip" path="res://Art/ProgrammerArt/wall.png" id="4_778te"]
 [ext_resource type="PackedScene" uid="uid://bkfjharp8tphe" path="res://Scenes/Objects/filing_cabinet.tscn" id="5_yhxhy"]
 [ext_resource type="PackedScene" uid="uid://bhcrxly5lu5dc" path="res://Scenes/Enemies/enemy.tscn" id="6_3j5pt"]
-[ext_resource type="PackedScene" path="res://Scenes/Graph/graph.tscn" id="7_g0fno"]
+[ext_resource type="PackedScene" uid="uid://6mbgrnsrct06" path="res://Scenes/Graph/graph.tscn" id="7_g0fno"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kk3vg"]
 
