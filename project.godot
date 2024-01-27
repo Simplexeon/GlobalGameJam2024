@@ -82,6 +82,7 @@ test_kill={
 3d_physics/layer_1="movement"
 3d_physics/layer_2="player"
 3d_physics/layer_3="enemy"
+3d_physics/layer_5="navigation_vertices"
 
 [physics]
 

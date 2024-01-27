@@ -2,15 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://cqscpaol21y5r" path="res://Art/ProgrammerArt/adult.png" id="1_83m1v"]
 [ext_resource type="Script" path="res://Scenes/Enemies/enemy.gd" id="1_jncxg"]
-[ext_resource type="Script" path="res://Scenes/Enemies/Graph.gd" id="3_aabfx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi8cg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2fnlr"]
 size = Vector3(0.1, 1.28765, 0.1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_6oymb"]
+radius = 6.45279
+
 [node name="Enemy" type="CharacterBody3D" groups=["Enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2032.97, 0)
 disable_mode = 2
 collision_layer = 5
 velocity = Vector3(0, -9.8, 0)
@@ -34,5 +35,9 @@ billboard = 2
 texture_filter = 0
 texture = ExtResource("1_83m1v")
 
-[node name="Graph" type="Node3D" parent="."]
-script = ExtResource("3_aabfx")
+[node name="VertexChecker" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VertexChecker"]
+shape = SubResource("SphereShape3D_6oymb")
