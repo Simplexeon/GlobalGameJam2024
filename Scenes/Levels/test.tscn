@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dbtxu6b1rygip" path="res://Art/ProgrammerArt/wall.png" id="4_778te"]
 [ext_resource type="PackedScene" uid="uid://bkfjharp8tphe" path="res://Scenes/Objects/filing_cabinet.tscn" id="5_yhxhy"]
 [ext_resource type="PackedScene" uid="uid://bhcrxly5lu5dc" path="res://Scenes/Enemies/enemy.tscn" id="6_3j5pt"]
-[ext_resource type="PackedScene" path="res://Scenes/Graph/graph.tscn" id="7_g0fno"]
+[ext_resource type="PackedScene" uid="uid://dbecn1whqqtei" path="res://Scenes/Graph/graph.tscn" id="7_g0fno"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kk3vg"]
 
@@ -194,72 +194,72 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022521, 1.00002, -4.30833)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.19669, 5.27731, -10.6821)
-light_energy = 4.0
+light_energy = 0.625
 shadow_enabled = true
-shadow_bias = 5.268
+shadow_bias = 2.018
 shadow_normal_bias = 0.0
 shadow_reverse_cull_face = true
-shadow_blur = 2.53
+shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
 spot_angle = 83.18
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.57745, 5.27731, -10.6821)
-light_energy = 4.0
+light_energy = 0.625
 shadow_enabled = true
-shadow_bias = 5.268
+shadow_bias = 2.018
 shadow_normal_bias = 0.0
 shadow_reverse_cull_face = true
-shadow_blur = 2.53
+shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
 spot_angle = 83.18
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.19669, 5.27731, 0.782186)
-light_energy = 4.0
+light_energy = 0.625
 shadow_enabled = true
-shadow_bias = 5.268
+shadow_bias = 2.018
 shadow_normal_bias = 0.0
 shadow_reverse_cull_face = true
-shadow_blur = 2.53
+shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
 spot_angle = 83.18
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.57745, 5.27731, 0.782186)
-light_energy = 4.0
+light_energy = 0.625
 shadow_enabled = true
-shadow_bias = 5.268
+shadow_bias = 2.018
 shadow_normal_bias = 0.0
 shadow_reverse_cull_face = true
-shadow_blur = 2.53
+shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
 spot_angle = 83.18
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.19669, 5.27731, 10.1068)
-light_energy = 4.0
+light_energy = 0.625
 shadow_enabled = true
-shadow_bias = 5.268
+shadow_bias = 2.018
 shadow_normal_bias = 0.0
 shadow_reverse_cull_face = true
-shadow_blur = 2.53
+shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
 spot_angle = 83.18
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.57745, 5.27731, 10.1068)
-light_energy = 4.0
+light_energy = 0.625
 shadow_enabled = true
-shadow_bias = 5.268
+shadow_bias = 2.018
 shadow_normal_bias = 0.0
 shadow_reverse_cull_face = true
-shadow_blur = 2.53
+shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
 spot_angle = 83.18
