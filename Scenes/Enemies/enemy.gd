@@ -36,8 +36,12 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide();
 	
-	var collision : KinematicCollision3D = get_last_slide_collision();
+	if(get_slide_collision_count() < 1):
+		return;
+	var collision : KinematicCollision3D = get_slide_collision(0);
 	if(collision != null and stapled):
+		if(collision.get_collider() == null):
+			return;
 		if(collision.get_collider().is_in_group("Enemies")):
 			return;
 		if(collision.get_collider().is_in_group("Staples")):
@@ -49,8 +53,11 @@ func _physics_process(delta: float) -> void:
 		
 
 func _on_Stapled(staple_pos : Vector3) -> void:
-	move_dir = ((staple_pos - Vector3(0, staple_pos.y, 0)) - global_position).normalized();
+	move_dir = ((staple_pos) - global_position).normalized();
+	move_dir -= Vector3(0, move_dir.y + StapleHeightOffset, 0);
+	move_dir = move_dir.normalized();
 	move_dir = move_dir * -1;
+	print(move_dir)
 	BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 	BodySprite.look_at(move_dir);
 	stapled = true;
