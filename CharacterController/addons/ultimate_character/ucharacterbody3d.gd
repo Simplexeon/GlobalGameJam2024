@@ -60,12 +60,15 @@ var direction = Vector3.ZERO
 var scene
 #endregion
 
+# Export Vars
 @export_range(0, 30) var strafe_tilt_rotation : float;
 @export_exp_easing var strafe_tilt_weight : float;
+@export var movement_animation_threshold : float;
 const default_rotation : float = 0.0;
 
 # Component Vars
 @onready var HeldStapler : Stapler = $Head/Camera/Stapler;
+@onready var StapleAnimator : AnimationPlayer = $Head/Camera/AnimationPlayer;
 
 
 func _enter_tree():
@@ -203,5 +206,10 @@ func _physics_process(delta):
 		camera_node.rotation_degrees.z = target_rotation;
 		
 		HeldStapler.player_velocity = velocity;
+		
+		if(velocity.length() > movement_animation_threshold):
+			StapleAnimator.play("Moving");
+		else:
+			StapleAnimator.play("Idle");
 		
 		move_and_slide()
