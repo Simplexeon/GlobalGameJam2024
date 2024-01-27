@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Enemies/Graph.gd" id="1_bk7ry"]
 [ext_resource type="PackedScene" uid="uid://byran0hjoypru" path="res://Scenes/Graph/vertex.tscn" id="2_sqq3s"]
 
-[node name="Graph" type="Node3D"]
+[node name="Graph" type="Node3D" groups=["Graph"]]
 script = ExtResource("1_bk7ry")
 
 [node name="Vertex" parent="." instance=ExtResource("2_sqq3s")]

@@ -34,6 +34,8 @@ texture_filter = 0
 
 [node name="Test" type="Node3D"]
 
+[node name="Graph" parent="." instance=ExtResource("7_g0fno")]
+
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
@@ -189,8 +191,6 @@ transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749
 
 [node name="Enemy" parent="." instance=ExtResource("6_3j5pt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022521, 1.97977, -4.30833)
-
-[node name="Graph" parent="." instance=ExtResource("7_g0fno")]
 
 [node name="Lights" type="Node3D" parent="."]
 
