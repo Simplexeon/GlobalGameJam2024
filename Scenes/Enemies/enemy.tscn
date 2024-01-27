@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhcrxly5lu5dc"]
+[gd_scene load_steps=6 format=3 uid="uid://bhcrxly5lu5dc"]
 
 [ext_resource type="Texture2D" uid="uid://cqscpaol21y5r" path="res://Art/ProgrammerArt/adult.png" id="1_83m1v"]
 [ext_resource type="Script" path="res://Scenes/Enemies/enemy.gd" id="1_jncxg"]
+[ext_resource type="Script" path="res://Scenes/Enemies/Graph.gd" id="3_aabfx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi8cg"]
 
@@ -9,8 +10,10 @@
 size = Vector3(0.1, 1.28765, 0.1)
 
 [node name="Enemy" type="CharacterBody3D" groups=["Enemies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2014.51, 0)
 disable_mode = 2
 collision_layer = 5
+velocity = Vector3(0, -9.8, 0)
 script = ExtResource("1_jncxg")
 Speed = 300.0
 HP = 1
@@ -31,4 +34,5 @@ billboard = 2
 texture_filter = 0
 texture = ExtResource("1_83m1v")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="Graph" type="Node3D" parent="."]
+script = ExtResource("3_aabfx")

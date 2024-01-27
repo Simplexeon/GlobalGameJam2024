@@ -1,4 +1,3 @@
-@tool
 extends CharacterBody3D
 class_name Enemy
 
@@ -46,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		stuck = true;
 		BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 		BodySprite.look_at(collision.get_normal() * 500);
-		
+		StapledCollider.set_deferred("disabled", true);
 
 func _on_Stapled(staple_pos : Vector3) -> void:
 	move_dir = ((staple_pos - Vector3(0, StapleHeightOffset, 0)) - global_position).normalized();
