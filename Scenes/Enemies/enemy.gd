@@ -12,7 +12,6 @@ var move_dir : Vector3 = Vector3.ZERO;
 var stapled : bool = false;
 var stuck : bool = false;
 var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity");
-var closest_vertex : Vertex = null;
 
 
 # Component Vars
@@ -76,10 +75,4 @@ func moveNormal() -> void:
 func moveStapled() -> void:
 	velocity = move_dir * StapleSpeed;
 
-func updateVertex() -> void:
-	var vertices : Array = VertexChecker.get_overlapping_areas();
-	for vertex in vertices:
-		if(closest_vertex == null):
-			closest_vertex = vertex;
-		if(global_position.distance_to(vertex.global_position) < global_position.distance_to(closest_vertex.global_position)):
-			closest_vertex = vertex;
+

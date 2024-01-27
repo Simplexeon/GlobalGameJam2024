@@ -69,6 +69,7 @@ const default_rotation : float = 0.0;
 # Component Vars
 @onready var HeldStapler : Stapler = $Head/Camera/Stapler;
 @onready var StapleAnimator : AnimationPlayer = $Head/Camera/AnimationPlayer;
+@onready var VertexChecker : Area3D = $VertexChecker
 
 
 func _enter_tree():
@@ -214,3 +215,7 @@ func _physics_process(delta):
 				StapleAnimator.play("Idle");
 		
 		move_and_slide()
+
+
+func _on_update_vertex_timeout() -> void:
+	VertexChecker.updateVertex();
