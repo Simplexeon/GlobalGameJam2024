@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bys6r5mavj4ox"]
+[gd_scene load_steps=7 format=3 uid="uid://bys6r5mavj4ox"]
 
 [ext_resource type="Texture2D" uid="uid://j641w6gl4v6r" path="res://Art/ProgrammerArt/StyleBar.png" id="1_u5tvx"]
 [ext_resource type="Script" path="res://Scenes/UI/StyleBar.gd" id="2_r3x2m"]
 [ext_resource type="PackedScene" uid="uid://p22ujaayli0n" path="res://Scenes/UI/HUD/kill_message.tscn" id="3_f8fpu"]
+[ext_resource type="Texture2D" uid="uid://eipfwugswt4m" path="res://Art/ProgrammerArt/WaveIndicator.png" id="4_ce066"]
+[ext_resource type="Script" path="res://Scenes/UI/WaveIndicator.gd" id="5_n1yaw"]
+[ext_resource type="Theme" uid="uid://dcnes8sf1rppn" path="res://Themes/WaveIndicator.tres" id="5_xcvy2"]
 
 [node name="2DHud" type="Node2D"]
 z_index = 10
@@ -31,6 +34,7 @@ grow_vertical = 2
 position = Vector2(0, -281)
 texture = ExtResource("1_u5tvx")
 region_enabled = true
+region_rect = Rect2(0, 0, 800, 100)
 script = ExtResource("2_r3x2m")
 StartStyle = 50.0
 StyleDecay = 20.0
@@ -44,3 +48,17 @@ offset_bottom = 306.0
 
 [node name="KillMessage" parent="Control/Center/StyleBar/KillFeed" instance=ExtResource("3_f8fpu")]
 layout_mode = 2
+
+[node name="WaveIndicator" type="Sprite2D" parent="Control/Center" groups=["CWaveChanged"]]
+position = Vector2(0, -243)
+texture = ExtResource("4_ce066")
+script = ExtResource("5_n1yaw")
+
+[node name="WaveLabel" type="RichTextLabel" parent="Control/Center/WaveIndicator"]
+offset_left = -24.0
+offset_top = -31.0
+offset_right = 36.0
+offset_bottom = 29.0
+theme = ExtResource("5_xcvy2")
+text = " 7"
+scroll_active = false
