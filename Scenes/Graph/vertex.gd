@@ -26,21 +26,18 @@ var permanent : bool:
 		pass;
 	get: 
 		return permanent;
-		pass;
 
 var previousVertex : Vertex:
 	set(value):
 		pass;
 	get: 
 		return previousVertex;
-		pass;
 
 var distance : float:
 	set(value):
 		pass;
 	get: 
 		return distance;
-		pass;
 
 func Reset():
 	distance = 1000000;
