@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6aus34iogfrd"]
+[gd_scene load_steps=11 format=3 uid="uid://b6aus34iogfrd"]
 
 [ext_resource type="Material" uid="uid://bqb6uldlfnjqa" path="res://Materials/floor.tres" id="1_m82ih"]
 [ext_resource type="PackedScene" uid="uid://jmojca2l0wb4" path="res://Scenes/Player/player.tscn" id="2_2u4x0"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bhcrxly5lu5dc" path="res://Scenes/Enemies/enemy.tscn" id="6_3j5pt"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kk3vg"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tc3re"]
+plane = Plane(0, -1, 0, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xyyis"]
 size = Vector3(0.2, 6.5, 30)
@@ -27,6 +30,17 @@ texture_filter = 0
 shape = SubResource("WorldBoundaryShape3D_kk3vg")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55179, -0.0910449, 0.495239)
+size = Vector3(21.1894, 0.182617, 28.9597)
+material = ExtResource("1_m82ih")
+
+[node name="Floor2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.49592, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2"]
+shape = SubResource("WorldBoundaryShape3D_tc3re")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Floor2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55179, -0.0910449, 0.495239)
 size = Vector3(21.1894, 0.182617, 28.9597)
 material = ExtResource("1_m82ih")
@@ -164,4 +178,5 @@ transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749
 transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, -8.54887, 0.855408, -1.26654)
 
 [node name="Enemy" parent="." instance=ExtResource("6_3j5pt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14391, -4.3193)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022521, 1.76182, -4.30833)
+StapleHeightOffset = null

@@ -6,7 +6,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi8cg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2fnlr"]
-size = Vector3(0.1, 0.1, 0.1)
+size = Vector3(0.1, 1.28765, 0.1)
 
 [node name="Enemy" type="CharacterBody3D" groups=["Enemies"]]
 disable_mode = 2
@@ -15,11 +15,13 @@ script = ExtResource("1_jncxg")
 Speed = 300.0
 HP = 1
 StapleSpeed = 25.0
+StapleHeightOffset = 0.1
 
 [node name="NormalCollision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_qi8cg")
 
 [node name="StapledCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.361548, 0)
 shape = SubResource("BoxShape3D_2fnlr")
 disabled = true
 
