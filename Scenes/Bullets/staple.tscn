@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://8862xim15cff"]
+
+[ext_resource type="Script" path="res://Scenes/Bullets/staple.gd" id="1_n8acy"]
+[ext_resource type="Material" uid="uid://jpfwvn4u0u6r" path="res://Materials/staple_mat.tres" id="2_e8l5b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ss2ke"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Staple" type="RigidBody3D"]
+collision_layer = 0
+collision_mask = 5
+mass = 0.2
+script = ExtResource("1_n8acy")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+size = Vector3(0.05, 0.05, 0.1)
+material = ExtResource("2_e8l5b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_ss2ke")
+
+[node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_ss2ke")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

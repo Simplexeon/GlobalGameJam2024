@@ -1,14 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6aus34iogfrd"]
+[gd_scene load_steps=9 format=3 uid="uid://b6aus34iogfrd"]
 
-[ext_resource type="Texture2D" uid="uid://m5ofj5hfnfk5" path="res://Art/ProgrammerArt/floor.png" id="1_axhkp"]
-[ext_resource type="Script" path="res://CharacterController/addons/ultimate_character/ucharacterbody3d.gd" id="2_nupyq"]
+[ext_resource type="Material" uid="uid://bqb6uldlfnjqa" path="res://Materials/floor.tres" id="1_m82ih"]
+[ext_resource type="PackedScene" uid="uid://jmojca2l0wb4" path="res://Scenes/Player/player.tscn" id="2_2u4x0"]
 [ext_resource type="PackedScene" uid="uid://g76k52yx25ke" path="res://Scenes/Objects/table.tscn" id="3_upq86"]
+[ext_resource type="Texture2D" uid="uid://dbtxu6b1rygip" path="res://Art/ProgrammerArt/wall.png" id="4_778te"]
+[ext_resource type="PackedScene" uid="uid://bkfjharp8tphe" path="res://Scenes/Objects/filing_cabinet.tscn" id="5_yhxhy"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kk3vg"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b3u2x"]
-radius = 0.241512
-height = 0.85248
+[sub_resource type="BoxShape3D" id="BoxShape3D_xyyis"]
+size = Vector3(0.2, 6.5, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrqe4"]
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("4_778te")
+texture_filter = 0
 
 [node name="Test" type="Node3D"]
 
@@ -17,36 +25,139 @@ height = 0.85248
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("WorldBoundaryShape3D_kk3vg")
 
-[node name="Sprite3D" type="Sprite3D" parent="Floor"]
-transform = Transform3D(15, 0, 0, 0, -6.55671e-07, 15, 0, -15, -6.55671e-07, 0, 0, 0)
-transparent = false
-texture_filter = 0
-texture = ExtResource("1_axhkp")
+[node name="CSGBox3D" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55179, -0.0910449, 0.495239)
+size = Vector3(21.1894, 0.182617, 28.9597)
+material = ExtResource("1_m82ih")
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0531486, 0)
-script = ExtResource("2_nupyq")
-walk_speed = 6.0
-standing_height = 0.85
-strafe_tilt_rotation = 4.0
-strafe_tilt_weight = 0.11487
-LEFT = "left"
-RIGHT = "right"
-FORWARD = "forward"
-BACKWARD = "backward"
-MOUSE_SENSITIVITY = 0.1
+[node name="Player" parent="." instance=ExtResource("2_2u4x0")]
 
-[node name="CollisionShapeNormal" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.387043, 0)
-shape = SubResource("CapsuleShape3D_b3u2x")
+[node name="Tables" type="Node3D" parent="."]
 
-[node name="Head" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.629446, 0)
+[node name="Table" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.29866, 0, -0.0589265, 0, 1.3, 0, 0.0589265, 0, 1.29866, -3.35312, 0.847767, 1.2969)
 
-[node name="Camera" type="Camera3D" parent="Player/Head"]
+[node name="Table2" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.29876, 0, -0.0567959, 0, 1.3, 0, 0.0567959, 0, 1.29876, 0.0629194, 0.847767, 3.02793)
 
-[node name="RayCast3D" type="RayCast3D" parent="Player"]
-target_position = Vector3(0, 2, 0)
+[node name="Table3" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.29997, 0.00733237, 0.00602338, -0.0073124, 1.29997, -0.00431843, -0.00604755, 0.00428444, 1.29998, -2.9334, 0.861546, -3.20199)
 
-[node name="Table" parent="." instance=ExtResource("3_upq86")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0.847767, 2.02189)
+[node name="Table4" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.29972, 0, -0.0267714, 0, 1.3, 0, 0.0267714, 0, 1.29972, -3.39464, 0.847767, 3.14541)
+
+[node name="Table17" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.2942, 0.121708, 0.0156769, -0.121699, 1.29429, -0.00147417, -0.015746, 0, 1.2999, -5.76516, 0.847767, 6.74283)
+
+[node name="Table18" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.29996, 0, -0.0096201, 0, 1.3, 0, 0.0096201, 0, 1.29996, -6.16794, 0.847767, 8.54935)
+
+[node name="Table19" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.29664, 0, 0.093422, 0, 1.3, 0, -0.093422, 0, 1.29664, -9.60496, 0.847767, 6.7212)
+
+[node name="Table20" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.2985, 0, 0.062349, 0, 1.3, 0, -0.062349, 0, 1.2985, -10.1575, 1.01998, 8.38795)
+
+[node name="Table5" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -3.51255, 0.847767, -10.2672)
+
+[node name="Table6" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -2.98483, 0.847767, -4.86654)
+
+[node name="Table7" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.96894, 0.847767, -10.191)
+
+[node name="Table8" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(-0.00567233, 0, 1.29999, 0, 1.3, 0, -1.29999, 0, -0.00567233, -7.89176, 0.721885, -7.42324)
+
+[node name="Table9" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 5.64187, 0.847767, -9.78639)
+
+[node name="Table10" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(0.0463444, 0, 1.29917, 0, 1.3, 0, -1.29917, 0, 0.0463444, 5.81511, 0.847767, -3.99227)
+
+[node name="Table11" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 2.28, 0.847767, -9.86656)
+
+[node name="Table12" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(-0.0106185, 0, -1.29996, 0, 1.3, 0, 1.29996, 0, -0.0106185, 6.29088, 0.847767, -7.3939)
+
+[node name="Table13" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(-1.29998, 0, -0.00803185, 0, 1.3, 0, 0.00803185, 0, -1.29998, 4.87588, 0.678675, 9.55325)
+
+[node name="Table14" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(0.0427164, 0, 1.2993, 0, 1.3, 0, -1.2993, 0, 0.0427164, -1.10301, 0.885459, 10.559)
+
+[node name="Table14" parent="Tables/Table14" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.29785, 0, 0.0747197, 0, 1.3, 0, -0.0747197, 0, 1.29785, 3.45655, -0.27094, 5.0397)
+
+[node name="Table15" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(-1.29992, 0, -0.0145434, 0, 1.3, 0, 0.0145434, 0, -1.29992, 1.46735, 0.847767, 9.53711)
+
+[node name="Table16" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(1.29555, 0, -0.107515, 0, 1.3, 0, 0.107515, 0, 1.29555, 0.284982, 0.847767, 1.19892)
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Wall" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.17147, 3.05449, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall"]
+shape = SubResource("BoxShape3D_xyyis")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls/Wall"]
+size = Vector3(0.2, 6.5, 30)
+material = SubResource("StandardMaterial3D_vrqe4")
+
+[node name="Wall2" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.117, 3.05449, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall2"]
+shape = SubResource("BoxShape3D_xyyis")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls/Wall2"]
+size = Vector3(0.2, 6.5, 30)
+material = SubResource("StandardMaterial3D_vrqe4")
+
+[node name="Wall3" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.93182, 3.05449, -13.8583)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall3"]
+shape = SubResource("BoxShape3D_xyyis")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls/Wall3"]
+size = Vector3(0.2, 6.5, 30)
+material = SubResource("StandardMaterial3D_vrqe4")
+
+[node name="Wall4" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.93182, 3.05449, 14.6867)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall4"]
+shape = SubResource("BoxShape3D_xyyis")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls/Wall4"]
+size = Vector3(0.2, 6.5, 30)
+material = SubResource("StandardMaterial3D_vrqe4")
+
+[node name="FilingCabinets" type="Node3D" parent="."]
+
+[node name="FilingCabinet" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
+transform = Transform3D(0.73617, 0, 0.143364, 0, 0.75, 0, -0.143364, 0, 0.73617, -10.0336, 0.839999, 2.30067)
+
+[node name="FilingCabinet2" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
+transform = Transform3D(0.73617, 0, 0.143364, 0, 0.75, 0, -0.143364, 0, 0.73617, -8.58226, 0.723345, 3.42928)
+
+[node name="FilingCabinet3" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
+transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, 8.06956, 0.839999, -3.83513)
+
+[node name="FilingCabinet4" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
+transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, 8.06956, 0.839999, -12.9772)
+
+[node name="FilingCabinet5" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
+transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, 6.4354, 0.839999, -12.9772)
+
+[node name="FilingCabinet6" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
+transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, -6.91471, 0.855408, -1.26654)
+
+[node name="FilingCabinet7" parent="FilingCabinets" instance=ExtResource("5_yhxhy")]
+transform = Transform3D(0.749871, 0, 0.0139008, 0, 0.75, 0, -0.0139008, 0, 0.749871, -8.54887, 0.855408, -1.26654)

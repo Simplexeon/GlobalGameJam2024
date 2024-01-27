@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkfjharp8tphe"]
+
+[ext_resource type="Texture2D" uid="uid://u62le1mv83y0" path="res://Art/ProgrammerArt/filingcabinet.png" id="1_hdfng"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gknlj"]
+size = Vector3(2.1, 2.2, 2.1)
+
+[node name="FilingCabinet" type="StaticBody3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="Side" type="Sprite3D" parent="."]
+transform = Transform3D(6.5, 0, 0, 0, 6.5, 0, 0, 0, 6.5, 0, 0, 1)
+texture = ExtResource("1_hdfng")
+
+[node name="Side2" type="Sprite3D" parent="."]
+transform = Transform3D(6.5, 0, 0, 0, 6.5, 0, 0, 0, 6.5, 0, 0, -1)
+texture = ExtResource("1_hdfng")
+
+[node name="Side3" type="Sprite3D" parent="."]
+transform = Transform3D(-2.84124e-07, 0, -6.5, 0, 6.5, 0, 6.5, 0, -2.84124e-07, 1, 0, 0)
+texture = ExtResource("1_hdfng")
+
+[node name="Side4" type="Sprite3D" parent="."]
+transform = Transform3D(-2.84124e-07, 0, -6.5, 0, 6.5, 0, 6.5, 0, -2.84124e-07, -1, 0, 0)
+texture = ExtResource("1_hdfng")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_gknlj")

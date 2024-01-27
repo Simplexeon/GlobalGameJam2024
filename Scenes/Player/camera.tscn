@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd5vtp7ctpic5"]
+
+[ext_resource type="PackedScene" uid="uid://bf2ymjjanep7t" path="res://Scenes/Player/stapler.tscn" id="1_r48ao"]
+
+[node name="Camera" type="Camera3D"]
+
+[node name="Stapler" parent="." instance=ExtResource("1_r48ao")]

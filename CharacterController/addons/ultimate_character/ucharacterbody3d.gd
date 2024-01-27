@@ -4,6 +4,7 @@ class_name UCharacterBody3D
 
 ## A 3D physics body using a revamped template script.
 
+#region Auto-made Variables
 @export_group("Character Speeds")
 @export var jump_velocity : float = 4.5
 @export var walk_speed : float = 5.0
@@ -23,9 +24,7 @@ class_name UCharacterBody3D
 #@export var head_bob_crouching_speed : float = 10.0
 ## The head bob intensity is for crouching, where walking is multiplied by 2, and sprinting is multiplied by 4
 @export var head_bob_intensity : float = 0.05
-@export_range(0, 30) var strafe_tilt_rotation : float;
-@export_exp_easing var strafe_tilt_weight : float;
-const default_rotation : float = 0.0;
+
 
 @export_group("Controls")
 ## The InputMap action string to be used for LEFT movement
@@ -59,6 +58,15 @@ var last_velocity = Vector3.ZERO
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var direction = Vector3.ZERO
 var scene
+#endregion
+
+@export_range(0, 30) var strafe_tilt_rotation : float;
+@export_exp_easing var strafe_tilt_weight : float;
+const default_rotation : float = 0.0;
+
+# Component Vars
+@onready var HeldStapler : Stapler = $Head/Camera/Stapler;
+
 
 func _enter_tree():
 	if Engine.is_editor_hint():
@@ -186,12 +194,14 @@ func _physics_process(delta):
 		last_velocity = velocity
 		
 		var target_rotation : float = default_rotation;
-		if(input_dir == Vector2(-1, 0)):
+		if(sign(input_dir.x) == -1):
 			target_rotation = strafe_tilt_rotation;
-		if(input_dir == Vector2(1, 0)):
+		if(sign(input_dir.x) == 1):
 			target_rotation = strafe_tilt_rotation * -1;
 		
 		target_rotation = lerpf(camera_node.rotation_degrees.z, target_rotation, strafe_tilt_weight);
 		camera_node.rotation_degrees.z = target_rotation;
+		
+		HeldStapler.player_velocity = velocity;
 		
 		move_and_slide()
