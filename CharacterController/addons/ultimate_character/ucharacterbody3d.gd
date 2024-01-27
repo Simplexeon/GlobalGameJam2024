@@ -207,9 +207,10 @@ func _physics_process(delta):
 		
 		HeldStapler.player_velocity = velocity;
 		
-		if(velocity.length() > movement_animation_threshold):
-			StapleAnimator.play("Moving");
-		else:
-			StapleAnimator.play("Idle");
+		if(StapleAnimator.current_animation != "Shoot"):
+			if(velocity.length() > movement_animation_threshold):
+				StapleAnimator.play("Moving");
+			else:
+				StapleAnimator.play("Idle");
 		
 		move_and_slide()

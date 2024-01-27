@@ -12,6 +12,7 @@ var player_velocity : Vector3 = Vector3.ZERO;
 @onready var CD : Timer = $CD;
 @onready var StapleSpawn : Node3D = $StapleSpawn;
 @onready var StapleDir : Node3D = $StapleSpawn/StapleDir;
+@onready var Animator : AnimationPlayer = get_parent().get_node("AnimationPlayer");
 var root : Node3D;
 
 # File Vars
@@ -23,6 +24,7 @@ var root : Node3D;
 func _ready() -> void:
 	root = get_tree().current_scene;
 	CD.wait_time = Cooldown;
+	frame = 0;
 
 func _physics_process(delta: float) -> void:
 	if(Input.is_action_just_pressed("shoot")):
@@ -38,5 +40,7 @@ func shoot() -> void:
 	var staple : Staple = staple_file.instantiate();
 	root.add_child(staple);
 	staple._initialize(StapleSpawn.global_position, StapleDir.global_position, BulletSpeed + player_velocity.length());
+	frame = 3;
+	Animator.play("Shoot", 0.05, 1);
 	
 	CD.start();
