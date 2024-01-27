@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1c6dyun5p56d"
 path.s3tc="res://.godot/imported/tableend.png-d9c318f189960800ce5ea5b5f9ffc260.s3tc.ctex"
+path.etc2="res://.godot/imported/tableend.png-d9c318f189960800ce5ea5b5f9ffc260.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/ProgrammerArt/tableend.png"
-dest_files=["res://.godot/imported/tableend.png-d9c318f189960800ce5ea5b5f9ffc260.s3tc.ctex"]
+dest_files=["res://.godot/imported/tableend.png-d9c318f189960800ce5ea5b5f9ffc260.s3tc.ctex", "res://.godot/imported/tableend.png-d9c318f189960800ce5ea5b5f9ffc260.etc2.ctex"]
 
 [params]
 

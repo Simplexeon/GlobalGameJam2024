@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7voni600w18q"
 path.s3tc="res://.godot/imported/tabletop.png-9f71394bbaf1a71839a6a017ce23a55e.s3tc.ctex"
+path.etc2="res://.godot/imported/tabletop.png-9f71394bbaf1a71839a6a017ce23a55e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/ProgrammerArt/tabletop.png"
-dest_files=["res://.godot/imported/tabletop.png-9f71394bbaf1a71839a6a017ce23a55e.s3tc.ctex"]
+dest_files=["res://.godot/imported/tabletop.png-9f71394bbaf1a71839a6a017ce23a55e.s3tc.ctex", "res://.godot/imported/tabletop.png-9f71394bbaf1a71839a6a017ce23a55e.etc2.ctex"]
 
 [params]
 

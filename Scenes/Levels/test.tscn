@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6aus34iogfrd"]
+[gd_scene load_steps=15 format=3 uid="uid://b6aus34iogfrd"]
 
 [ext_resource type="Material" uid="uid://bqb6uldlfnjqa" path="res://Materials/floor.tres" id="1_m82ih"]
 [ext_resource type="PackedScene" uid="uid://jmojca2l0wb4" path="res://Scenes/Player/player.tscn" id="2_2u4x0"]
+[ext_resource type="Texture2D" uid="uid://m5ofj5hfnfk5" path="res://Art/ProgrammerArt/floor.png" id="2_ce01r"]
 [ext_resource type="PackedScene" uid="uid://g76k52yx25ke" path="res://Scenes/Objects/table.tscn" id="3_upq86"]
 [ext_resource type="Texture2D" uid="uid://dbtxu6b1rygip" path="res://Art/ProgrammerArt/wall.png" id="4_778te"]
 [ext_resource type="PackedScene" uid="uid://bkfjharp8tphe" path="res://Scenes/Objects/filing_cabinet.tscn" id="5_yhxhy"]
@@ -13,6 +14,12 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tc3re"]
 plane = Plane(0, -1, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3d88"]
+specular_mode = 2
+albedo_texture = ExtResource("2_ce01r")
+texture_filter = 0
+grow = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xyyis"]
 size = Vector3(0.2, 6.5, 30)
@@ -43,76 +50,76 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.49592, 0)
 shape = SubResource("WorldBoundaryShape3D_tc3re")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Floor2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55179, 23.475, 0.495239)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55179, -0.417552, 0.495239)
 size = Vector3(21.1894, 0.182617, 28.9597)
-material = ExtResource("1_m82ih")
+material = SubResource("StandardMaterial3D_i3d88")
 
 [node name="Player" parent="." instance=ExtResource("2_2u4x0")]
 
 [node name="Tables" type="Node3D" parent="."]
 
 [node name="Table" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29866, 0, -0.0589265, 0, 1.3, 0, 0.0589265, 0, 1.29866, -3.35312, 0.847767, 1.2969)
+transform = Transform3D(1.29866, 0, -0.0589265, 0, 1.3, 0, 0.0589265, 0, 1.29866, -3.35312, 0.75, 1.2969)
 
 [node name="Table2" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29876, 0, -0.0567959, 0, 1.3, 0, 0.0567959, 0, 1.29876, 0.0629194, 0.847767, 3.02793)
+transform = Transform3D(1.29876, 0, -0.0567959, 0, 1.3, 0, 0.0567959, 0, 1.29876, 0.0629194, 0.75, 3.02793)
 
 [node name="Table3" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29997, 0.00733237, 0.00602338, -0.0073124, 1.29997, -0.00431843, -0.00604755, 0.00428444, 1.29998, -2.9334, 0.861546, -3.20199)
+transform = Transform3D(1.29997, 0.00733233, 0.0060233, -0.0073124, 1.29997, -0.00431845, -0.00604755, 0.00428444, 1.29998, -2.9334, 0.75, -3.20199)
 
 [node name="Table4" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29972, 0, -0.0267714, 0, 1.3, 0, 0.0267714, 0, 1.29972, -3.39464, 0.847767, 3.14541)
+transform = Transform3D(1.29972, 0, -0.0267714, 0, 1.3, 0, 0.0267714, 0, 1.29972, -3.39464, 0.75, 3.14541)
 
 [node name="Table17" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.2942, 0.121708, 0.0156769, -0.121699, 1.29429, -0.00147417, -0.015746, 0, 1.2999, -5.76516, 0.847767, 6.74283)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -5.76516, 0.75, 6.74283)
 
 [node name="Table18" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29996, 0, -0.0096201, 0, 1.3, 0, 0.0096201, 0, 1.29996, -6.16794, 0.847767, 8.54935)
+transform = Transform3D(1.29996, 0, -0.0096201, 0, 1.3, 0, 0.0096201, 0, 1.29996, -6.16794, 0.75, 8.54935)
 
 [node name="Table19" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29664, 0, 0.093422, 0, 1.3, 0, -0.093422, 0, 1.29664, -9.60496, 0.847767, 6.7212)
+transform = Transform3D(1.29664, 0, 0.093422, 0, 1.3, 0, -0.093422, 0, 1.29664, -9.60496, 0.75, 6.7212)
 
 [node name="Table20" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.2985, 0, 0.062349, 0, 1.3, 0, -0.062349, 0, 1.2985, -10.1575, 1.01998, 8.38795)
+transform = Transform3D(1.2985, 0, 0.062349, 0, 1.3, 0, -0.062349, 0, 1.2985, -10.1575, 0.75, 8.38795)
 
 [node name="Table5" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -3.51255, 0.847767, -10.2672)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -3.51255, 0.75, -10.2672)
 
 [node name="Table6" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -2.98483, 0.847767, -4.86654)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -2.98483, 0.75, -4.86654)
 
 [node name="Table7" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.96894, 0.847767, -10.191)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.96894, 0.75, -10.191)
 
 [node name="Table8" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(-0.00567233, 0, 1.29999, 0, 1.3, 0, -1.29999, 0, -0.00567233, -7.89176, 0.721885, -7.42324)
+transform = Transform3D(-0.00567234, 0, 1.29999, 0, 1.3, 0, -1.29999, 0, -0.00567234, -7.89176, 0.75, -7.42324)
 
 [node name="Table9" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 5.64187, 0.847767, -9.78639)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 5.64187, 0.75, -9.78639)
 
 [node name="Table10" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(0.0463444, 0, 1.29917, 0, 1.3, 0, -1.29917, 0, 0.0463444, 5.81511, 0.847767, -3.99227)
+transform = Transform3D(0.0463445, 0, 1.29917, 0, 1.3, 0, -1.29917, 0, 0.0463445, 5.81511, 0.75, -3.99227)
 
 [node name="Table11" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 2.28, 0.847767, -9.86656)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 2.28, 0.75, -9.86656)
 
 [node name="Table12" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(-0.0106185, 0, -1.29996, 0, 1.3, 0, 1.29996, 0, -0.0106185, 6.29088, 0.847767, -7.3939)
+transform = Transform3D(-0.0106185, 0, -1.29996, 0, 1.3, 0, 1.29996, 0, -0.0106185, 6.29088, 0.75, -7.3939)
 
 [node name="Table13" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(-1.29998, 0, -0.00803185, 0, 1.3, 0, 0.00803185, 0, -1.29998, 4.87588, 0.678675, 9.55325)
+transform = Transform3D(-1.29998, 0, -0.00803176, 0, 1.3, 0, 0.00803176, 0, -1.29998, 4.87588, 0.75, 9.55325)
 
 [node name="Table14" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(0.0427164, 0, 1.2993, 0, 1.3, 0, -1.2993, 0, 0.0427164, -1.10301, 0.885459, 10.559)
-
-[node name="Table14" parent="Tables/Table14" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29785, 0, 0.0747197, 0, 1.3, 0, -0.0747197, 0, 1.29785, 3.45655, -0.27094, 5.0397)
+transform = Transform3D(0.0427164, 0, 1.2993, 0, 1.3, 0, -1.2993, 0, 0.0427164, -1.10301, 0.75, 10.559)
 
 [node name="Table15" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(-1.29992, 0, -0.0145434, 0, 1.3, 0, 0.0145434, 0, -1.29992, 1.46735, 0.847767, 9.53711)
+transform = Transform3D(-1.29992, 0, -0.0145434, 0, 1.3, 0, 0.0145434, 0, -1.29992, 1.46735, 0.75, 9.53711)
 
 [node name="Table16" parent="Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29555, 0, -0.107515, 0, 1.3, 0, 0.107515, 0, 1.29555, 0.284982, 0.847767, 1.19892)
+transform = Transform3D(1.29555, 0, -0.107515, 0, 1.3, 0, 0.107515, 0, 1.29555, 0.284982, 0.75, 1.19892)
+
+[node name="Table21" parent="Tables" instance=ExtResource("3_upq86")]
+transform = Transform3D(-0.0416439, 0, 1.68949, 0, 1.69, 0, -1.68949, 0, -0.0416439, 5.59272, 0.75, 6.28318)
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -256,3 +263,83 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94493, 0, 1.13125)
 
 [node name="Vertex24" parent="Graph" instance=ExtResource("8_r2s5w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.36451, 0, -10.6568)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -0.0270319, 0.999635, 0, -0.999635, -0.0270319, -7.93256, 4.33165, -9.52981)
+light_energy = 2.475
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 4.381
+shadow_normal_bias = 0.0
+shadow_reverse_cull_face = true
+shadow_blur = 1.333
+spot_range = 19.223
+spot_attenuation = 0.138696
+spot_angle = 81.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -0.0270319, 0.999635, 0, -0.999635, -0.0270319, 4.79779, 4.33165, -9.52981)
+light_energy = 2.475
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 4.381
+shadow_normal_bias = 0.0
+shadow_reverse_cull_face = true
+shadow_blur = 1.333
+spot_range = 19.223
+spot_attenuation = 0.138696
+spot_angle = 81.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -0.0270319, 0.999635, 0, -0.999635, -0.0270319, -7.93256, 4.33165, -2.16076)
+light_energy = 2.475
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 4.381
+shadow_normal_bias = 0.0
+shadow_reverse_cull_face = true
+shadow_blur = 1.333
+spot_range = 19.223
+spot_attenuation = 0.138696
+spot_angle = 81.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -0.0270319, 0.999635, 0, -0.999635, -0.0270319, 4.79779, 4.33165, -2.16076)
+light_energy = 2.475
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 4.381
+shadow_normal_bias = 0.0
+shadow_reverse_cull_face = true
+shadow_blur = 1.333
+spot_range = 19.223
+spot_attenuation = 0.138696
+spot_angle = 81.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -0.0270319, 0.999635, 0, -0.999635, -0.0270319, -7.93256, 4.33165, 9.754)
+light_energy = 2.475
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 4.381
+shadow_normal_bias = 0.0
+shadow_reverse_cull_face = true
+shadow_blur = 1.333
+spot_range = 19.223
+spot_attenuation = 0.138696
+spot_angle = 81.0
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -0.0270319, 0.999635, 0, -0.999635, -0.0270319, 4.79779, 4.33165, 9.754)
+light_energy = 2.475
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 4.381
+shadow_normal_bias = 0.0
+shadow_reverse_cull_face = true
+shadow_blur = 1.333
+spot_range = 19.223
+spot_attenuation = 0.138696
+spot_angle = 81.0

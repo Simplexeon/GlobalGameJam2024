@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bexu0u212bmtw"
 path.s3tc="res://.godot/imported/tableside.png-81ed02095a23b6b29db684a65dd28d60.s3tc.ctex"
+path.etc2="res://.godot/imported/tableside.png-81ed02095a23b6b29db684a65dd28d60.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/ProgrammerArt/tableside.png"
-dest_files=["res://.godot/imported/tableside.png-81ed02095a23b6b29db684a65dd28d60.s3tc.ctex"]
+dest_files=["res://.godot/imported/tableside.png-81ed02095a23b6b29db684a65dd28d60.s3tc.ctex", "res://.godot/imported/tableside.png-81ed02095a23b6b29db684a65dd28d60.etc2.ctex"]
 
 [params]
 

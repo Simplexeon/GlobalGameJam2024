@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://j641w6gl4v6r"
 path.s3tc="res://.godot/imported/StyleBar.png-e6dd819e2d61a5b176847a180b7d597e.s3tc.ctex"
+path.etc2="res://.godot/imported/StyleBar.png-e6dd819e2d61a5b176847a180b7d597e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/ProgrammerArt/StyleBar.png"
-dest_files=["res://.godot/imported/StyleBar.png-e6dd819e2d61a5b176847a180b7d597e.s3tc.ctex"]
+dest_files=["res://.godot/imported/StyleBar.png-e6dd819e2d61a5b176847a180b7d597e.s3tc.ctex", "res://.godot/imported/StyleBar.png-e6dd819e2d61a5b176847a180b7d597e.etc2.ctex"]
 
 [params]
 
