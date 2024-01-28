@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b6aus34iogfrd"]
+[gd_scene load_steps=23 format=3 uid="uid://b6aus34iogfrd"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/Graph.gd" id="1_cpa6v"]
 [ext_resource type="Material" uid="uid://bqb6uldlfnjqa" path="res://Materials/floor.tres" id="1_m82ih"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://duofrappmfno0" path="res://Art/Environment/wall2.png" id="9_c27vf"]
 [ext_resource type="Texture2D" uid="uid://bj3vb2b03aq2x" path="res://Art/Environment/wall3.png" id="9_yhwlt"]
 [ext_resource type="Texture2D" uid="uid://bw4jxnry5egjm" path="res://Art/Environment/wall4.png" id="11_j7e02"]
+[ext_resource type="Script" path="res://Scenes/SpawnManager.gd" id="12_7m5ak"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kk3vg"]
 
@@ -132,9 +133,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94493, 0.5, 1.13125)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.36451, 0.5, -10.6568)
 
 [node name="Player" parent="." instance=ExtResource("2_2u4x0")]
-
-[node name="RayCast3D" type="RayCast3D" parent="Player"]
-target_position = Vector3(0, 2, 0)
 
 [node name="Tables" type="Node3D" parent="."]
 
@@ -350,3 +348,6 @@ shape = SubResource("BoxShape3D_8ehq2")
 transform = Transform3D(0.999997, 0, -5.32907e-14, 0, 1, 0, 5.32907e-14, 0, 0.999997, 2.42095, 3.072, 0)
 size = Vector3(29.0819, 6.6, 0.2)
 material = SubResource("StandardMaterial3D_mjmy5")
+
+[node name="SpawnManager" type="Node3D" parent="."]
+script = ExtResource("12_7m5ak")
