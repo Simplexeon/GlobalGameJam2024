@@ -9,8 +9,8 @@
 [ext_resource type="Theme" uid="uid://d4ivmg83msm63" path="res://Themes/KillMessageTheme.tres" id="7_khht0"]
 [ext_resource type="Texture2D" uid="uid://t0nwc1bdc5y4" path="res://Art/UI/tutorial.png" id="8_xu054"]
 [ext_resource type="Script" path="res://Scenes/UI/Tutorial.gd" id="9_u8n5i"]
-[ext_resource type="VideoStream" path="res://Art/UI/stapler intro.ogv" id="10_2aiq4"]
 [ext_resource type="AudioStream" uid="uid://c64uxlxqk30ts" path="res://Music/sounds_deathscreen/deathscreen.wav" id="10_7tri0"]
+[ext_resource type="VideoStream" path="res://Art/UI/Untitled Project.ogv" id="10_ku8lv"]
 [ext_resource type="Script" path="res://Scenes/UI/STAPLE HIM.gd" id="11_vgk8d"]
 [ext_resource type="Texture2D" uid="uid://d2058qind1hyu" path="res://Art/UI/STAPLE.png" id="12_yyvug"]
 [ext_resource type="Texture2D" uid="uid://dwjvwfkctg23j" path="res://Art/UI/HIM.png" id="13_1u7v6"]
@@ -99,7 +99,7 @@ offset_left = -480.0
 offset_top = -330.0
 offset_right = 520.0
 offset_bottom = 370.0
-stream = ExtResource("10_2aiq4")
+stream = ExtResource("10_ku8lv")
 script = ExtResource("15_atl5e")
 
 [node name="GrabSound" type="AudioStreamPlayer" parent="."]
@@ -126,5 +126,6 @@ autostart = true
 stream = ExtResource("14_nhlpt")
 
 [connection signal="timeout" from="Control/Center/Tutorial/Timer" to="Control/Center/Tutorial" method="_on_timer_timeout"]
+[connection signal="finished" from="Control/Center/Cutscene" to="Control/Center/Cutscene" method="_on_finished"]
 [connection signal="timeout" from="STAPLE HIM/Timer" to="STAPLE HIM" method="_on_timer_timeout"]
 [connection signal="finished" from="STAPLE HIM/Sound" to="STAPLE HIM" method="_on_sound_finished"]
