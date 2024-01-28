@@ -86,7 +86,7 @@ stream_5/weight = 1.0
 stream_6/stream = ExtResource("23_0nefg")
 stream_6/weight = 1.0
 
-[node name="Enemy" type="CharacterBody3D" groups=["Enemies"]]
+[node name="Enemy" type="CharacterBody3D" groups=["CPlayerGrabbed", "Enemies"]]
 disable_mode = 2
 collision_layer = 5
 velocity = Vector3(0, -9.8, 0)

@@ -181,3 +181,6 @@ func movePlayer() -> void:
 		MoveState = moveNormal;
 
 
+func _on_PlayerGrabbed() -> void:
+	queue_free();
+

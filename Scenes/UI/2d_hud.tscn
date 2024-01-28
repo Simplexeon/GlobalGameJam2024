@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bys6r5mavj4ox"]
+[gd_scene load_steps=15 format=3 uid="uid://bys6r5mavj4ox"]
 
 [ext_resource type="Script" path="res://Scenes/UI/2d_hud.gd" id="1_gkfa1"]
 [ext_resource type="Texture2D" uid="uid://j641w6gl4v6r" path="res://Art/ProgrammerArt/StyleBar.png" id="1_u5tvx"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/STAPLE HIM.gd" id="11_vgk8d"]
 [ext_resource type="Texture2D" uid="uid://d2058qind1hyu" path="res://Art/UI/STAPLE.png" id="12_yyvug"]
 [ext_resource type="Texture2D" uid="uid://dwjvwfkctg23j" path="res://Art/UI/HIM.png" id="13_1u7v6"]
+[ext_resource type="AudioStream" uid="uid://cjoob7f47fcw8" path="res://Music/staplehim/staplehim.wav" id="14_nhlpt"]
 
 [node name="2DHud" type="Node2D" groups=["CPlayerGrabbed"]]
 z_index = 10
@@ -109,6 +110,8 @@ wait_time = 0.9
 autostart = true
 
 [node name="Sound" type="AudioStreamPlayer" parent="STAPLE HIM"]
+stream = ExtResource("14_nhlpt")
+autoplay = true
 
 [connection signal="timeout" from="Control/Center/Tutorial/Timer" to="Control/Center/Tutorial" method="_on_timer_timeout"]
 [connection signal="timeout" from="STAPLE HIM/Timer" to="STAPLE HIM" method="_on_timer_timeout"]
