@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Dad
 
 # Export Vars
 @export var Speed : float;
@@ -86,9 +87,9 @@ func _physics_process(delta: float) -> void:
 		BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 		BodySprite.look_at(collision.get_normal() * 500);
 		BodySprite.frame = 2;
+		get_tree().call_group("CGameStart", "_on_GameStart");
 		StapledCollider.set_deferred("disabled", true);
 		remove_from_group("Enemies");
-		get_tree().call_group("CGameStart", "_on_GameStart");
 
 func _on_Stapled(staple_pos : Vector3) -> void:
 	var target_pos : Vector3 = staple_pos;

@@ -10,7 +10,7 @@ func _initialize(spawn_pos : Vector3, spawn_dir : Vector3, speed : float) -> voi
 	linear_velocity = (spawn_dir - spawn_pos).normalized() * speed;
 
 func _on_body_entered(body: Node3D) -> void:
-	if(body is Enemy):
+	if(body is Enemy or body is Dad):
 		body._on_Stapled(global_position);
 		queue_free();
 	axis_lock_angular_x = false;
