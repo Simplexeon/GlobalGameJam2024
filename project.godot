@@ -119,6 +119,7 @@ environment/subsurface_scattering/subsurface_scattering_quality=0
 lightmapping/probe_capture/update_speed=2.0
 global_illumination/sdfgi/frames_to_converge=0
 environment/volumetric_fog/use_filter=0
+environment/defaults/default_clear_color=Color(0.411765, 0.698039, 0.709804, 1)
 lightmapping/bake_quality/low_quality_ray_count=10
 lightmapping/bake_quality/medium_quality_ray_count=32
 lightmapping/bake_quality/high_quality_ray_count=32
