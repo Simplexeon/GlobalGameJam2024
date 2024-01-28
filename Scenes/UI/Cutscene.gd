@@ -3,7 +3,7 @@ extends VideoStreamPlayer
 
 
 func _on_CutsceneBegin() -> void:
-	play();
+	endCutscene();
 
 
 func endCutscene() -> void:
