@@ -7,6 +7,9 @@ class_name Enemy
 @export var StapleSpeed : float;
 @export var StapleHeightOffset : float;
 @export var FindNextPoint : float;
+@export var GrabDistance : float;
+@export var GrabSpeed : float;
+@export var GrabScale : float;
 
 # Object Vars
 var move_dir : Vector3 = Vector3.ZERO;
@@ -14,6 +17,7 @@ var stapled : bool = false;
 var stuck : bool = false;
 var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity");
 var next_path_pos = Vector3.ZERO;
+var hand_offset : Vector3 = Vector3.ZERO;
 
 # Lambdas
 var MoveState = moveNormal;
@@ -41,6 +45,18 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if(stuck):
 		return;
+	
+	if(player != null):
+		var player_vector : Vector3 = (player.global_position - global_position);
+		if(player_vector.length() <= GrabDistance):
+			var next_pos : Vector3 = (player.global_position - HandSprite.global_position).normalized() * GrabSpeed * delta;
+			HandSprite.position += next_pos;
+			hand_offset += next_pos;
+			HandSprite.scale += Vector3(GrabScale * delta, GrabScale * delta, GrabScale * delta);
+		else:
+			HandSprite.position -= hand_offset;
+			hand_offset = Vector3.ZERO;
+			HandSprite.scale = Vector3(1.5, 1.5, 1.5);
 	
 	MoveState.call();
 	
@@ -139,7 +155,6 @@ func movePlayer() -> void:
 	if(!PlayerRaycast.is_colliding()):
 		MoveState = moveNormal;
 	elif(!PlayerRaycast.get_collider().is_in_group("Player")):
-		print("Going normal")
 		MoveState = moveNormal;
 
 
