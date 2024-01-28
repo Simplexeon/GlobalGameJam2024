@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6aus34iogfrd"]
+[gd_scene load_steps=16 format=3 uid="uid://b6aus34iogfrd"]
 
 [ext_resource type="Material" uid="uid://bqb6uldlfnjqa" path="res://Materials/floor.tres" id="1_m82ih"]
 [ext_resource type="PackedScene" uid="uid://jmojca2l0wb4" path="res://Scenes/Player/player.tscn" id="2_2u4x0"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dbtxu6b1rygip" path="res://Art/ProgrammerArt/wall.png" id="4_778te"]
 [ext_resource type="PackedScene" uid="uid://bkfjharp8tphe" path="res://Scenes/Objects/filing_cabinet.tscn" id="5_yhxhy"]
 [ext_resource type="PackedScene" uid="uid://bhcrxly5lu5dc" path="res://Scenes/Enemies/enemy.tscn" id="6_3j5pt"]
-[ext_resource type="PackedScene" uid="uid://6mbgrnsrct06" path="res://Scenes/Graph/graph.tscn" id="7_g0fno"]
+[ext_resource type="PackedScene" uid="uid://dbecn1whqqtei" path="res://Scenes/Graph/graph.tscn" id="7_g0fno"]
+[ext_resource type="PackedScene" uid="uid://154ljmu2n3r3" path="res://Scenes/door.tscn" id="9_3hga2"]
+[ext_resource type="Script" path="res://Scenes/SpawnManager.gd" id="10_talc5"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kk3vg"]
 
@@ -263,3 +265,12 @@ shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
 spot_angle = 83.18
+
+[node name="SpawnManager" parent="." instance=ExtResource("9_3hga2")]
+script = ExtResource("10_talc5")
+
+[node name="Door" type="Node3D" parent="SpawnManager"]
+
+[node name="Door2" type="Node3D" parent="SpawnManager"]
+
+[node name="Door3" type="Node3D" parent="SpawnManager"]
