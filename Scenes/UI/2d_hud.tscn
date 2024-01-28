@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bys6r5mavj4ox"]
+[gd_scene load_steps=11 format=3 uid="uid://bys6r5mavj4ox"]
 
 [ext_resource type="Script" path="res://Scenes/UI/2d_hud.gd" id="1_gkfa1"]
 [ext_resource type="Texture2D" uid="uid://j641w6gl4v6r" path="res://Art/ProgrammerArt/StyleBar.png" id="1_u5tvx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://d4ivmg83msm63" path="res://Themes/KillMessageTheme.tres" id="7_khht0"]
 [ext_resource type="Texture2D" uid="uid://t0nwc1bdc5y4" path="res://Art/UI/tutorial.png" id="8_xu054"]
 [ext_resource type="Script" path="res://Scenes/UI/Tutorial.gd" id="9_u8n5i"]
+[ext_resource type="AudioStream" uid="uid://c64uxlxqk30ts" path="res://Music/sounds_deathscreen/deathscreen.wav" id="10_7tri0"]
 
 [node name="2DHud" type="Node2D" groups=["CPlayerGrabbed"]]
 z_index = 10
@@ -84,5 +85,9 @@ script = ExtResource("9_u8n5i")
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="GrabSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_7tri0")
+volume_db = 24.0
 
 [connection signal="timeout" from="Control/Center/Tutorial/Timer" to="Control/Center/Tutorial" method="_on_timer_timeout"]

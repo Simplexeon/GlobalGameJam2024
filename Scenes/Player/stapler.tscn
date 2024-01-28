@@ -49,4 +49,5 @@ one_shot = true
 
 [node name="Sounds" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_r28d3")
-max_distance = 3.0
+volume_db = 30.0
+max_distance = 30.0
