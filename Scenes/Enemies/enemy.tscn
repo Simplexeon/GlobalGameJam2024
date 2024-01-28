@@ -12,7 +12,7 @@ radius = 0.192412
 height = 1.62672
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2fnlr"]
-size = Vector3(0.01, 0.772107, 0.001)
+size = Vector3(0.01, 1.18506, 0.001)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_loyq3"]
 radius = 0.391042
@@ -51,7 +51,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_qi8cg")
 
 [node name="StapledCollision" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.776697, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.363745, 0)
 shape = SubResource("BoxShape3D_2fnlr")
 disabled = true
 
@@ -101,7 +101,7 @@ wait_time = 2.5
 autostart = true
 
 [node name="PlayerRaycast" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.254876, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.212217, 0)
 target_position = Vector3(0, 0, -15)
 collision_mask = 3
 

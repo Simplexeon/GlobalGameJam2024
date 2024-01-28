@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvp4vs00h8jse"
+path="res://.godot/imported/FileCabinets.obj-5cb84b817a8c286bfe8a247cb94834df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/FileCabinets.obj-5cb84b817a8c286bfe8a247cb94834df.mesh"]
+
+source_file="res://Art/Objects/Filing Cabinet/FileCabinets.obj"
+dest_files=["res://.godot/imported/FileCabinets.obj-5cb84b817a8c286bfe8a247cb94834df.mesh", "res://.godot/imported/FileCabinets.obj-5cb84b817a8c286bfe8a247cb94834df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

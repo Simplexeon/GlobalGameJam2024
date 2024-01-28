@@ -78,8 +78,10 @@ func _physics_process(delta: float) -> void:
 			return;
 		if(collision.get_collider().is_in_group("Staples")):
 			return;
-		if(collision.get_collider().get_parent().is_in_group("Tables")):
+		if(collision.get_collider().is_in_group("Chairs")):
 			return;
+		#if(collision.get_collider().get_parent().is_in_group("Tables")):
+		#	return;
 		
 		stuck = true;
 		BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
@@ -139,6 +141,7 @@ func moveNormal() -> void:
 		if(PlayerRaycast.is_colliding()):
 			if(PlayerRaycast.get_collider() is Player):
 				MoveState = movePlayer;
+				print("Line of sight obtained")
 	rotation_degrees.x = 0;
 	rotation_degrees.z = 0; 
 	
@@ -163,8 +166,10 @@ func movePlayer() -> void:
 	BodySprite.look_at(player.global_position);
 	PlayerRaycast.target_position = player.global_position - PlayerRaycast.global_position;
 	if(!PlayerRaycast.is_colliding()):
+		print("lost line of sight");
 		MoveState = moveNormal;
 	elif(!PlayerRaycast.get_collider().is_in_group("Player")):
+		print("lost line of sight");
 		MoveState = moveNormal;
 
 
