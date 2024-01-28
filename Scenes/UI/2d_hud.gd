@@ -9,7 +9,7 @@ func _ready() -> void:
 func Opening() -> void:
 	var Transition : TransitionNode = Globals.transition_file.instantiate();
 	add_child(Transition);
-	Transition.initialize(Vector2(500, 350), true, 1);
+	Transition.initialize(Vector2(500, 350), true, 0);
 
 func _on_PlayerGrabbed() -> void:
 	var Transition : TransitionNode = Globals.transition_file.instantiate();
