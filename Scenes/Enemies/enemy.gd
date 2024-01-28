@@ -18,7 +18,7 @@ var stuck : bool = false;
 var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity");
 var next_path_pos = Vector3.ZERO;
 var hand_offset : Vector3 = Vector3.ZERO;
-var worker_name : String = names[randi_range(0, names.size())];
+var worker_name : String = names[randi_range(0, names.size() - 1)];
 var points = randi_range(10, 30);
 
 const names : Array[String] = ["Jack", "Steven", "Ryan", "Brady", "Rob", "Ben", "Jebediah", "Gordon", "Stacy", "Sharon", "Megan", "Janice", "Pam", "Dwight", "Mary", "Linda", "Eliza", "Emma"];
@@ -78,13 +78,13 @@ func _physics_process(delta: float) -> void:
 		if(collision.get_collider().is_in_group("Staples")):
 			return;
 		
-		global_position = collision.get_position(0);
 		stuck = true;
 		BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 		BodySprite.look_at(collision.get_normal() * 500);
 		HandSprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 		HandSprite.look_at(collision.get_normal() * 500);
 		StapledCollider.set_deferred("disabled", true);
+		remove_from_group("Enemies");
 
 func _on_Stapled(staple_pos : Vector3) -> void:
 	var target_pos : Vector3 = staple_pos;
