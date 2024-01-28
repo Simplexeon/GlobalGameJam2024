@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bys6r5mavj4ox"]
+[gd_scene load_steps=17 format=3 uid="uid://bys6r5mavj4ox"]
 
 [ext_resource type="Script" path="res://Scenes/UI/2d_hud.gd" id="1_gkfa1"]
 [ext_resource type="Texture2D" uid="uid://j641w6gl4v6r" path="res://Art/ProgrammerArt/StyleBar.png" id="1_u5tvx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://d4ivmg83msm63" path="res://Themes/KillMessageTheme.tres" id="7_khht0"]
 [ext_resource type="Texture2D" uid="uid://t0nwc1bdc5y4" path="res://Art/UI/tutorial.png" id="8_xu054"]
 [ext_resource type="Script" path="res://Scenes/UI/Tutorial.gd" id="9_u8n5i"]
+[ext_resource type="VideoStream" path="res://Art/UI/stapler intro.ogv" id="10_2aiq4"]
 [ext_resource type="AudioStream" uid="uid://c64uxlxqk30ts" path="res://Music/sounds_deathscreen/deathscreen.wav" id="10_7tri0"]
 [ext_resource type="Script" path="res://Scenes/UI/STAPLE HIM.gd" id="11_vgk8d"]
 [ext_resource type="Texture2D" uid="uid://d2058qind1hyu" path="res://Art/UI/STAPLE.png" id="12_yyvug"]
@@ -98,6 +99,7 @@ offset_left = -480.0
 offset_top = -330.0
 offset_right = 520.0
 offset_bottom = 370.0
+stream = ExtResource("10_2aiq4")
 script = ExtResource("15_atl5e")
 
 [node name="GrabSound" type="AudioStreamPlayer" parent="."]
