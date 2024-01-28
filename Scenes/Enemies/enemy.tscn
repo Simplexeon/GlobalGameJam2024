@@ -153,9 +153,11 @@ mesh = SubResource("SphereMesh_1ot23")
 particle_flag_rotate_y = true
 direction = Vector3(0, 1, 0)
 initial_velocity_min = 5.0
-initial_velocity_max = 7.0
-angular_velocity_min = -5.0
-angular_velocity_max = 5.0
+initial_velocity_max = 12.0
+angular_velocity_min = -15.0
+angular_velocity_max = 15.0
+angle_min = -15.0
+angle_max = 15.0
 
 [node name="UpdateMovement" type="Timer" parent="."]
 wait_time = 2.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://djaa6tuj8ve53"]
+[gd_scene load_steps=30 format=3 uid="uid://djaa6tuj8ve53"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Screen.gd" id="1_7a2kp"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/real_menu.gd" id="1_t3vf2"]
@@ -21,8 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://dgn7uupcnmkcl" path="res://Art/UI/Buttons/CreditsHover.png" id="12_1048t"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/CreditsButton.gd" id="13_2nd6d"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Stapler.gd" id="19_p5ftu"]
+[ext_resource type="Texture2D" uid="uid://bf83f6csfnm7y" path="res://Art/UI/Buttons/Home.png" id="20_sh6bk"]
+[ext_resource type="Texture2D" uid="uid://c760jqkqpu67j" path="res://Art/UI/Buttons/HomeClicked.png" id="21_hvkut"]
 [ext_resource type="AudioStream" uid="uid://dbc7mh2urpd1s" path="res://Music/bossa_stapler.mp3" id="22_g0wf3"]
+[ext_resource type="Texture2D" uid="uid://1ia6tk57orpo" path="res://Art/UI/Buttons/HomeHover.png" id="22_wx46a"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/MusicPlayer.gd" id="23_afj5h"]
+[ext_resource type="Script" path="res://Scenes/Menus/MainMenu/HomeButtonCredits.gd" id="23_ckxh8"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_03nml"]
 viewport_path = NodePath("Screen/Center/SubViewport")
@@ -157,6 +161,27 @@ grow_vertical = 2
 [node name="Sprite2D" type="Sprite2D" parent="Credits"]
 position = Vector2(500, 350)
 
+[node name="HomeButton" type="TextureButton" parent="Credits"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 50.585
+offset_top = 570.705
+offset_right = 150.585
+offset_bottom = 610.705
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture_normal = ExtResource("20_sh6bk")
+texture_pressed = ExtResource("21_hvkut")
+texture_hover = ExtResource("22_wx46a")
+script = ExtResource("23_ckxh8")
+CenterOffset = Vector2(100.585, 590.705)
+
 [node name="LoadingScreen" type="Control" parent="." groups=["CLoadGame"]]
 visible = false
 layout_mode = 3
@@ -183,4 +208,5 @@ script = ExtResource("23_afj5h")
 
 [connection signal="pressed" from="Screen/Center/StartButton" to="Screen/Center/StartButton" method="_on_pressed"]
 [connection signal="pressed" from="Screen/Center/CreditsButton" to="Screen/Center/CreditsButton" method="_on_pressed"]
+[connection signal="pressed" from="Credits/HomeButton" to="Credits/HomeButton" method="_on_pressed"]
 [connection signal="finished" from="MusicPlayer" to="MusicPlayer" method="_on_finished"]
