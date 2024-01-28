@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clforl28i4h4g"
-path="res://.godot/imported/ceiling.png-1227f3eb39ec5e9d882124d26086902f.ctex"
+uid="uid://dkbug1vyfmq2q"
+path="res://.godot/imported/wall1.png-3df6aa89b5891e9ce1101379836a4bfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Environment/ceiling.png"
-dest_files=["res://.godot/imported/ceiling.png-1227f3eb39ec5e9d882124d26086902f.ctex"]
+source_file="res://Art/Environment/wall1.png"
+dest_files=["res://.godot/imported/wall1.png-3df6aa89b5891e9ce1101379836a4bfd.ctex"]
 
 [params]
 

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://30ltx810aof8"]
+
+[ext_resource type="Texture2D" uid="uid://ds00q46rx3cvj" path="res://Art/ProgrammerArt/blood.png" id="1_0j51b"]
+
+[resource]
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("1_0j51b")
+disable_receive_shadows = true

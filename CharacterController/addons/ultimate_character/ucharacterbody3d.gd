@@ -1,6 +1,6 @@
 @tool
 extends CharacterBody3D
-class_name UCharacterBody3D
+class_name Player
 
 ## A 3D physics body using a revamped template script.
 
@@ -69,6 +69,8 @@ const default_rotation : float = 0.0;
 # Component Vars
 @onready var HeldStapler : Stapler = $Head/Camera/Stapler;
 @onready var StapleAnimator : AnimationPlayer = $Head/Camera/AnimationPlayer;
+@onready var VertexChecker : VertexChecker3D = $VertexChecker
+var graph : Graph;
 
 
 func _enter_tree():
@@ -86,7 +88,7 @@ func _enter_tree():
 		raycast_node = $RayCast3D
 
 func _ready():
-	# Only editor: Create child nodes
+	#region AHH
 	if Engine.is_editor_hint():
 		# TODO: Find a better way to implement this. A workaround to not adding duplicate nodes
 		# Need to figure out how to lo	
@@ -129,12 +131,10 @@ func _ready():
 			raycast_node.target_position = Vector3(0, 2, 0)
 			self.add_child(raycast_node)
 			raycast_node.owner = scene
-	
-	# Only game: Run normal ready logic
+	#endregion
 	if !Engine.is_editor_hint():
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		
-		pass
+		graph = get_tree().get_first_node_in_group("Graph");
 
 func _input(event):
 	if !Engine.is_editor_hint():
@@ -148,12 +148,7 @@ func _physics_process(delta):
 		# Get input direction
 		var input_dir = Input.get_vector(LEFT, RIGHT, FORWARD, BACKWARD)
 		
-		# Handle crouch, sprint, walk speed.
-		if !raycast_node.is_colliding():
-			head_node.position.y = lerpf(head_node.position.y, standing_height, delta * 10.0)
-			collision_shape_normal.disabled = false
-			
-			current_speed = lerpf(current_speed, walk_speed, delta * 10.0)
+		
 		
 		
 		# Handle head bob.
@@ -214,3 +209,8 @@ func _physics_process(delta):
 				StapleAnimator.play("Idle");
 		
 		move_and_slide()
+
+
+func _on_update_vertex_timeout() -> void:
+	VertexChecker.updateVertex();
+	graph.CreateGraph(VertexChecker.closest_vertex);

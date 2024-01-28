@@ -4,14 +4,14 @@ class_name Graph
 
 var verteces : Array : 
 	set(value):
-		pass;
+		verteces = value;
 	get: 
 		return verteces;
 
 var adjMatrix : Array[Array];
 
 # Called when the node enters the scene tree for the first time.
-func ready():
+func _ready():
 	call_deferred("deferred_ready");
 
 func deferred_ready() -> void:
@@ -26,7 +26,6 @@ func deferred_ready() -> void:
 	Connect();
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
@@ -89,9 +88,9 @@ func CreateGraph(start : Vertex):
 		CheckNeighbors(current);
 		current = ShortestVertex();
 	
-	
-	pass
-	
+
+
+
 func CheckNeighbors(current : Vertex):
 	
 	var indexVertex : int = verteces.find(current);
@@ -100,7 +99,7 @@ func CheckNeighbors(current : Vertex):
 		if(adjMatrix[indexVertex][i] > 0 && !verteces[i].permanent):
 			if(adjMatrix[indexVertex][i] + current.distance < verteces[i].distance):
 				verteces[i].distance = adjMatrix[indexVertex][i] + current.distance;
-				verteces[i].previous = current;
+				verteces[i].previousVertex = current;
 				
 	pass
 
@@ -118,5 +117,4 @@ func ShortestVertex():
 func ResetPaths():
 	for i in verteces.size():
 		verteces[i].Reset();
-		
-	pass
+

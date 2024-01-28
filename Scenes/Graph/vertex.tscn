@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://byran0hjoypru"]
+[gd_scene load_steps=4 format=3 uid="uid://byran0hjoypru"]
 
 [ext_resource type="Script" path="res://Scenes/Graph/vertex.gd" id="1_6uejx"]
 [ext_resource type="Texture2D" uid="uid://cj8pkrkqmb2ny" path="res://icon.svg" id="2_xnk20"]
 
-[node name="Vertex" type="Node3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_5e0sa"]
+
+[node name="Vertex" type="Area3D"]
+collision_layer = 16
+collision_mask = 0
 script = ExtResource("1_6uejx")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 billboard = 1
 texture = ExtResource("2_xnk20")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_5e0sa")

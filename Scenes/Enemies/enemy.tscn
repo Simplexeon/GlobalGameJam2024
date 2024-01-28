@@ -1,38 +1,89 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhcrxly5lu5dc"]
+[gd_scene load_steps=9 format=3 uid="uid://bhcrxly5lu5dc"]
 
-[ext_resource type="Texture2D" uid="uid://cqscpaol21y5r" path="res://Art/ProgrammerArt/adult.png" id="1_83m1v"]
 [ext_resource type="Script" path="res://Scenes/Enemies/enemy.gd" id="1_jncxg"]
-[ext_resource type="Script" path="res://Scenes/Enemies/Graph.gd" id="3_aabfx"]
+[ext_resource type="Texture2D" uid="uid://c2e42fse7jksu" path="res://Art/Enemies/BadGuy.png" id="2_yvqox"]
+[ext_resource type="Texture2D" uid="uid://cnbpba548v8ha" path="res://Art/Enemies/BadGuyHands.png" id="3_coaxh"]
+[ext_resource type="PackedScene" uid="uid://64mlfhbptu5x" path="res://Scenes/Graph/vertex_checker.tscn" id="3_efhpy"]
+[ext_resource type="Material" uid="uid://30ltx810aof8" path="res://Materials/blood.tres" id="4_7hflg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi8cg"]
+radius = 0.192412
+height = 1.62672
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2fnlr"]
-size = Vector3(0.1, 1.28765, 0.1)
+size = Vector3(0.1, 1.288, 0.01)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1ot23"]
+material = ExtResource("4_7hflg")
+radius = 0.4
+height = 0.8
+radial_segments = 4
+rings = 1
 
 [node name="Enemy" type="CharacterBody3D" groups=["Enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2032.97, 0)
 disable_mode = 2
 collision_layer = 5
 velocity = Vector3(0, -9.8, 0)
+wall_min_slide_angle = 0.141372
+floor_constant_speed = true
+floor_max_angle = 0.0436332
+floor_snap_length = 0.2
+platform_floor_layers = 4294967041
+platform_wall_layers = 1
+safe_margin = 0.08
 script = ExtResource("1_jncxg")
-Speed = 300.0
+Speed = 4.0
 HP = 1
 StapleSpeed = 25.0
 StapleHeightOffset = 0.1
+FindNextPoint = 10.0
 
 [node name="NormalCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_qi8cg")
 
 [node name="StapledCollision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.361548, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.361548, 0)
 shape = SubResource("BoxShape3D_2fnlr")
 disabled = true
 
 [node name="Body" type="Sprite3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 billboard = 2
 texture_filter = 0
-texture = ExtResource("1_83m1v")
+texture = ExtResource("2_yvqox")
 
-[node name="Graph" type="Node3D" parent="."]
-script = ExtResource("3_aabfx")
+[node name="Hands" type="Sprite3D" parent="Body"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.23167, -0.34)
+billboard = 1
+texture_filter = 0
+render_priority = 2
+texture = ExtResource("3_coaxh")
+
+[node name="VertexChecker" parent="." instance=ExtResource("3_efhpy")]
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 6
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.95
+randomness = 0.35
+mesh = SubResource("SphereMesh_1ot23")
+particle_flag_rotate_y = true
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 7.0
+angular_velocity_min = -5.0
+angular_velocity_max = 5.0
+
+[node name="UpdateMovement" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="PlayerRaycast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.254876, 0)
+target_position = Vector3(0, 0, -15)
+collision_mask = 3
+
+[connection signal="timeout" from="UpdateMovement" to="." method="_on_update_movement_timeout"]
