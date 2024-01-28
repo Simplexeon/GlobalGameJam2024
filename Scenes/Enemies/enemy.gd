@@ -31,6 +31,7 @@ var MoveState = moveNormal;
 @onready var BloodParticles : CPUParticles3D = $CPUParticles3D;
 @onready var HandSprite : Sprite3D = $Body/Hands;
 @onready var PlayerRaycast : RayCast3D = $PlayerRaycast;
+@onready var GrabBox : Area3D = $Body/Hands/GrabBox;
 var player : CharacterBody3D;
 var graph : Graph;
 
@@ -99,6 +100,8 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	StapledCollider.set_deferred("disabled", false);
 	BloodParticles.emitting = true;
 	MoveState = moveStapled;
+	GrabBox.monitoring = false;
+	GrabBox.monitorable = false;
 
 func _on_update_movement_timeout() -> void:
 	VertexChecker.updateVertex();
