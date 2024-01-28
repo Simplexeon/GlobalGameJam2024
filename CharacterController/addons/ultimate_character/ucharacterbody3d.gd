@@ -1,6 +1,6 @@
 @tool
 extends CharacterBody3D
-class_name UCharacterBody3D
+class_name Player
 
 ## A 3D physics body using a revamped template script.
 
@@ -88,50 +88,6 @@ func _enter_tree():
 		raycast_node = $RayCast3D
 
 func _ready():
-	#region AHH
-	if Engine.is_editor_hint():
-		# TODO: Find a better way to implement this. A workaround to not adding duplicate nodes
-		# Need to figure out how to lo	
-		var nodes = get_children()
-		if nodes.size() > 0:
-			collision_shape_normal = get_node("CollisionShapeNormal")
-			head_node = get_node("Head")
-			camera_node = head_node.get_node("Camera")
-			raycast_node = get_node("RayCast3D")
-		
-		# Create the collision shapes
-		if collision_shape_normal == null:
-			collision_shape_normal = CollisionShape3D.new()
-			collision_shape_normal.name = "CollisionShapeNormal"
-			collision_shape_normal.shape = CapsuleShape3D.new()
-			collision_shape_normal.position.y = 1.0
-			self.add_child(collision_shape_normal)
-			collision_shape_normal.owner = scene
-		
-		
-		# Create the head node
-		if head_node == null:
-			head_node = Node3D.new()
-			head_node.name = "Head"
-			head_node.position.y = standing_height
-			self.add_child(head_node)
-			head_node.owner = scene
-		
-		# Create the camera node
-		if camera_node == null:
-			camera_node = Camera3D.new()
-			camera_node.name = "Camera"
-			head_node.add_child(camera_node)
-			camera_node.owner = scene
-		
-		# Create the raycast node
-		if raycast_node == null:
-			raycast_node = RayCast3D.new()
-			raycast_node.name = "RayCast3D"
-			raycast_node.target_position = Vector3(0, 2, 0)
-			self.add_child(raycast_node)
-			raycast_node.owner = scene
-	#endregion
 	if !Engine.is_editor_hint():
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		graph = get_tree().get_first_node_in_group("Graph");
@@ -148,12 +104,7 @@ func _physics_process(delta):
 		# Get input direction
 		var input_dir = Input.get_vector(LEFT, RIGHT, FORWARD, BACKWARD)
 		
-		# Handle crouch, sprint, walk speed.
-		if !raycast_node.is_colliding():
-			head_node.position.y = lerpf(head_node.position.y, standing_height, delta * 10.0)
-			collision_shape_normal.disabled = false
-			
-			current_speed = lerpf(current_speed, walk_speed, delta * 10.0)
+		
 		
 		
 		# Handle head bob.
