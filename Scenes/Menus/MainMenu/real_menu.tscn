@@ -1,11 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://djaa6tuj8ve53"]
+[gd_scene load_steps=31 format=3 uid="uid://djaa6tuj8ve53"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Screen.gd" id="1_7a2kp"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/real_menu.gd" id="1_t3vf2"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Center.gd" id="2_d36l3"]
-[ext_resource type="Texture2D" uid="uid://l3rfw6lx578i" path="res://Art/ProgrammerArt/stapler.png" id="3_evasn"]
 [ext_resource type="ArrayMesh" uid="uid://dfmrh8xtcdr66" path="res://Art/Objects/Stapler/StaplerPaint.obj" id="4_0hogi"]
 [ext_resource type="Texture2D" uid="uid://5ci6rq2ah1ym" path="res://Art/Objects/Stapler/StaplerTextures/StaplerPaint_initialShadingGroup_BaseColor.png" id="4_ccm3o"]
+[ext_resource type="Texture2D" uid="uid://uytn1v55rf4r" path="res://Art/UI/FPSTAPLER.png" id="4_eri80"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Title.gd" id="4_rh3r8"]
 [ext_resource type="Texture2D" uid="uid://du3l3rsces0sf" path="res://Art/Objects/Stapler/StaplerTextures/StaplerPaint_initialShadingGroup_Height.png" id="5_80xpp"]
 [ext_resource type="Texture2D" uid="uid://ck20recot4auf" path="res://Art/Objects/Stapler/StaplerTextures/StaplerPaint_initialShadingGroup_Metallic.png" id="6_84oou"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dgn7uupcnmkcl" path="res://Art/UI/Buttons/CreditsHover.png" id="12_1048t"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/CreditsButton.gd" id="13_2nd6d"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Stapler.gd" id="19_p5ftu"]
+[ext_resource type="Texture2D" uid="uid://bdco0xp4v52ji" path="res://Art/UI/credits.png" id="20_j256s"]
 [ext_resource type="Texture2D" uid="uid://bf83f6csfnm7y" path="res://Art/UI/Buttons/Home.png" id="20_sh6bk"]
 [ext_resource type="Texture2D" uid="uid://c760jqkqpu67j" path="res://Art/UI/Buttons/HomeClicked.png" id="21_hvkut"]
 [ext_resource type="AudioStream" uid="uid://dbc7mh2urpd1s" path="res://Music/bossa_stapler.mp3" id="22_g0wf3"]
@@ -72,7 +73,6 @@ position = Vector2(500, 350)
 texture = SubResource("ViewportTexture_03nml")
 
 [node name="Title" type="TextureRect" parent="Screen/Center"]
-visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 8
@@ -80,13 +80,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -346.5
-offset_top = -359.0
-offset_right = 346.5
-offset_bottom = -81.0
+offset_left = -400.0
+offset_top = -370.0
+offset_right = 400.0
+offset_bottom = -70.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_evasn")
+texture = ExtResource("4_eri80")
 script = ExtResource("4_rh3r8")
 CenterHeightOffset = 220
 
@@ -151,6 +151,8 @@ transform = Transform3D(1, 0, 0, 0, 0.965772, 0.259392, 0, -0.259392, 0.965772, 
 light_energy = 5.0
 
 [node name="Credits" type="Control" parent="."]
+visible = false
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,6 +162,7 @@ grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Credits"]
 position = Vector2(500, 350)
+texture = ExtResource("20_j256s")
 
 [node name="HomeButton" type="TextureButton" parent="Credits"]
 z_index = 3

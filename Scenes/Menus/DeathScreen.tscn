@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfff3a8am1bjq"]
+[gd_scene load_steps=9 format=3 uid="uid://dfff3a8am1bjq"]
 
 [ext_resource type="Theme" uid="uid://chmvh0joiq6vd" path="res://Themes/DeathScreenResult.tres" id="1_5qytb"]
+[ext_resource type="Texture2D" uid="uid://dwropjylsb7ag" path="res://Art/UI/death screen.png" id="1_drhkq"]
 [ext_resource type="Texture2D" uid="uid://bf83f6csfnm7y" path="res://Art/UI/Buttons/Home.png" id="1_pa7v7"]
 [ext_resource type="Texture2D" uid="uid://c760jqkqpu67j" path="res://Art/UI/Buttons/HomeClicked.png" id="2_0kn72"]
 [ext_resource type="Script" path="res://Scenes/Menus/WaveReached.gd" id="2_0kxh0"]
@@ -29,6 +30,10 @@ offset_right = 500.0
 offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Screen/Center"]
+position = Vector2(500, 350)
+texture = ExtResource("1_drhkq")
 
 [node name="WaveReached" type="RichTextLabel" parent="Screen/Center"]
 layout_mode = 1

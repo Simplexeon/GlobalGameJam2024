@@ -23,3 +23,4 @@ func _on_PlayerGrabbed() -> void:
 
 func transition_end(anim_name : StringName) -> void:
 	get_tree().change_scene_to_packed(Globals.death_screen);
+
