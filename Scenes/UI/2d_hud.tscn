@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bys6r5mavj4ox"]
+[gd_scene load_steps=8 format=3 uid="uid://bys6r5mavj4ox"]
 
+[ext_resource type="Script" path="res://Scenes/UI/2d_hud.gd" id="1_gkfa1"]
 [ext_resource type="Texture2D" uid="uid://j641w6gl4v6r" path="res://Art/ProgrammerArt/StyleBar.png" id="1_u5tvx"]
 [ext_resource type="Script" path="res://Scenes/UI/StyleBar.gd" id="2_r3x2m"]
 [ext_resource type="Texture2D" uid="uid://eipfwugswt4m" path="res://Art/ProgrammerArt/WaveIndicator.png" id="4_ce066"]
@@ -7,8 +8,9 @@
 [ext_resource type="Theme" uid="uid://dcnes8sf1rppn" path="res://Themes/WaveIndicator.tres" id="5_xcvy2"]
 [ext_resource type="Theme" uid="uid://d4ivmg83msm63" path="res://Themes/KillMessageTheme.tres" id="7_khht0"]
 
-[node name="2DHud" type="Node2D"]
+[node name="2DHud" type="Node2D" groups=["CPlayerGrabbed"]]
 z_index = 10
+script = ExtResource("1_gkfa1")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

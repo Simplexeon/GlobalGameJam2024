@@ -1,10 +1,11 @@
 extends Node2D
-class_name  Transition
+class_name  TransitionNode
 
 
 # Export var
 @export var FadeIn : bool;
 @export var TransitionType : Transitions;
+@export var Autoplay : bool = false;
 
 # Enums
 
@@ -32,15 +33,16 @@ func _ready() -> void:
 			RainbowTrans.visible = false;
 	
 	if(FadeIn):
-		Animator.speed_scale *= -1;
+		Animator.speed_scale = -1;
 	
-	go();
+	if(Autoplay):
+		call_deferred("go");
 
 func initialize(start_pos : Vector2, fade_in : bool, transition_type : int) -> void:
 	
 	global_position = start_pos;
 	FadeIn = fade_in;
-	TransitionType = transition_type;
+	TransitionType = transition_type as Transitions;
 	
 	match(TransitionType):
 		Transitions.Rainbow:
@@ -51,7 +53,7 @@ func initialize(start_pos : Vector2, fade_in : bool, transition_type : int) -> v
 			RainbowTrans.visible = false;
 	
 	if(FadeIn):
-		Animator.speed_scale *= -1;
+		Animator.speed_scale = -1;
 	
 	go();
 
@@ -60,7 +62,11 @@ func initialize(start_pos : Vector2, fade_in : bool, transition_type : int) -> v
 func go() -> void:
 	match(TransitionType):
 		Transitions.Rainbow:
-			RainbowTrans.visible = true;
-			HandsTrans.visible = false;
+			Animator.play("RainbowTrans", 0, 1.0, FadeIn);
 		Transitions.Hands:
-			Animator.play("HandsTrans");
+			Animator.play("HandsTrans", 0, 1.0, FadeIn);
+
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	queue_free();

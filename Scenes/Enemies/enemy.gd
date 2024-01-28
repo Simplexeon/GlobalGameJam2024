@@ -141,7 +141,6 @@ func moveNormal() -> void:
 		if(PlayerRaycast.is_colliding()):
 			if(PlayerRaycast.get_collider() is Player):
 				MoveState = movePlayer;
-				print("Line of sight obtained")
 	rotation_degrees.x = 0;
 	rotation_degrees.z = 0; 
 	
@@ -166,10 +165,8 @@ func movePlayer() -> void:
 	BodySprite.look_at(player.global_position);
 	PlayerRaycast.target_position = player.global_position - PlayerRaycast.global_position;
 	if(!PlayerRaycast.is_colliding()):
-		print("lost line of sight");
 		MoveState = moveNormal;
 	elif(!PlayerRaycast.get_collider().is_in_group("Player")):
-		print("lost line of sight");
 		MoveState = moveNormal;
 
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://djaa6tuj8ve53"]
 
-[ext_resource type="PackedScene" uid="uid://bmvj64uyog1lj" path="res://Scenes/Menus/ScreenTransition.tscn" id="1_1smyw"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Screen.gd" id="1_7a2kp"]
+[ext_resource type="Script" path="res://Scenes/Menus/MainMenu/real_menu.gd" id="1_t3vf2"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Center.gd" id="2_d36l3"]
 [ext_resource type="Texture2D" uid="uid://l3rfw6lx578i" path="res://Art/ProgrammerArt/stapler.png" id="3_evasn"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Title.gd" id="4_rh3r8"]
@@ -12,7 +12,8 @@
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/MainMenuButton.gd" id="10_i37wx"]
 [ext_resource type="Texture2D" uid="uid://dlk072hlfn74v" path="res://Art/Enemies/BadGuyFlying.png" id="10_s0mr8"]
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" groups=["CTransition"]]
+script = ExtResource("1_t3vf2")
 
 [node name="Screen" type="Control" parent="."]
 layout_mode = 3
@@ -100,9 +101,5 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_gpwqy")
-
-[node name="ScreenTransition" parent="." instance=ExtResource("1_1smyw")]
-visible = false
-position = Vector2(400, 400)
 
 [connection signal="pressed" from="Screen/Center/MainMenuButton" to="Screen/Center/MainMenuButton" method="_on_pressed"]
