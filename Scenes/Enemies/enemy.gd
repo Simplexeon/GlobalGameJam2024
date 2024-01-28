@@ -20,6 +20,8 @@ var next_path_pos = Vector3.ZERO;
 var hand_offset : Vector3 = Vector3.ZERO;
 var worker_name : String = names[randi_range(0, names.size() - 1)];
 var points = randi_range(10, 30);
+var moved : Vector3 = Vector3.ZERO;
+
 
 const names : Array[String] = ["Jack", "Steven", "Ryan", "Brady", "Rob", "Ben", "Jebediah", "Gordon", "Stacy", "Sharon", "Megan", "Janice", "Pam", "Dwight", "Mary", "Linda", "Eliza", "Emma"];
 
@@ -36,6 +38,8 @@ var MoveState = moveNormal;
 @onready var HandSprite : Sprite3D = $Body/Hands;
 @onready var PlayerRaycast : RayCast3D = $PlayerRaycast;
 @onready var GrabBox : Area3D = $Body/Hands/GrabBox;
+@onready var Footstep : AudioStreamPlayer3D = $FootstepSound;
+@onready var HurtSound : AudioStreamPlayer3D = $HurtSound;
 var player : CharacterBody3D;
 var graph : Graph;
 
@@ -108,6 +112,7 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	StapledCollider.set_deferred("disabled", false);
 	BloodParticles.emitting = true;
 	MoveState = moveStapled;
+	HurtSound.play();
 	get_tree().call_group("CEnemyDied", "_on_EnemyDied", worker_name, points);
 	GrabBox.set_deferred("monitoring", false);
 	GrabBox.set_deferred("monitorable", false);
@@ -135,6 +140,12 @@ func moveNormal() -> void:
 		_on_update_movement_timeout();
 	
 	velocity += target_vector;
+	moved += target_vector;
+	
+	if(moved.length() > .3):
+		Footstep.play();
+		moved = Vector3.ZERO;
+	
 	if(player != null):
 		BodySprite.look_at(player.global_position);
 		PlayerRaycast.target_position = player.global_position - PlayerRaycast.global_position;

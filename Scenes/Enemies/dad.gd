@@ -36,6 +36,7 @@ var MoveState = moveNormal;
 @onready var HandSprite : Sprite3D = $Body/Hands;
 @onready var PlayerRaycast : RayCast3D = $PlayerRaycast;
 @onready var GrabBox : Area3D = $Body/Hands/GrabBox;
+@onready var DeathSound : AudioStreamPlayer3D = $HurtSound;
 var player : CharacterBody3D;
 var graph : Graph;
 
@@ -109,6 +110,7 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	StapledCollider.set_deferred("disabled", false);
 	BloodParticles.emitting = true;
 	MoveState = moveStapled;
+	DeathSound.play();
 	get_tree().call_group("CEnemyDied", "_on_EnemyDied", worker_name, points);
 	GrabBox.set_deferred("monitoring", false);
 	GrabBox.set_deferred("monitorable", false);

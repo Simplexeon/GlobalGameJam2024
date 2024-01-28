@@ -94,9 +94,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = 78.14
-offset_bottom = 118.14
+offset_left = -449.42
+offset_top = 118.555
+offset_right = -349.42
+offset_bottom = 158.555
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -104,7 +105,7 @@ texture_normal = ExtResource("6_s8de4")
 texture_pressed = ExtResource("7_4w47y")
 texture_hover = ExtResource("8_5b5h2")
 script = ExtResource("10_i37wx")
-CenterOffset = Vector2(-50, 98.14)
+CenterOffset = Vector2(-399.42, 138.555)
 
 [node name="CreditsButton" type="TextureButton" parent="Screen/Center"]
 z_index = 3
@@ -114,9 +115,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = 193.075
-offset_bottom = 233.075
+offset_left = -449.42
+offset_top = 220.67
+offset_right = -349.42
+offset_bottom = 260.67
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -124,14 +126,14 @@ texture_normal = ExtResource("10_3fyuq")
 texture_pressed = ExtResource("11_xn86e")
 texture_hover = ExtResource("12_1048t")
 script = ExtResource("13_2nd6d")
-CenterOffset = Vector2(-50, 213.075)
+CenterOffset = Vector2(-399.42, 240.67)
 
 [node name="SubViewport" type="SubViewport" parent="Screen/Center"]
 transparent_bg = true
 size = Vector2i(1000, 700)
 
 [node name="Camera3D" type="Camera3D" parent="Screen/Center/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.828461, 0.560046, 0, -0.560046, 0.828461, 0, 0.890913, 1.09171)
+transform = Transform3D(1, 0, 0, 0, 0.828461, 0.560046, 0, -0.560046, 0.828461, 0, 1.3076, 1.64955)
 
 [node name="Stapler" type="MeshInstance3D" parent="Screen/Center/SubViewport"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.0651442, 0)
