@@ -10,7 +10,7 @@
 radius = 0.241512
 height = 0.85248
 
-[node name="Player" type="CharacterBody3D" groups=["Player"]]
+[node name="Player" type="CharacterBody3D" groups=["CBegin", "Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0531486, 0)
 collision_layer = 3
 script = ExtResource("1_v68ga")
@@ -45,7 +45,6 @@ target_position = Vector3(0, 2, 0)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_p7mji")
-autoplay = true
 script = ExtResource("5_5y1ub")
 
 [connection signal="timeout" from="UpdateVertex" to="." method="_on_update_vertex_timeout"]
