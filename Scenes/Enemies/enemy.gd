@@ -45,7 +45,8 @@ var graph : Graph;
 func _ready() -> void:
 	graph = get_tree().get_first_node_in_group("Graph");
 	MoveState = moveNormal;
-	player= get_tree().get_first_node_in_group("Player");
+	BodySprite.frame = 0;
+	player = get_tree().get_first_node_in_group("Player");
 
 func _physics_process(delta: float) -> void:
 	if(stuck):
@@ -77,12 +78,13 @@ func _physics_process(delta: float) -> void:
 			return;
 		if(collision.get_collider().is_in_group("Staples")):
 			return;
+		if(collision.get_collider().get_parent().is_in_group("Tables")):
+			return;
 		
 		stuck = true;
 		BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 		BodySprite.look_at(collision.get_normal() * 500);
-		HandSprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
-		HandSprite.look_at(collision.get_normal() * 500);
+		BodySprite.frame = 2;
 		StapledCollider.set_deferred("disabled", true);
 		remove_from_group("Enemies");
 
@@ -96,8 +98,8 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	move_dir = move_dir * -1;
 	BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 	BodySprite.look_at(move_dir * 500);
-	HandSprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
-	HandSprite.look_at(move_dir * 500);
+	BodySprite.frame = 1;
+	HandSprite.visible = false;
 	StapledCollider.look_at(move_dir * 500);
 	stapled = true;
 	RegularCollider.set_deferred("disabled", true);

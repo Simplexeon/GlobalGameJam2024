@@ -49,10 +49,10 @@ func _physics_process(delta: float) -> void:
 		if(get_tree().get_nodes_in_group("Enemies").size() == 0):
 			time = 0.0;
 			current_wave += 1
+			current_spawn_index = 0;
 			queued_wave = false;
 			get_tree().call_group("CWaveChanged", "_on_WaveChanged", current_wave);
-			current_spawn_index = 0;
-			if(current_wave > wave_data.size() - 1):
+			if(current_wave > wave_data.size()):
 				get_tree().call_group("CGameWon", "_on_GameWon");
 				next_spawn_time = 99.0;
 			elif(current_spawn_index > wave_data[current_wave - 1].size() - 1):
