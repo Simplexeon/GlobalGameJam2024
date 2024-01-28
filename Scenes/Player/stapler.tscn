@@ -1,7 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf2ymjjanep7t"]
+[gd_scene load_steps=10 format=3 uid="uid://bf2ymjjanep7t"]
 
 [ext_resource type="Texture2D" uid="uid://dusgyl431l75h" path="res://Art/Stapler/stapler.png" id="1_xowd6"]
 [ext_resource type="Script" path="res://Scenes/Player/stapler.gd" id="2_pqjk1"]
+[ext_resource type="AudioStream" uid="uid://debxqr1tlwgi6" path="res://Music/sounds_stapler/stapler1.wav" id="3_0u3yt"]
+[ext_resource type="AudioStream" uid="uid://ci0uhhcwgumtl" path="res://Music/sounds_stapler/stapler2.wav" id="4_wv4dh"]
+[ext_resource type="AudioStream" uid="uid://bx1dhau1ci00d" path="res://Music/sounds_stapler/stapler3.wav" id="5_n57ss"]
+[ext_resource type="AudioStream" uid="uid://c2flrvd45niky" path="res://Music/sounds_stapler/stapler4.wav" id="6_f0j5c"]
+[ext_resource type="AudioStream" uid="uid://dc424bh1h0n21" path="res://Music/sounds_stapler/stapler5.wav" id="7_jix53"]
+[ext_resource type="AudioStream" uid="uid://d14y4jke3g0e5" path="res://Music/sounds_stapler/stapler6.wav" id="8_sn4me"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_r28d3"]
+random_pitch = 1.5
+random_volume_offset_db = 1.0
+streams_count = 6
+stream_0/stream = ExtResource("3_0u3yt")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_wv4dh")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_n57ss")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("6_f0j5c")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("7_jix53")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("8_sn4me")
+stream_5/weight = 1.0
 
 [node name="Stapler" type="Sprite3D"]
 transform = Transform3D(0.992084, 0, -0.125576, 0, 1, 0, 0.125576, 0, 0.992084, 0.389462, -0.185559, -0.588801)
@@ -23,3 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0463395)
 
 [node name="CD" type="Timer" parent="."]
 one_shot = true
+
+[node name="Sounds" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_r28d3")
+max_distance = 3.0

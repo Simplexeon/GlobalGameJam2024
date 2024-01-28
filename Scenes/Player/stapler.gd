@@ -14,6 +14,7 @@ var player_velocity : Vector3 = Vector3.ZERO;
 @onready var StapleDir : Node3D = $StapleSpawn/StapleDir;
 @onready var Animator : AnimationPlayer = get_parent().get_node("AnimationPlayer");
 var root : Node3D;
+@onready var Sounds : AudioStreamPlayer3D = $Sounds;
 
 # File Vars
 @onready var staple_file : PackedScene = preload("res://Scenes/Bullets/staple.tscn");
@@ -41,6 +42,7 @@ func shoot() -> void:
 	root.add_child(staple);
 	staple._initialize(StapleSpawn.global_position, StapleDir.global_position, BulletSpeed + player_velocity.length());
 	frame = 3;
+	Sounds.play();
 	Animator.play("Shoot", 0.05, 1);
 	
 	CD.start();
