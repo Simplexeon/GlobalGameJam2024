@@ -26,6 +26,8 @@ var MoveState = moveNormal;
 @onready var VertexChecker : VertexChecker3D = $VertexChecker;
 @onready var BloodParticles : CPUParticles3D = $CPUParticles3D;
 @onready var HandSprite : Sprite3D = $Hands;
+@onready var PlayerRaycast : RayCast3D = $PlayerRaycast;
+var player : CharacterBody3D;
 var graph : Graph;
 
 
@@ -34,6 +36,7 @@ var graph : Graph;
 func _ready() -> void:
 	graph = get_tree().get_first_node_in_group("Graph");
 	MoveState = moveNormal;
+	player= get_tree().get_first_node_in_group("Player");
 
 func _physics_process(delta: float) -> void:
 	if(stuck):
@@ -62,7 +65,6 @@ func _physics_process(delta: float) -> void:
 		StapledCollider.set_deferred("disabled", true);
 
 func _on_Stapled(staple_pos : Vector3) -> void:
-	var player : CharacterBody3D = get_tree().get_first_node_in_group("Player");
 	var target_pos : Vector3 = staple_pos;
 	if(player != null):
 		target_pos = player.global_position;
@@ -103,7 +105,11 @@ func moveNormal() -> void:
 		_on_update_movement_timeout();
 	
 	velocity += target_vector;
-	look_at(next_path_pos);
+	if(player != null):
+		look_at(player.global_position);
+		PlayerRaycast.target_position = PlayerRaycast.to_local(player.global_position);
+		if(PlayerRaycast.is_colliding()):
+			MoveState = movePlayer;
 	rotation_degrees.x = 0;
 	rotation_degrees.z = 0; 
 	
@@ -114,6 +120,7 @@ func moveNormal() -> void:
 func moveStapled() -> void:
 	velocity = move_dir * StapleSpeed;
 
-
+func movePlayer() -> void:
+	print("movePlayer");
 
 
