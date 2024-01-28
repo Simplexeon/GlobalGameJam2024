@@ -2,6 +2,7 @@ extends Sprite2D
 
 # Object vars
 var time : float = 0.0;
+var wave : int = 0;
 
 # Components
 @onready var WaveLabel : RichTextLabel = $WaveLabel;
@@ -18,4 +19,8 @@ func _physics_process(delta: float) -> void:
 	TimeLabel.bbcode_enabled = true;
 
 func _on_WaveChanged(wave_number : int) -> void:
+	wave = wave_number;
 	WaveLabel.text = " %1d" % wave_number;
+
+func _on_PlayerGrabbed() -> void:
+	Globals.wave_reached = wave;

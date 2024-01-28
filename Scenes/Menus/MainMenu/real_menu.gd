@@ -11,7 +11,7 @@ func _ready() -> void:
 	Credits.visible = false;
 	var Transition : TransitionNode = trans_file.instantiate();
 	add_child(Transition);
-	Transition.call_deferred("initialize", Vector2(500, 350), true, 1);
+	Transition.call_deferred("initialize", Vector2(500, 350), true, 0);
 
 func _on_Transition() -> void:
 	var Transition : TransitionNode = Globals.transition_file.instantiate();

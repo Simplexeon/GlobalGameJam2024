@@ -1,12 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://djaa6tuj8ve53"]
+[gd_scene load_steps=26 format=3 uid="uid://djaa6tuj8ve53"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Screen.gd" id="1_7a2kp"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/real_menu.gd" id="1_t3vf2"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Center.gd" id="2_d36l3"]
 [ext_resource type="Texture2D" uid="uid://l3rfw6lx578i" path="res://Art/ProgrammerArt/stapler.png" id="3_evasn"]
+[ext_resource type="ArrayMesh" uid="uid://dfmrh8xtcdr66" path="res://Art/Objects/Stapler/StaplerPaint.obj" id="4_0hogi"]
+[ext_resource type="Texture2D" uid="uid://5ci6rq2ah1ym" path="res://Art/Objects/Stapler/StaplerTextures/StaplerPaint_initialShadingGroup_BaseColor.png" id="4_ccm3o"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Title.gd" id="4_rh3r8"]
+[ext_resource type="Texture2D" uid="uid://du3l3rsces0sf" path="res://Art/Objects/Stapler/StaplerTextures/StaplerPaint_initialShadingGroup_Height.png" id="5_80xpp"]
+[ext_resource type="Texture2D" uid="uid://ck20recot4auf" path="res://Art/Objects/Stapler/StaplerTextures/StaplerPaint_initialShadingGroup_Metallic.png" id="6_84oou"]
 [ext_resource type="Texture2D" uid="uid://hg5slv1rdmvd" path="res://Art/UI/Buttons/start.png" id="6_s8de4"]
 [ext_resource type="Texture2D" uid="uid://bg1omo17y23km" path="res://Art/UI/Buttons/StartClicked.png" id="7_4w47y"]
+[ext_resource type="Texture2D" uid="uid://cbc1jiv87t8at" path="res://Art/Objects/Stapler/StaplerTextures/StaplerPaint_initialShadingGroup_Roughness.png" id="7_5gb2i"]
 [ext_resource type="Texture2D" uid="uid://dxx58k57dg1iw" path="res://Art/UI/Buttons/StartHover.png" id="8_5b5h2"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/LoadingScreen.gd" id="9_8eotc"]
 [ext_resource type="Texture2D" uid="uid://uyqyia0tuumx" path="res://Art/UI/Buttons/credits.png" id="10_3fyuq"]
@@ -15,6 +20,23 @@
 [ext_resource type="Texture2D" uid="uid://bjbxqisdueanb" path="res://Art/UI/Buttons/CreditsClicked.png" id="11_xn86e"]
 [ext_resource type="Texture2D" uid="uid://dgn7uupcnmkcl" path="res://Art/UI/Buttons/CreditsHover.png" id="12_1048t"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/CreditsButton.gd" id="13_2nd6d"]
+[ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Stapler.gd" id="19_p5ftu"]
+[ext_resource type="AudioStream" uid="uid://dbc7mh2urpd1s" path="res://Music/bossa_stapler.mp3" id="22_g0wf3"]
+[ext_resource type="Script" path="res://Scenes/Menus/MainMenu/MusicPlayer.gd" id="23_afj5h"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_03nml"]
+viewport_path = NodePath("Screen/Center/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdl7j"]
+diffuse_mode = 1
+specular_mode = 1
+albedo_texture = ExtResource("4_ccm3o")
+metallic = 0.31
+metallic_specular = 0.4
+metallic_texture = ExtResource("6_84oou")
+roughness_texture = ExtResource("7_5gb2i")
+heightmap_texture = ExtResource("5_80xpp")
+disable_receive_shadows = true
 
 [node name="MainMenu" type="Node2D" groups=["CCloseCredits", "COpenCredits", "CTransition"]]
 script = ExtResource("1_t3vf2")
@@ -41,7 +63,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_d36l3")
 
+[node name="3D Viewer" type="Sprite2D" parent="Screen/Center"]
+position = Vector2(500, 350)
+texture = SubResource("ViewportTexture_03nml")
+
 [node name="Title" type="TextureRect" parent="Screen/Center"]
+visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 8
@@ -99,6 +126,24 @@ texture_hover = ExtResource("12_1048t")
 script = ExtResource("13_2nd6d")
 CenterOffset = Vector2(-50, 213.075)
 
+[node name="SubViewport" type="SubViewport" parent="Screen/Center"]
+transparent_bg = true
+size = Vector2i(1000, 700)
+
+[node name="Camera3D" type="Camera3D" parent="Screen/Center/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.828461, 0.560046, 0, -0.560046, 0.828461, 0, 0.890913, 1.09171)
+
+[node name="Stapler" type="MeshInstance3D" parent="Screen/Center/SubViewport"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.0651442, 0)
+material_override = SubResource("StandardMaterial3D_wdl7j")
+mesh = ExtResource("4_0hogi")
+skeleton = NodePath("../../../..")
+script = ExtResource("19_p5ftu")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Screen/Center/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.965772, 0.259392, 0, -0.259392, 0.965772, -0.0292013, 0.409585, 1.02051)
+light_energy = 5.0
+
 [node name="Credits" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -129,5 +174,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_gpwqy")
 
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_g0wf3")
+autoplay = true
+script = ExtResource("23_afj5h")
+
 [connection signal="pressed" from="Screen/Center/StartButton" to="Screen/Center/StartButton" method="_on_pressed"]
 [connection signal="pressed" from="Screen/Center/CreditsButton" to="Screen/Center/CreditsButton" method="_on_pressed"]
+[connection signal="finished" from="MusicPlayer" to="MusicPlayer" method="_on_finished"]

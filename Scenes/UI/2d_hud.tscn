@@ -49,7 +49,7 @@ offset_top = 6.0
 offset_right = 71.0
 offset_bottom = 306.0
 
-[node name="WaveIndicator" type="Sprite2D" parent="Control/Center" groups=["CWaveChanged"]]
+[node name="WaveIndicator" type="Sprite2D" parent="Control/Center" groups=["CPlayerGrabbed", "CWaveChanged"]]
 position = Vector2(438, -219)
 scale = Vector2(2, 2)
 texture = ExtResource("4_ce066")

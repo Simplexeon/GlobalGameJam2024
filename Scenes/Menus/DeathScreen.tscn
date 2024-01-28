@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfff3a8am1bjq"]
+
+[ext_resource type="Theme" uid="uid://chmvh0joiq6vd" path="res://Themes/DeathScreenResult.tres" id="1_5qytb"]
+[ext_resource type="Texture2D" uid="uid://bf83f6csfnm7y" path="res://Art/UI/Buttons/Home.png" id="1_pa7v7"]
+[ext_resource type="Texture2D" uid="uid://c760jqkqpu67j" path="res://Art/UI/Buttons/HomeClicked.png" id="2_0kn72"]
+[ext_resource type="Script" path="res://Scenes/Menus/WaveReached.gd" id="2_0kxh0"]
+[ext_resource type="Texture2D" uid="uid://1ia6tk57orpo" path="res://Art/UI/Buttons/HomeHover.png" id="3_yktv4"]
+[ext_resource type="Script" path="res://Scenes/Menus/MainMenu/HomeButton.gd" id="6_kg8mx"]
+[ext_resource type="PackedScene" uid="uid://bmvj64uyog1lj" path="res://Scenes/Menus/ScreenTransition.tscn" id="7_lrokc"]
+
+[node name="DeathScreen" type="Node2D"]
+
+[node name="Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1000.0
+offset_bottom = 700.0
+
+[node name="Center" type="Control" parent="Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -350.0
+offset_right = 500.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WaveReached" type="RichTextLabel" parent="Screen/Center"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -304.5
+offset_right = 150.0
+offset_bottom = 104.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5qytb")
+bbcode_enabled = true
+text = "[center]5[/center]"
+fit_content = true
+scroll_active = false
+script = ExtResource("2_0kxh0")
+
+[node name="HomeButton" type="TextureButton" parent="Screen/Center"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 193.14
+offset_bottom = 233.14
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_pa7v7")
+texture_pressed = ExtResource("2_0kn72")
+texture_hover = ExtResource("3_yktv4")
+script = ExtResource("6_kg8mx")
+CenterOffset = Vector2(-50, 213.14)
+
+[node name="ScreenTransition" parent="." instance=ExtResource("7_lrokc")]
+position = Vector2(500, 350)
+FadeIn = true
+TransitionType = 1
+Autoplay = true
+
+[connection signal="pressed" from="Screen/Center/HomeButton" to="Screen/Center/HomeButton" method="_on_pressed"]

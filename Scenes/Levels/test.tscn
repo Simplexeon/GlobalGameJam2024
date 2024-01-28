@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b6aus34iogfrd"]
+[gd_scene load_steps=35 format=3 uid="uid://b6aus34iogfrd"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/Graph.gd" id="1_cpa6v"]
 [ext_resource type="Material" uid="uid://bqb6uldlfnjqa" path="res://Materials/floor.tres" id="1_m82ih"]
@@ -14,6 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://c31ga8gpd8n6o" path="res://Art/Environment/background2.png" id="12_0ypm6"]
 [ext_resource type="Script" path="res://Scenes/SpawnManager.gd" id="12_7m5ak"]
 [ext_resource type="PackedScene" uid="uid://dmkqa6qn0jwic" path="res://Scenes/Objects/chair.tscn" id="12_sovm5"]
+[ext_resource type="Script" path="res://Scenes/Enemies/dad.gd" id="15_qlsl5"]
+[ext_resource type="Texture2D" uid="uid://7p382osft25x" path="res://Art/Enemies/BadGuySpritesheet.png" id="16_1yad6"]
+[ext_resource type="Texture2D" uid="uid://cnbpba548v8ha" path="res://Art/Enemies/BadGuyHands.png" id="17_6o3v0"]
+[ext_resource type="Script" path="res://Scenes/Enemies/GrabBox.gd" id="18_e6gtx"]
+[ext_resource type="PackedScene" uid="uid://64mlfhbptu5x" path="res://Scenes/Graph/vertex_checker.tscn" id="19_peeng"]
+[ext_resource type="Material" uid="uid://30ltx810aof8" path="res://Materials/blood.tres" id="20_gjy7y"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kk3vg"]
 
@@ -62,6 +68,24 @@ depth_draw_mode = 1
 specular_mode = 2
 albedo_texture = ExtResource("11_j7e02")
 texture_filter = 0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi8cg"]
+radius = 0.192412
+height = 1.62672
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2fnlr"]
+size = Vector3(0.01, 1.18506, 0.001)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_loyq3"]
+radius = 0.391042
+height = 1.89427
+
+[sub_resource type="SphereMesh" id="SphereMesh_1ot23"]
+material = ExtResource("20_gjy7y")
+radius = 0.4
+height = 0.8
+radial_segments = 4
+rings = 1
 
 [node name="Test" type="Node3D"]
 
@@ -451,3 +475,81 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94493, 0.5, 1.13125)
 
 [node name="Vertex23" parent="World/Graph" instance=ExtResource("2_b2amw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.36451, 0.5, -10.6568)
+
+[node name="Dad" type="CharacterBody3D" parent="." groups=["Enemies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76405, -8.30012)
+disable_mode = 2
+collision_layer = 5
+velocity = Vector3(0, -9.8, 0)
+wall_min_slide_angle = 0.141372
+floor_constant_speed = true
+floor_max_angle = 0.0436332
+floor_snap_length = 0.2
+platform_floor_layers = 4294901761
+platform_wall_layers = 1
+safe_margin = 0.08
+script = ExtResource("15_qlsl5")
+StapleSpeed = 7.0
+StapleHeightOffset = 0.03
+
+[node name="NormalCollision" type="CollisionShape3D" parent="Dad"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_qi8cg")
+
+[node name="StapledCollision" type="CollisionShape3D" parent="Dad"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.363745, 0)
+shape = SubResource("BoxShape3D_2fnlr")
+disabled = true
+
+[node name="Body" type="Sprite3D" parent="Dad"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("16_1yad6")
+hframes = 3
+
+[node name="Hands" type="Sprite3D" parent="Dad/Body"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.23167, -0.34)
+billboard = 1
+texture_filter = 0
+render_priority = 2
+texture = ExtResource("17_6o3v0")
+
+[node name="GrabBox" type="Area3D" parent="Dad/Body/Hands"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("18_e6gtx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dad/Body/Hands/GrabBox"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.0829581, -0.198381)
+shape = SubResource("CapsuleShape3D_loyq3")
+
+[node name="VertexChecker" parent="Dad" instance=ExtResource("19_peeng")]
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Dad"]
+emitting = false
+amount = 6
+lifetime = 1.7
+one_shot = true
+explosiveness = 0.95
+randomness = 0.35
+draw_order = 2
+mesh = SubResource("SphereMesh_1ot23")
+particle_flag_rotate_y = true
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 7.0
+angular_velocity_min = -5.0
+angular_velocity_max = 5.0
+
+[node name="UpdateMovement" type="Timer" parent="Dad"]
+wait_time = 2.5
+autostart = true
+
+[node name="PlayerRaycast" type="RayCast3D" parent="Dad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.212217, 0)
+target_position = Vector3(0, 0, -15)
+collision_mask = 3
+
+[connection signal="body_entered" from="Dad/Body/Hands/GrabBox" to="Dad/Body/Hands/GrabBox" method="_on_body_entered"]
+[connection signal="timeout" from="Dad/UpdateMovement" to="Dad" method="_on_update_movement_timeout"]

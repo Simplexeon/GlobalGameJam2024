@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfmrh8xtcdr66"
+path="res://.godot/imported/StaplerPaint.obj-e48548681aae19ec2c402b3951f9aa7b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/StaplerPaint.obj-e48548681aae19ec2c402b3951f9aa7b.mesh"]
+
+source_file="res://Art/Objects/Stapler/StaplerPaint.obj"
+dest_files=["res://.godot/imported/StaplerPaint.obj-e48548681aae19ec2c402b3951f9aa7b.mesh", "res://.godot/imported/StaplerPaint.obj-e48548681aae19ec2c402b3951f9aa7b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

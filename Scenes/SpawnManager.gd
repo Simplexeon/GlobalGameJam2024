@@ -9,6 +9,7 @@ var next_enemy_index : int = 0;
 var current_wave : int = 1;
 var current_spawn_index : int = 0;
 var queued_wave : bool = false;
+var started : bool = false;
 
 # JSON Formatting
 # {
@@ -38,7 +39,13 @@ func _ready():
 	wave_data = data["wave_data"];
 	SetNextSpawn();
 
+func _on_GameStart() -> void:
+	started = true;
+
 func _physics_process(delta: float) -> void:
+	if(!started):
+		return;
+	
 	time += delta;
 	
 	if(time >= next_spawn_time):

@@ -19,7 +19,10 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	get_tree().call_group("COpenCredits", "_on_OpenCredits");
+	var Transition : TransitionNode = Globals.transition_file.instantiate();
+	add_child(Transition);
+	Transition.initialize(Vector2(500, 350), false, 0);
+	Transition.Animator.connect("animation_finished", transition_end);
 
-
-
+func transition_end(anim_name : StringName) -> void:
+	get_tree().change_scene_to_packed(Globals.main_menu);
