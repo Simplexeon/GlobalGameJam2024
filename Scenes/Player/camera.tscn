@@ -106,6 +106,8 @@ _data = {
 
 [node name="Stapler" parent="." instance=ExtResource("1_r48ao")]
 transform = Transform3D(0.396834, 0, -0.0502304, 0, 0.4, 0, 0.0502304, 0, 0.396834, 0.389462, -0.185559, -0.588801)
+no_depth_test = true
+render_priority = 5
 frame = 5
 
 [node name="UIViewport" type="Sprite3D" parent="."]

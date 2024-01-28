@@ -57,6 +57,7 @@ func _physics_process(delta: float) -> void:
 		if(collision.get_collider().is_in_group("Staples")):
 			return;
 		
+		global_position = collision.get_position(0);
 		stuck = true;
 		BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 		BodySprite.look_at(collision.get_normal() * 500);
@@ -76,6 +77,7 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	BodySprite.look_at(move_dir);
 	HandSprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 	HandSprite.look_at(move_dir);
+	StapledCollider.look_at(move_dir);
 	stapled = true;
 	RegularCollider.set_deferred("disabled", true);
 	StapledCollider.set_deferred("disabled", false);
