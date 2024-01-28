@@ -100,8 +100,8 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	StapledCollider.set_deferred("disabled", false);
 	BloodParticles.emitting = true;
 	MoveState = moveStapled;
-	GrabBox.monitoring = false;
-	GrabBox.monitorable = false;
+	GrabBox.set_deferred("monitoring", false);
+	GrabBox.set_deferred("monitorable", false);
 
 func _on_update_movement_timeout() -> void:
 	VertexChecker.updateVertex();
