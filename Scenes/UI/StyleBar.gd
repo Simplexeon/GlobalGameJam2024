@@ -26,9 +26,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	current_style -= StyleDecay * delta;
-	
-	if(Input.is_action_just_pressed("test_kill")):
-		_on_EnemyDied("Stephen", randf_range(10.0, 30.0));
 
 func _on_EnemyDied(enemy_name : String, points : float) -> void:
 	current_style += points;

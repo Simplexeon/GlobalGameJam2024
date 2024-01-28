@@ -18,6 +18,10 @@ var stuck : bool = false;
 var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity");
 var next_path_pos = Vector3.ZERO;
 var hand_offset : Vector3 = Vector3.ZERO;
+var worker_name : String = names[randi_range(0, names.size())];
+var points = randi_range(10, 30);
+
+const names : Array[String] = ["Jack", "Steven", "Ryan", "Brady", "Rob", "Ben", "Jebediah", "Gordon", "Stacy", "Sharon", "Megan", "Janice", "Pam", "Dwight", "Mary", "Linda", "Eliza", "Emma"];
 
 # Lambdas
 var MoveState = moveNormal;
@@ -100,6 +104,7 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	StapledCollider.set_deferred("disabled", false);
 	BloodParticles.emitting = true;
 	MoveState = moveStapled;
+	get_tree().call_group("CEnemyDied", "_on_EnemyDied", worker_name, points);
 	GrabBox.set_deferred("monitoring", false);
 	GrabBox.set_deferred("monitorable", false);
 
