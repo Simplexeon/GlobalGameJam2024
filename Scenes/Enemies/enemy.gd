@@ -18,7 +18,7 @@ var stuck : bool = false;
 var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity");
 var next_path_pos = Vector3.ZERO;
 var hand_offset : Vector3 = Vector3.ZERO;
-var worker_name : String = names[randi_range(0, names.size())];
+var worker_name : String = names[randi_range(0, names.size() - 1)];
 var points = randi_range(10, 30);
 
 const names : Array[String] = ["Jack", "Steven", "Ryan", "Brady", "Rob", "Ben", "Jebediah", "Gordon", "Stacy", "Sharon", "Megan", "Janice", "Pam", "Dwight", "Mary", "Linda", "Eliza", "Emma"];
@@ -45,7 +45,8 @@ var graph : Graph;
 func _ready() -> void:
 	graph = get_tree().get_first_node_in_group("Graph");
 	MoveState = moveNormal;
-	player= get_tree().get_first_node_in_group("Player");
+	BodySprite.frame = 0;
+	player = get_tree().get_first_node_in_group("Player");
 
 func _physics_process(delta: float) -> void:
 	if(stuck):
@@ -77,14 +78,17 @@ func _physics_process(delta: float) -> void:
 			return;
 		if(collision.get_collider().is_in_group("Staples")):
 			return;
+		if(collision.get_collider().is_in_group("Chairs")):
+			return;
+		#if(collision.get_collider().get_parent().is_in_group("Tables")):
+		#	return;
 		
-		global_position = collision.get_position(0);
 		stuck = true;
 		BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 		BodySprite.look_at(collision.get_normal() * 500);
-		HandSprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
-		HandSprite.look_at(collision.get_normal() * 500);
+		BodySprite.frame = 2;
 		StapledCollider.set_deferred("disabled", true);
+		remove_from_group("Enemies");
 
 func _on_Stapled(staple_pos : Vector3) -> void:
 	var target_pos : Vector3 = staple_pos;
@@ -96,8 +100,8 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	move_dir = move_dir * -1;
 	BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
 	BodySprite.look_at(move_dir * 500);
-	HandSprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
-	HandSprite.look_at(move_dir * 500);
+	BodySprite.frame = 1;
+	HandSprite.visible = false;
 	StapledCollider.look_at(move_dir * 500);
 	stapled = true;
 	RegularCollider.set_deferred("disabled", true);
@@ -137,6 +141,7 @@ func moveNormal() -> void:
 		if(PlayerRaycast.is_colliding()):
 			if(PlayerRaycast.get_collider() is Player):
 				MoveState = movePlayer;
+				print("Line of sight obtained")
 	rotation_degrees.x = 0;
 	rotation_degrees.z = 0; 
 	
@@ -161,8 +166,10 @@ func movePlayer() -> void:
 	BodySprite.look_at(player.global_position);
 	PlayerRaycast.target_position = player.global_position - PlayerRaycast.global_position;
 	if(!PlayerRaycast.is_colliding()):
+		print("lost line of sight");
 		MoveState = moveNormal;
 	elif(!PlayerRaycast.get_collider().is_in_group("Player")):
+		print("lost line of sight");
 		MoveState = moveNormal;
 
 

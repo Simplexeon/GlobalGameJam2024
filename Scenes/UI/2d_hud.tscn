@@ -57,7 +57,7 @@ offset_top = -31.0
 offset_right = 36.0
 offset_bottom = 29.0
 theme = ExtResource("5_xcvy2")
-text = " 7"
+text = " 1"
 scroll_active = false
 
 [node name="TimeLabel" type="RichTextLabel" parent="Control/Center/WaveIndicator"]
