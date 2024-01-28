@@ -70,7 +70,9 @@ const default_rotation : float = 0.0;
 @onready var HeldStapler : Stapler = $Head/Camera/Stapler;
 @onready var StapleAnimator : AnimationPlayer = $Head/Camera/AnimationPlayer;
 @onready var VertexChecker : VertexChecker3D = $VertexChecker
+@onready var Music : AudioStreamPlayer = $Music;
 var graph : Graph;
+
 
 
 func _enter_tree():
@@ -170,3 +172,7 @@ func _physics_process(delta):
 func _on_update_vertex_timeout() -> void:
 	VertexChecker.updateVertex();
 	graph.CreateGraph(VertexChecker.closest_vertex);
+
+func _on_Begin() -> void:
+	Music.play();
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;

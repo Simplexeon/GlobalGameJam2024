@@ -102,20 +102,20 @@ _data = {
 
 [node name="Camera" type="Camera3D"]
 
-[node name="HUD" parent="." instance=ExtResource("1_67osl")]
-
 [node name="Stapler" parent="." instance=ExtResource("1_r48ao")]
 transform = Transform3D(0.396834, 0, -0.0502304, 0, 0.4, 0, 0.0502304, 0, 0.396834, 0.389462, -0.185559, -0.588801)
 no_depth_test = true
-render_priority = 5
+render_priority = 3
 frame = 5
 
 [node name="UIViewport" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.71758)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.46719)
 billboard = 1
 no_depth_test = true
 render_priority = 4
 texture = ExtResource("3_u0ncn")
+
+[node name="HUD" parent="UIViewport" instance=ExtResource("1_67osl")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false

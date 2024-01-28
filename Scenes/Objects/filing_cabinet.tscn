@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkfjharp8tphe"]
 
-[ext_resource type="ArrayMesh" uid="uid://dvp4vs00h8jse" path="res://Art/Objects/Filing Cabinet/FileCabinets.obj" id="1_xuouw"]
+[ext_resource type="ArrayMesh" uid="uid://d0jcibx5dfrfi" path="res://Art/Objects/Filing Cabinet/FileCabinets.obj" id="1_xuouw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2etnl"]
 albedo_color = Color(0.341176, 0.341176, 0.341176, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bys6r5mavj4ox"]
+[gd_scene load_steps=17 format=3 uid="uid://bys6r5mavj4ox"]
 
 [ext_resource type="Script" path="res://Scenes/UI/2d_hud.gd" id="1_gkfa1"]
 [ext_resource type="Texture2D" uid="uid://j641w6gl4v6r" path="res://Art/ProgrammerArt/StyleBar.png" id="1_u5tvx"]
@@ -10,10 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://t0nwc1bdc5y4" path="res://Art/UI/tutorial.png" id="8_xu054"]
 [ext_resource type="Script" path="res://Scenes/UI/Tutorial.gd" id="9_u8n5i"]
 [ext_resource type="AudioStream" uid="uid://c64uxlxqk30ts" path="res://Music/sounds_deathscreen/deathscreen.wav" id="10_7tri0"]
+[ext_resource type="VideoStream" path="res://Art/UI/ProjectFinal.ogv" id="10_onpkp"]
 [ext_resource type="Script" path="res://Scenes/UI/STAPLE HIM.gd" id="11_vgk8d"]
 [ext_resource type="Texture2D" uid="uid://d2058qind1hyu" path="res://Art/UI/STAPLE.png" id="12_yyvug"]
 [ext_resource type="Texture2D" uid="uid://dwjvwfkctg23j" path="res://Art/UI/HIM.png" id="13_1u7v6"]
 [ext_resource type="AudioStream" uid="uid://cjoob7f47fcw8" path="res://Music/staplehim/staplehim.wav" id="14_nhlpt"]
+[ext_resource type="Script" path="res://Scenes/UI/Cutscene.gd" id="15_atl5e"]
 
 [node name="2DHud" type="Node2D" groups=["CPlayerGrabbed"]]
 z_index = 10
@@ -90,15 +92,30 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[node name="Cutscene" type="VideoStreamPlayer" parent="Control/Center" groups=["CCutsceneBegin"]]
+z_index = 20
+layout_mode = 0
+offset_left = -567.0
+offset_top = -339.0
+offset_right = 713.0
+offset_bottom = 381.0
+stream = ExtResource("10_onpkp")
+script = ExtResource("15_atl5e")
+
+[node name="Timer" type="Timer" parent="Control/Center/Cutscene"]
+wait_time = 2.5
+one_shot = true
+
 [node name="GrabSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_7tri0")
 volume_db = 24.0
 
-[node name="STAPLE HIM" type="Node2D" parent="." groups=["CGameStart"]]
+[node name="STAPLE HIM" type="Node2D" parent="." groups=["CBegin", "CGameStart"]]
 position = Vector2(500, 350)
 script = ExtResource("11_vgk8d")
 
 [node name="STAPLE" type="Sprite2D" parent="STAPLE HIM"]
+visible = false
 texture = ExtResource("12_yyvug")
 
 [node name="HIM" type="Sprite2D" parent="STAPLE HIM"]
@@ -111,8 +128,9 @@ autostart = true
 
 [node name="Sound" type="AudioStreamPlayer" parent="STAPLE HIM"]
 stream = ExtResource("14_nhlpt")
-autoplay = true
 
 [connection signal="timeout" from="Control/Center/Tutorial/Timer" to="Control/Center/Tutorial" method="_on_timer_timeout"]
+[connection signal="finished" from="Control/Center/Cutscene" to="Control/Center/Cutscene" method="_on_finished"]
+[connection signal="timeout" from="Control/Center/Cutscene/Timer" to="Control/Center/Cutscene" method="_on_timer_timeout"]
 [connection signal="timeout" from="STAPLE HIM/Timer" to="STAPLE HIM" method="_on_timer_timeout"]
 [connection signal="finished" from="STAPLE HIM/Sound" to="STAPLE HIM" method="_on_sound_finished"]
