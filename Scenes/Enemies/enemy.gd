@@ -74,10 +74,10 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	move_dir = move_dir.normalized();
 	move_dir = move_dir * -1;
 	BodySprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
-	BodySprite.look_at(move_dir);
+	BodySprite.look_at(move_dir * 500);
 	HandSprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED;
-	HandSprite.look_at(move_dir);
-	StapledCollider.look_at(move_dir);
+	HandSprite.look_at(move_dir * 500);
+	StapledCollider.look_at(move_dir * 500);
 	stapled = true;
 	RegularCollider.set_deferred("disabled", true);
 	StapledCollider.set_deferred("disabled", false);
