@@ -1,6 +1,6 @@
 @tool
 extends CharacterBody3D
-class_name UCharacterBody3D
+class_name Player
 
 ## A 3D physics body using a revamped template script.
 
@@ -148,12 +148,7 @@ func _physics_process(delta):
 		# Get input direction
 		var input_dir = Input.get_vector(LEFT, RIGHT, FORWARD, BACKWARD)
 		
-		# Handle crouch, sprint, walk speed.
-		if !raycast_node.is_colliding():
-			head_node.position.y = lerpf(head_node.position.y, standing_height, delta * 10.0)
-			collision_shape_normal.disabled = false
-			
-			current_speed = lerpf(current_speed, walk_speed, delta * 10.0)
+		
 		
 		
 		# Handle head bob.

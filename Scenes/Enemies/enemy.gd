@@ -25,7 +25,7 @@ var MoveState = moveNormal;
 @onready var StapledCollider : CollisionShape3D = $StapledCollision;
 @onready var VertexChecker : VertexChecker3D = $VertexChecker;
 @onready var BloodParticles : CPUParticles3D = $CPUParticles3D;
-@onready var HandSprite : Sprite3D = $Hands;
+@onready var HandSprite : Sprite3D = $Body/Hands;
 @onready var PlayerRaycast : RayCast3D = $PlayerRaycast;
 var player : CharacterBody3D;
 var graph : Graph;
@@ -106,10 +106,11 @@ func moveNormal() -> void:
 	
 	velocity += target_vector;
 	if(player != null):
-		look_at(player.global_position);
-		PlayerRaycast.target_position = PlayerRaycast.to_local(player.global_position);
+		BodySprite.look_at(player.global_position);
+		PlayerRaycast.target_position = player.global_position - PlayerRaycast.global_position;
 		if(PlayerRaycast.is_colliding()):
-			MoveState = movePlayer;
+			if(PlayerRaycast.get_collider() is Player):
+				MoveState = movePlayer;
 	rotation_degrees.x = 0;
 	rotation_degrees.z = 0; 
 	
@@ -121,6 +122,22 @@ func moveStapled() -> void:
 	velocity = move_dir * StapleSpeed;
 
 func movePlayer() -> void:
-	print("movePlayer");
+	if(player == null):
+		MoveState = moveNormal;
+		return;
+	
+	var target_dir = player.global_position - global_position;
+	target_dir = target_dir - Vector3(0, target_dir.y, 0);
+	target_dir = target_dir.normalized();
+	
+	velocity = target_dir * Speed;
+	
+	BodySprite.look_at(player.global_position);
+	PlayerRaycast.target_position = player.global_position - PlayerRaycast.global_position;
+	if(!PlayerRaycast.is_colliding()):
+		MoveState = moveNormal;
+	elif(!PlayerRaycast.get_collider().is_in_group("Player")):
+		print("Going normal")
+		MoveState = moveNormal;
 
 

@@ -133,6 +133,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.36451, 0.5, -10.6568)
 
 [node name="Player" parent="." instance=ExtResource("2_2u4x0")]
 
+[node name="RayCast3D" type="RayCast3D" parent="Player"]
+target_position = Vector3(0, 2, 0)
+
 [node name="Tables" type="Node3D" parent="."]
 
 [node name="Table" parent="Tables" instance=ExtResource("3_upq86")]
@@ -294,8 +297,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.49592, 0)
 shape = SubResource("WorldBoundaryShape3D_tc3re")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Room/Floor2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55179, -0.417552, 0.495239)
-size = Vector3(21.1894, 0.182617, 28.9597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13391, -0.417552, 0.45834)
+size = Vector3(22.3602, 0.182617, 29.1166)
 material = SubResource("StandardMaterial3D_vvqga")
 
 [node name="Walls" type="Node3D" parent="Room"]

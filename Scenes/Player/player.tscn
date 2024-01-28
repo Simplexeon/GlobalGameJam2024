@@ -33,12 +33,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.629446, 0)
 [node name="Camera" parent="Head" instance=ExtResource("2_febgm")]
 current = true
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-target_position = Vector3(0, 2, 0)
-
 [node name="VertexChecker" parent="." instance=ExtResource("3_vwoxq")]
 
 [node name="UpdateVertex" type="Timer" parent="."]
 autostart = true
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 2, 0)
 
 [connection signal="timeout" from="UpdateVertex" to="." method="_on_update_vertex_timeout"]
