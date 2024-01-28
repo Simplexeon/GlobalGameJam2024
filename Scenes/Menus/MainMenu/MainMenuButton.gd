@@ -4,10 +4,6 @@ extends TextureButton
 # Export Vars
 @export var CenterOffset : Vector2;
 
-# File Vars
-@onready var game_file : PackedScene = preload("res://Scenes/Testing/main.tscn");
-@onready var transition_file : PackedScene = preload("res://ReusableScenes/UI/Transitions/screen_transition.tscn");
-
 
 # Processes
 
@@ -23,15 +19,5 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	GlobalParameters.played_once = true;
-	var Transition : TransitionNode = transition_file.instantiate();
-	get_tree().root.add_child(Transition);
-	Transition.global_position = Vector2(400, 400);
-	Transition.initialize(false);
-	Transition.Animator.connect("animation_finished", changeScene);
-
-
-func changeScene(_anim_name) -> void:
-	get_tree().change_scene_to_packed(game_file);
-
+	get_tree().call_group("CLoadGame", "_on_LoadGame");
 

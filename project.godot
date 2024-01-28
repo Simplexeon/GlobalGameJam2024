@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="GlobalGameJam2024"
-run/main_scene="res://Scenes/Levels/test.tscn"
+run/main_scene="res://Scenes/Menus/MainMenu/real_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://Autoloads/Globals.gd"
 
 [display]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://djaa6tuj8ve53"]
+[gd_scene load_steps=12 format=3 uid="uid://djaa6tuj8ve53"]
 
 [ext_resource type="PackedScene" uid="uid://bmvj64uyog1lj" path="res://Scenes/Menus/ScreenTransition.tscn" id="1_1smyw"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Screen.gd" id="1_7a2kp"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://l3rfw6lx578i" path="res://Art/ProgrammerArt/stapler.png" id="3_evasn"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/Title.gd" id="4_rh3r8"]
 [ext_resource type="Texture2D" uid="uid://dkbug1vyfmq2q" path="res://Art/Environment/wall1.png" id="7_68asu"]
+[ext_resource type="Script" path="res://Scenes/Menus/MainMenu/LoadingScreen.gd" id="9_8eotc"]
 [ext_resource type="Texture2D" uid="uid://c2e42fse7jksu" path="res://Art/Enemies/BadGuy.png" id="9_rlqux"]
+[ext_resource type="Texture2D" uid="uid://dswh033btfvtx" path="res://Art/Environment/floor.png" id="10_gpwqy"]
 [ext_resource type="Script" path="res://Scenes/Menus/MainMenu/MainMenuButton.gd" id="10_i37wx"]
 [ext_resource type="Texture2D" uid="uid://dlk072hlfn74v" path="res://Art/Enemies/BadGuyFlying.png" id="10_s0mr8"]
 
@@ -60,10 +62,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -300.0
-offset_right = 150.0
-offset_bottom = 300.0
+offset_left = -325.325
+offset_top = -123.255
+offset_right = -25.325
+offset_bottom = 476.745
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("9_rlqux")
@@ -79,6 +81,25 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("7_68asu")
+
+[node name="LoadingScreen" type="Control" parent="." groups=["CLoadGame"]]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1000.0
+offset_bottom = 700.0
+script = ExtResource("9_8eotc")
+
+[node name="LoadingSprite" type="TextureRect" parent="LoadingScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_gpwqy")
 
 [node name="ScreenTransition" parent="." instance=ExtResource("1_1smyw")]
 visible = false
