@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bd5vtp7ctpic5"]
+[gd_scene load_steps=10 format=3 uid="uid://bd5vtp7ctpic5"]
 
 [ext_resource type="PackedScene" uid="uid://b8c221hmycluj" path="res://Scenes/UI/HUD.tscn" id="1_67osl"]
 [ext_resource type="PackedScene" uid="uid://bf2ymjjanep7t" path="res://Scenes/Player/stapler.tscn" id="1_r48ao"]
 [ext_resource type="Texture2D" uid="uid://b146ul7oelvhh" path="res://Scenes/UI/HUD/Viewport.tres" id="3_u0ncn"]
+[ext_resource type="Script" path="res://Scenes/Player/UIViewport.gd" id="3_xdcpu"]
 
 [sub_resource type="Animation" id="Animation_oa3fh"]
 resource_name = "Idle"
@@ -114,6 +115,7 @@ billboard = 1
 no_depth_test = true
 render_priority = 4
 texture = ExtResource("3_u0ncn")
+script = ExtResource("3_xdcpu")
 
 [node name="HUD" parent="UIViewport" instance=ExtResource("1_67osl")]
 

@@ -24,6 +24,7 @@ Globals="*res://Autoloads/Globals.gd"
 
 window/size/viewport_width=1000
 window/size/viewport_height=700
+window/stretch/mode="viewport"
 window/per_pixel_transparency/allowed=true
 
 [importer_defaults]
