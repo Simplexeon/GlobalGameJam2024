@@ -5,7 +5,7 @@ class_name Door3D
 var queued_enemies : int = 0;
 
 # Component Vars
-@onready var Sprite : Sprite3D = $Sprite3D;
+@onready var Sprite : Sprite3D = $DoorSprite;
 @onready var EnemySpawnPos : Node3D = $EnemySpawnPos;
 @onready var Animator : AnimationPlayer = $AnimationPlayer;
 
@@ -37,4 +37,5 @@ func queueEnemy() -> void:
 
 func spawnEnemy() -> void:
 	var enemy : Enemy = enemies[0].instantiate();
+	enemy.global_position = EnemySpawnPos.global_position;
 	get_tree().root.add_child(enemy);
