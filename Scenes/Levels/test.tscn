@@ -139,61 +139,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5491, 1.65, 12.082)
 [node name="Tables" type="Node3D" parent="World"]
 
 [node name="Table" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29866, 0, -0.0589265, 0, 1.3, 0, 0.0589265, 0, 1.29866, -3.35312, 0.75, 1.2969)
-
-[node name="Table2" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29876, 0, -0.0567959, 0, 1.3, 0, 0.0567959, 0, 1.29876, 0.0629194, 0.75, 3.02793)
-
-[node name="Table3" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29997, 0.00733233, 0.0060233, -0.0073124, 1.29997, -0.00431845, -0.00604755, 0.00428444, 1.29998, -2.9334, 0.75, -3.20199)
-
-[node name="Table4" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29972, 0, -0.0267714, 0, 1.3, 0, 0.0267714, 0, 1.29972, -3.39464, 0.75, 3.14541)
-
-[node name="Table17" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.06995, 0.75, 7.40647)
-
-[node name="Table18" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29996, 0, -0.0096201, 0, 1.3, 0, 0.0096201, 0, 1.29996, -6.16794, 0.75, 9.17425)
-
-[node name="Table19" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29664, 0, 0.093422, 0, 1.3, 0, -0.093422, 0, 1.29664, -9.60496, 0.75, 6.7212)
-
-[node name="Table20" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.2985, 0, 0.062349, 0, 1.3, 0, -0.062349, 0, 1.2985, -10.1575, 0.75, 8.38795)
-
-[node name="Table5" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -3.51255, 0.75, -10.2672)
-
-[node name="Table6" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(-1.3, 0, -1.1365e-07, 0, 1.3, 0, 1.1365e-07, 0, -1.3, -2.98483, 0.75, -4.86654)
-
-[node name="Table7" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.96894, 0.75, -10.191)
-
-[node name="Table9" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(-1.29964, 0, -0.0307184, 0, 1.3, 0, 0.0307184, 0, -1.29964, 5.71734, 0.75, -10.0105)
-
-[node name="Table10" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(0.0463445, 0, 1.29917, 0, 1.3, 0, -1.29917, 0, 0.0463445, 5.81511, 0.75, -3.99227)
-
-[node name="Table11" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 2.28, 0.75, -9.86656)
-
-[node name="Table12" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(-0.0106185, 0, -1.29996, 0, 1.3, 0, 1.29996, 0, -0.0106185, 6.29088, 0.75, -7.3939)
-
-[node name="Table13" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(-1.29998, 0, -0.00803176, 0, 1.3, 0, 0.00803176, 0, -1.29998, 4.87588, 0.75, 9.55325)
-
-[node name="Table15" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(-1.29992, 0, -0.0145434, 0, 1.3, 0, 0.0145434, 0, -1.29992, 1.46735, 0.75, 9.53711)
-
-[node name="Table16" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(1.29555, 0, -0.107515, 0, 1.3, 0, 0.107515, 0, 1.29555, 0.284982, 0.75, 1.19892)
-
-[node name="Table21" parent="World/Tables" instance=ExtResource("3_upq86")]
-transform = Transform3D(-0.0416439, 0, 1.68949, 0, 1.69, 0, -1.68949, 0, -0.0416439, 5.59272, 0.75, 6.28318)
+transform = Transform3D(1.29866, 0, -0.0589265, 0, 1.3, 0, 0.0589265, 0, 1.29866, -8.48218, 0.75, -6.75744)
 
 [node name="Lights" type="Node3D" parent="World"]
 
@@ -272,6 +218,7 @@ spot_angle = 87.18
 [node name="Room" type="Node3D" parent="World"]
 
 [node name="Floor" type="StaticBody3D" parent="World/Room"]
+transform = Transform3D(1.11064, 0, 0, 0, 1, 0, 0, 0, 1.1964, 1.23854, 0, 2.9499)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Room/Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, 0)
@@ -283,7 +230,7 @@ size = Vector3(21.1894, 0.182617, 28.9597)
 material = ExtResource("1_m82ih")
 
 [node name="Floor2" type="StaticBody3D" parent="World/Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.49592, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.5731, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Room/Floor2"]
 shape = SubResource("WorldBoundaryShape3D_tc3re")
@@ -303,12 +250,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61972, 3.07227, 0.0220461)
 shape = SubResource("BoxShape3D_36o2a")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Walls/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62, 3.072, 0)
+transform = Transform3D(1.35027, 0, 0, 0, 1, 0, 0, 0, 1, 1.98016, 3.072, 0)
 size = Vector3(21, 6.6, 0.2)
 material = SubResource("StandardMaterial3D_2avwr")
 
 [node name="Wall3" type="StaticBody3D" parent="World/Room/Walls"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.59394, 0, 14.8214)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.60658, -9.53674e-07, 26.89)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Room/Walls/Wall3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90464, 3.07227, 0.0117979)
@@ -339,63 +286,12 @@ transform = Transform3D(0.999997, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.99
 shape = SubResource("BoxShape3D_8ehq2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Walls/Wall4"]
-transform = Transform3D(0.999997, 0, -5.32907e-14, 0, 1, 0, 5.32907e-14, 0, 0.999997, 2.42095, 3.072, 0)
+transform = Transform3D(1.44106, 0, -5.32907e-14, 0, 1, 0, 7.10543e-14, 0, 0.999997, 7.80526, 3.072, -7.31046)
 size = Vector3(29.0819, 6.6, 0.2)
 material = SubResource("StandardMaterial3D_mjmy5")
 
 [node name="Chair" parent="World/Room" instance=ExtResource("12_sovm5")]
 transform = Transform3D(-0.108121, 0, -0.994138, 0, 1, 0, 0.994138, 0, -0.108121, -4.02791, 0.0229819, -0.112888)
-
-[node name="Chair5" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(0.0462348, 0, 0.998931, 0, 1, 0, -0.998931, 0, 0.0462348, -3.81322, 0.0229819, -2.22304)
-
-[node name="Chair6" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(-0.037324, 0, -0.999303, 0, 1, 0, 0.999303, 0, -0.037324, -2.36393, 0.0229819, -5.77496)
-
-[node name="Chair2" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(0.0959848, 0, -0.995383, 0, 1, 0, 0.995383, 0, 0.0959848, -0.141673, 0.0229819, -0.310611)
-
-[node name="Chair3" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(0.20506, 0, 0.978749, 0, 1, 0, -0.978749, 0, 0.20506, -0.437533, 0.0229819, 4.4425)
-
-[node name="Chair4" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(-0.162207, 0, 0.986757, 0, 1, 0, -0.986757, 0, -0.162207, -4.08263, 0.0229819, 4.3088)
-
-[node name="Chair7" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(-0.162207, 0, 0.986757, 0, 1, 0, -0.986757, 0, -0.162207, -6.31791, 0.0229819, 10.3077)
-
-[node name="Chair8" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(0.458324, 0, 0.888785, 0, 1, 0, -0.888785, 0, 0.458324, -10.4129, 0.0229819, 13.0059)
-
-[node name="Chair9" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(0.679044, 0, -0.734097, 0, 1, 0, 0.734097, 0, 0.679044, -10.4129, 0.0229819, 5.06258)
-
-[node name="Chair10" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(0.575676, 0, 0.817678, 0, 1, 0, -0.817678, 0, 0.575676, -10.4129, 0.0229819, -1.46852)
-
-[node name="Chair11" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(0.278354, 0, 0.960478, 0, 1, 0, -0.960478, 0, 0.278354, -7.42998, 0.0229819, -8.79386)
-
-[node name="Chair13" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(0.131859, 0, 0.991269, 0, 1, 0, -0.991269, 0, 0.131859, 1.64227, 0.0229819, -8.79386)
-
-[node name="Chair14" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(0.816138, 0, -0.577858, 0, 1, 0, 0.577858, 0, 0.816138, 5.20953, 0.0229819, -8.15562)
-
-[node name="Chair15" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(-0.143631, 0, -0.989631, 0, 1, 0, 0.989631, 0, -0.143631, 6.55229, 0.0229819, -11.5988)
-
-[node name="Chair16" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(-0.873959, 0, -0.486, 0, 1, 0, 0.486, 0, -0.873959, 7.47781, 0.0229819, -3.26093)
-
-[node name="Chair17" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(-0.947663, 0, 0.319274, 0, 1, 0, -0.319274, 0, -0.947663, 6.86383, 0.0229819, 6.86619)
-
-[node name="Chair18" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(0.356461, 0, 0.93431, 0, 1, 0, -0.93431, 0, 0.356461, 1.98576, 0.0229819, 10.9785)
-
-[node name="Chair12" parent="World/Room" instance=ExtResource("12_sovm5")]
-transform = Transform3D(-0.433266, 0, 0.901266, 0, 1, 0, -0.901266, 0, -0.433266, -3.92191, 0.0229819, -8.70518)
 
 [node name="Outdoors" type="Node3D" parent="World"]
 
@@ -432,6 +328,7 @@ transform = Transform3D(5.5454, 0, -2.29097, 1.06232, 10.6319, 2.57139, 2.02979,
 texture = ExtResource("12_0ypm6")
 
 [node name="Graph" type="Node3D" parent="World" groups=["Graph"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.76737, 0)
 script = ExtResource("1_cpa6v")
 
 [node name="Vertex" parent="World/Graph" instance=ExtResource("2_b2amw")]
