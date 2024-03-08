@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b6aus34iogfrd"]
+[gd_scene load_steps=45 format=3 uid="uid://b6aus34iogfrd"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/Graph.gd" id="1_cpa6v"]
 [ext_resource type="Script" path="res://Scenes/Levels/test.gd" id="1_eff21"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://byran0hjoypru" path="res://Scenes/Graph/vertex.tscn" id="2_b2amw"]
 [ext_resource type="Texture2D" uid="uid://clforl28i4h4g" path="res://Art/Environment/ceiling.png" id="2_pj2os"]
 [ext_resource type="PackedScene" uid="uid://g76k52yx25ke" path="res://Scenes/Objects/table.tscn" id="3_upq86"]
+[ext_resource type="PackedScene" uid="uid://d33ghtwyurfd2" path="res://Scenes/Objects/door.tscn" id="4_2e2yt"]
 [ext_resource type="Texture2D" uid="uid://dkbug1vyfmq2q" path="res://Art/Environment/wall1.png" id="8_2jy3q"]
 [ext_resource type="Texture2D" uid="uid://duofrappmfno0" path="res://Art/Environment/wall2.png" id="9_c27vf"]
 [ext_resource type="Texture2D" uid="uid://bj3vb2b03aq2x" path="res://Art/Environment/wall3.png" id="9_yhwlt"]
@@ -122,9 +123,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0531486, -2.4524)
 [node name="SpawnManager" type="Node3D" parent="." groups=["CGameStart"]]
 script = ExtResource("12_7m5ak")
 
-[node name="Door" type="Node3D" parent="SpawnManager"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.412, 1.65, 13.309)
-
 [node name="Door2" type="Node3D" parent="SpawnManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3773, 1.65, -12.8453)
 
@@ -133,6 +131,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.26932, 1.65, -12.8453)
 
 [node name="Door4" type="Node3D" parent="SpawnManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5491, 1.65, 12.082)
+
+[node name="Door" parent="SpawnManager" instance=ExtResource("4_2e2yt")]
 
 [node name="World" type="Node3D" parent="."]
 

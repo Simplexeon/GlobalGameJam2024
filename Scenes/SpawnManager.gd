@@ -73,10 +73,8 @@ func _physics_process(delta: float) -> void:
 
 # Functions
 
-func Spawn(doorIndex : int, enemyIndex : int):
-	var enemy : Enemy = enemies[enemyIndex].instantiate();
-	get_tree().root.add_child(enemy);
-	enemy.global_position = doors[doorIndex].global_position;
+func Spawn(doorIndex : int, _enemyIndex : int):
+	doors[doorIndex].queueEnemy();
 
 func SetNextSpawn() -> void:
 	if(current_spawn_index > wave_data[current_wave - 1].size() - 1):
