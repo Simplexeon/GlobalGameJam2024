@@ -1,0 +1,51 @@
+[gd_scene load_steps=11 format=3 uid="uid://h3eyqwpbsnhw"]
+
+[ext_resource type="ArrayMesh" uid="uid://crjapi5heua4e" path="res://Art/Environment/ComputerTextures/ComputerPaint.obj" id="1_ce72o"]
+[ext_resource type="Script" path="res://Scenes/Objects/Computer.gd" id="1_whxnh"]
+[ext_resource type="Texture2D" uid="uid://cbna53vjuv2n5" path="res://Art/Environment/ComputerTextures/ComputerPaint_initialShadingGroup_BaseColor.png" id="2_n3ym8"]
+[ext_resource type="Texture2D" uid="uid://jtmqrsg1njat" path="res://Art/Environment/ComputerTextures/ComputerPaint_initialShadingGroup_Metallic.png" id="3_dkmt0"]
+[ext_resource type="Texture2D" uid="uid://bhsmpgqyulyul" path="res://Art/Environment/ComputerTextures/ComputerPaint_initialShadingGroup_Height.png" id="3_mwxwg"]
+[ext_resource type="Texture2D" uid="uid://s3gn46d0iqra" path="res://Art/Environment/ComputerTextures/ComputerPaint_initialShadingGroup_Normal.png" id="4_wm043"]
+[ext_resource type="Texture2D" uid="uid://bj4vn6ie62fnp" path="res://Art/Environment/ComputerTextures/ComputerPaint_initialShadingGroup_Roughness.png" id="6_ejref"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8uuv7"]
+diffuse_mode = 1
+albedo_texture = ExtResource("2_n3ym8")
+metallic = 0.68
+metallic_texture = ExtResource("3_dkmt0")
+roughness_texture = ExtResource("6_ejref")
+normal_enabled = true
+normal_texture = ExtResource("4_wm043")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("3_mwxwg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3x4mp"]
+size = Vector3(0.546356, 0.871582, 0.807465)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2e7u"]
+size = Vector3(0.621796, 0.90271, 0.844383)
+
+[node name="Computer" type="RigidBody3D"]
+collision_mask = 14
+mass = 3.0
+script = ExtResource("1_whxnh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 0.308433, -2.34258, -0.734704)
+mesh = ExtResource("1_ce72o")
+surface_material_override/0 = SubResource("StandardMaterial3D_8uuv7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0431671, 0.064209, -0.0151215)
+shape = SubResource("BoxShape3D_3x4mp")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 14
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0493622, 0.0648804, -0.0155602)
+shape = SubResource("BoxShape3D_u2e7u")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

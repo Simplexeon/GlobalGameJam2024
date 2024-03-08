@@ -9,13 +9,13 @@ var queued_enemies : int = 0;
 @onready var EnemySpawnPos : Node3D = $EnemySpawnPos;
 @onready var Animator : AnimationPlayer = $AnimationPlayer;
 
+# File Vars
+@onready var enemies : Array = [preload("res://Scenes/Enemies/enemy.tscn")];
 
-# Functions
+# Processes
 
-func queueEnemy() -> void:
-	if(queued_enemies == 0):
-		Animator.play("Open"); # TODO ADD ANIMATION
-	queued_enemies += 1;
+func _ready() -> void:
+	Sprite.rotation.y = 0;
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if(anim_name == "Open"):
@@ -28,7 +28,13 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		else:
 			Animator.play("Close");
 
+# Functions
+
+func queueEnemy() -> void:
+	if(queued_enemies == 0):
+		Animator.play("Open"); # TODO ADD ANIMATION
+	queued_enemies += 1;
+
 func spawnEnemy() -> void:
-	#var enemy : Enemy = enemies[enemyIndex].instantiate();
-	#get_tree().root.add_child(enemy);
-	pass
+	var enemy : Enemy = enemies[0].instantiate();
+	get_tree().root.add_child(enemy);
