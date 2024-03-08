@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlyjp31xclva7"]
+
+[ext_resource type="ArrayMesh" uid="uid://d0jcibx5dfrfi" path="res://Art/Objects/Filing Cabinet/FileCabinets.obj" id="1_uncef"]
+[ext_resource type="Texture2D" uid="uid://xxv3n2i2vxsa" path="res://Art/Objects/Filing Cabinet/FileCabinetTextures/FileCabinets_initialShadingGroup_BaseColor.png" id="2_dfccn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1jij"]
+albedo_texture = ExtResource("2_dfccn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5qfoa"]
+size = Vector3(0.554169, 0.990479, 0.910156)
+
+[node name="FilingCabinet" type="StaticBody3D"]
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7951, -1.59592, 2.32844)
+mesh = ExtResource("1_uncef")
+surface_material_override/0 = SubResource("StandardMaterial3D_q1jij")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.81816, 0, 0, 0, 6.70061, 0, 0, 0, 3.06457, -0.84378, 3.34022, -0.0359129)
+shape = SubResource("BoxShape3D_5qfoa")
