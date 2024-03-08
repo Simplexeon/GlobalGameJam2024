@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0y1cgq0p8sk2"
+path="res://.godot/imported/CubicleWallPaint.obj-a3f4a68fa4a1939a108846a9b0e2a552.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CubicleWallPaint.obj-a3f4a68fa4a1939a108846a9b0e2a552.mesh"]
+
+source_file="res://Art/Environment/Cubicle/CubicleWallPaint.obj"
+dest_files=["res://.godot/imported/CubicleWallPaint.obj-a3f4a68fa4a1939a108846a9b0e2a552.mesh", "res://.godot/imported/CubicleWallPaint.obj-a3f4a68fa4a1939a108846a9b0e2a552.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

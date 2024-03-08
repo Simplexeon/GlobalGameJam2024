@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8n8db51c37f8"]
+
+[ext_resource type="ArrayMesh" uid="uid://b0y1cgq0p8sk2" path="res://Art/Environment/Cubicle/CubicleWallPaint.obj" id="1_5i05o"]
+[ext_resource type="Texture2D" uid="uid://citdhn0ojo4we" path="res://Art/Environment/Cubicle/CubicleWallPaint_initialShadingGroup_BaseColor.png" id="2_et7mp"]
+[ext_resource type="Texture2D" uid="uid://d4ijff32wk4ph" path="res://Art/Environment/Cubicle/CubicleWallPaint_initialShadingGroup_Height.png" id="3_aja20"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7oaw"]
+diffuse_mode = 1
+specular_mode = 1
+albedo_color = Color(0.831373, 0.831373, 0.831373, 1)
+albedo_texture = ExtResource("2_et7mp")
+heightmap_texture = ExtResource("3_aja20")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knobf"]
+size = Vector3(0.0197105, 1.76422, 2.42068)
+
+[node name="CubicleWall" type="StaticBody3D"]
+collision_mask = 15
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.757362, -1.04724, 0)
+mesh = ExtResource("1_5i05o")
+surface_material_override/0 = SubResource("StandardMaterial3D_f7oaw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00555992, -0.00436401, -0.00178528)
+shape = SubResource("BoxShape3D_knobf")
