@@ -28,7 +28,8 @@ size = Vector3(0.621796, 0.90271, 0.844383)
 
 [node name="Computer" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.430545, 0)
-collision_mask = 14
+collision_layer = 0
+collision_mask = 13
 mass = 3.0
 script = ExtResource("1_whxnh")
 
