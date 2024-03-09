@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://clforl28i4h4g" path="res://Art/Environment/ceiling.png" id="2_pj2os"]
 [ext_resource type="PackedScene" uid="uid://g76k52yx25ke" path="res://Scenes/Objects/table.tscn" id="3_upq86"]
 [ext_resource type="PackedScene" uid="uid://d33ghtwyurfd2" path="res://Scenes/Objects/door.tscn" id="4_2e2yt"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/CubicleWall.tscn" id="6_k588h"]
+[ext_resource type="PackedScene" uid="uid://c8n8db51c37f8" path="res://Scenes/Objects/CubicleWall.tscn" id="6_k588h"]
 [ext_resource type="Texture2D" uid="uid://dkbug1vyfmq2q" path="res://Art/Environment/wall1.png" id="8_2jy3q"]
 [ext_resource type="Texture2D" uid="uid://duofrappmfno0" path="res://Art/Environment/wall2.png" id="9_c27vf"]
 [ext_resource type="Texture2D" uid="uid://bw4jxnry5egjm" path="res://Art/Environment/wall4.png" id="11_j7e02"]
@@ -304,7 +304,7 @@ transform = Transform3D(1.45856, 0, 1.36843, 0, 2, 0, -1.36843, 0, 1.45856, -6.1
 
 [node name="SpotLight3D" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.19669, 6.12744, -10.6821)
-light_energy = 0.625
+light_energy = 0.825
 shadow_enabled = true
 shadow_bias = 2.018
 shadow_normal_bias = 0.0
@@ -312,11 +312,11 @@ shadow_reverse_cull_face = true
 shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
-spot_angle = 87.18
+spot_angle = 89.18
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.57745, 6.12744, -10.6821)
-light_energy = 0.625
+light_energy = 0.825
 shadow_enabled = true
 shadow_bias = 2.018
 shadow_normal_bias = 0.0
@@ -324,11 +324,11 @@ shadow_reverse_cull_face = true
 shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
-spot_angle = 87.18
+spot_angle = 89.18
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.19669, 6.12744, 0.782186)
-light_energy = 0.625
+light_energy = 0.825
 shadow_enabled = true
 shadow_bias = 2.018
 shadow_normal_bias = 0.0
@@ -336,11 +336,11 @@ shadow_reverse_cull_face = true
 shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
-spot_angle = 87.18
+spot_angle = 89.18
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.57745, 6.12744, 0.782186)
-light_energy = 0.625
+light_energy = 0.825
 shadow_enabled = true
 shadow_bias = 2.018
 shadow_normal_bias = 0.0
@@ -348,11 +348,11 @@ shadow_reverse_cull_face = true
 shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
-spot_angle = 87.18
+spot_angle = 89.18
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.19669, 6.12744, 10.1068)
-light_energy = 0.625
+light_energy = 0.825
 shadow_enabled = true
 shadow_bias = 2.018
 shadow_normal_bias = 0.0
@@ -360,11 +360,11 @@ shadow_reverse_cull_face = true
 shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
-spot_angle = 87.18
+spot_angle = 89.18
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.57745, 6.12744, 10.1068)
-light_energy = 0.625
+light_energy = 0.825
 shadow_enabled = true
 shadow_bias = 2.018
 shadow_normal_bias = 0.0
@@ -372,11 +372,11 @@ shadow_reverse_cull_face = true
 shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
-spot_angle = 87.18
+spot_angle = 89.18
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.2711, 6.12744, 21.8914)
-light_energy = 0.625
+light_energy = 0.825
 shadow_enabled = true
 shadow_bias = 2.018
 shadow_normal_bias = 0.0
@@ -384,11 +384,11 @@ shadow_reverse_cull_face = true
 shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
-spot_angle = 87.18
+spot_angle = 89.18
 
 [node name="SpotLight3D8" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.73226, 6.12744, 21.8914)
-light_energy = 0.625
+light_energy = 0.825
 shadow_enabled = true
 shadow_bias = 2.018
 shadow_normal_bias = 0.0
@@ -396,11 +396,11 @@ shadow_reverse_cull_face = true
 shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
-spot_angle = 87.18
+spot_angle = 89.18
 
 [node name="SpotLight3D9" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.89857, 6.12744, 21.8914)
-light_energy = 0.625
+light_energy = 0.825
 shadow_enabled = true
 shadow_bias = 2.018
 shadow_normal_bias = 0.0
@@ -408,11 +408,11 @@ shadow_reverse_cull_face = true
 shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
-spot_angle = 87.18
+spot_angle = 89.18
 
 [node name="SpotLight3D10" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.8825, 6.12744, 9.17086)
-light_energy = 0.625
+light_energy = 0.825
 shadow_enabled = true
 shadow_bias = 2.018
 shadow_normal_bias = 0.0
@@ -420,11 +420,11 @@ shadow_reverse_cull_face = true
 shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
-spot_angle = 87.18
+spot_angle = 89.18
 
 [node name="SpotLight3D11" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.8825, 6.12744, -9.8461)
-light_energy = 0.625
+light_energy = 0.825
 shadow_enabled = true
 shadow_bias = 2.018
 shadow_normal_bias = 0.0
@@ -432,7 +432,7 @@ shadow_reverse_cull_face = true
 shadow_blur = 1.768
 spot_range = 31.748
 spot_attenuation = 0.112656
-spot_angle = 87.18
+spot_angle = 89.18
 
 [node name="Room" type="Node3D" parent="World"]
 

@@ -8,6 +8,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	get_viewport().transparent_bg = false;
 	Credits.visible = false;
 	var Transition : TransitionNode = trans_file.instantiate();
 	add_child(Transition);

@@ -37,5 +37,6 @@ func queueEnemy() -> void:
 
 func spawnEnemy() -> void:
 	var enemy : Enemy = enemies[0].instantiate();
-	enemy.global_position = EnemySpawnPos.global_position;
 	get_tree().root.add_child(enemy);
+	enemy.global_position = EnemySpawnPos.global_position;
+	
