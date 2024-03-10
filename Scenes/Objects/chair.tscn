@@ -35,6 +35,7 @@ size = Vector3(0.263062, 0.756363, 0.9104)
 
 [node name="Chair" type="RigidBody3D" groups=["Chairs"]]
 collision_layer = 0
+collision_mask = 15
 mass = 1.5
 script = ExtResource("1_2n2ak")
 
@@ -61,7 +62,7 @@ shape = SubResource("BoxShape3D_smj1b")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 0
-collision_mask = 9
+collision_mask = 11
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.479178, 0)
