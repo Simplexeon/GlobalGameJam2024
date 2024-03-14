@@ -46,7 +46,7 @@ texture_filter = 0
 grow = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_36o2a"]
-size = Vector3(21, 6.6, 0.244092)
+size = Vector3(28.479, 6.6, 0.244092)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2avwr"]
 specular_mode = 2
@@ -54,7 +54,7 @@ albedo_texture = ExtResource("8_2jy3q")
 texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ehq2"]
-size = Vector3(44.8981, 6.6, 0.467654)
+size = Vector3(41.5118, 6.6, 0.467654)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ea6c"]
 transparency = 1
@@ -468,7 +468,7 @@ material = SubResource("StandardMaterial3D_vvqga")
 transform = Transform3D(1.09761, 0, 0, 0, 1, 0, 0, 0, 1, -0.27613, 0, -15.8431)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Room/Walls/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61972, 3.07227, 0.0220461)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11978, 3.07227, 0.0220461)
 shape = SubResource("BoxShape3D_36o2a")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Walls/Wall"]
@@ -484,7 +484,7 @@ transform = Transform3D(0.999997, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.99
 shape = SubResource("BoxShape3D_8ehq2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Walls/Wall2"]
-transform = Transform3D(0.999997, 0, -5.32907e-14, 0, 1, 0, 5.32907e-14, 0, 0.999997, 2.42095, 3.072, 0)
+transform = Transform3D(0.999997, 0, -9.9476e-14, 0, 1, 0, 5.68434e-14, 0, 0.999997, 2.42095, 3.072, 0)
 size = Vector3(29.0819, 6.6, 0.2)
 material = SubResource("StandardMaterial3D_2ea6c")
 
@@ -492,7 +492,7 @@ material = SubResource("StandardMaterial3D_2ea6c")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.5068, 0, -1.9507)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Room/Walls/Wall4"]
-transform = Transform3D(0.999997, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999997, 6.32602, 3.07227, -7.21095)
+transform = Transform3D(0.999997, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999997, 6.32711, 3.07227, -7.21095)
 shape = SubResource("BoxShape3D_8ehq2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Walls/Wall4"]
@@ -504,7 +504,7 @@ material = SubResource("StandardMaterial3D_mjmy5")
 transform = Transform3D(-4.65091e-08, 0, -1, 0, 1, 0, 1.064, 0, -4.37114e-08, -19.6887, 0, 1.17825)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Room/Walls/Wall5"]
-transform = Transform3D(0.999997, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999997, 2.38522, 3.07227, -7.28828)
+transform = Transform3D(0.999997, 0, 1.38556e-13, 0, 1, 0, 4.61853e-14, 0, 0.999997, 7.06946, 3.07227, -7.28828)
 shape = SubResource("BoxShape3D_8ehq2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Walls/Wall5"]
