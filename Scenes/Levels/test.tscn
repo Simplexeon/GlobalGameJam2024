@@ -64,11 +64,7 @@ albedo_texture = ExtResource("8_2jy3q")
 texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ehq2"]
-<<<<<<< Updated upstream
-size = Vector3(41.5118, 6.6, 0.467654)
-=======
 size = Vector3(28.9775, 6.6, 0.467654)
->>>>>>> Stashed changes
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ea6c"]
 transparency = 1
@@ -578,11 +574,7 @@ material = SubResource("StandardMaterial3D_mjmy5")
 transform = Transform3D(-4.14939e-08, 0, -1, 0, 1, 0, 0.949265, 0, -4.37114e-08, -19.6887, 0, -0.213095)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Room/Walls/Wall5"]
-<<<<<<< Updated upstream
-transform = Transform3D(0.999997, 0, 1.38556e-13, 0, 1, 0, 4.61853e-14, 0, 0.999997, 7.06946, 3.07227, -7.28828)
-=======
 transform = Transform3D(0.999997, 0, -3.19744e-14, 0, 1, 0, 3.90799e-14, 0, 0.999997, 7.89505, 3.07227, -7.28828)
->>>>>>> Stashed changes
 shape = SubResource("BoxShape3D_8ehq2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Walls/Wall5"]

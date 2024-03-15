@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://jmojca2l0wb4"]
+[gd_scene load_steps=8 format=3 uid="uid://jmojca2l0wb4"]
 
 [ext_resource type="Script" path="res://CharacterController/addons/ultimate_character/ucharacterbody3d.gd" id="1_v68ga"]
 [ext_resource type="PackedScene" uid="uid://bd5vtp7ctpic5" path="res://Scenes/Player/camera.tscn" id="2_febgm"]
@@ -9,6 +9,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b3u2x"]
 radius = 0.241512
 height = 0.85248
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1crko"]
 
 [node name="Player" type="CharacterBody3D" groups=["CBegin", "Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0531486, 0)
@@ -34,6 +36,7 @@ shape = SubResource("CapsuleShape3D_b3u2x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.629446, 0)
 
 [node name="Camera" parent="Head" instance=ExtResource("2_febgm")]
+attributes = SubResource("CameraAttributesPractical_1crko")
 current = true
 
 [node name="VertexChecker" parent="." instance=ExtResource("3_vwoxq")]
