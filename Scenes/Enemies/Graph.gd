@@ -51,7 +51,7 @@ func Connect():
 	AddEdge(verteces[2], verteces[42]);
 	AddEdge(verteces[3], verteces[4]);
 	AddEdge(verteces[3], verteces[4]);
-	AddEdge(verteces[4], verteces[6]);
+	#AddEdge(verteces[4], verteces[6]);
 	AddEdge(verteces[4], verteces[7]);
 	AddEdge(verteces[4], verteces[8]);
 	AddEdge(verteces[5], verteces[6]);
