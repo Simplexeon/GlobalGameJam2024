@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://d33ghtwyurfd2"]
+[gd_scene load_steps=12 format=3 uid="uid://d33ghtwyurfd2"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/door.gd" id="1_46ek7"]
 [ext_resource type="Texture2D" uid="uid://fduhtlhd3db1" path="res://Art/Environment/door.png" id="2_mjw45"]
+[ext_resource type="AudioStream" uid="uid://ctcpe751wqhty" path="res://Music/slam.wav" id="3_hpc0t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_11jlr"]
 size = Vector3(1.87848, 3.28889, 0.0418701)
@@ -16,7 +17,7 @@ tracks/0/path = NodePath("DoorSprite:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.7, 2.9),
+"times": PackedFloat32Array(2.8, 2.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -2.87979, 0), Vector3(0, 0, 0)]
@@ -25,7 +26,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_jxoo2"]
 resource_name = "Open"
 length = 0.06
-step = 0.05
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -33,10 +34,22 @@ tracks/0/path = NodePath("DoorSprite:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05),
-"transitions": PackedFloat32Array(1, 1.31951),
+"times": PackedFloat32Array(0, 0.05, 0.0501),
+"transitions": PackedFloat32Array(1, 1.31951, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -2.87979, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, -2.87979, 0), Vector3(0, -2.87979, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_gn3xs"]
@@ -52,6 +65,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, -2.83984, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_cmxgl"]
@@ -155,5 +180,10 @@ material = SubResource("StandardMaterial3D_sa5ct")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.926121, 0.0308838, 4.16855)
 size = Vector3(2.09839, 3.34497, 0.493896)
 material = SubResource("StandardMaterial3D_sa5ct")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_hpc0t")
+volume_db = -10.0
+max_distance = 30.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

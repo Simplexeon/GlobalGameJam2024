@@ -229,7 +229,7 @@ transform = Transform3D(1, 0, 0, 0, 1.6985, 0, 0, 0, 1.91565, 0.412381, 0.004496
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.68351, 0, -1, 0, -4.37114e-08, -0.852694, 0, 4.69918)
 
 [node name="Door3" parent="SpawnManager" instance=ExtResource("4_2e2yt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.061, 1.60777, 25.8458)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.061, 1.60777, 27.6435)
 
 [node name="CubicleWall" parent="SpawnManager/Door3" instance=ExtResource("6_k588h")]
 transform = Transform3D(1, 0, 0, 0, 2.11731, 0, 0, 0, 1.8786, -2.12675, 0, 2.22735)
@@ -1494,6 +1494,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5712, -0.254694, 42.8106)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D3"]
 transform = Transform3D(4.02967, 0, 0, 0, 2.67884, 0, 0, 0, 3.57129, -14.5848, 5.69791, -14.4279)
+mesh = SubResource("BoxMesh_b2ffs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D3"]
+transform = Transform3D(4.02967, 0, 0, 0, 2.67884, 0, 0, 0, 3.57129, -44.4878, 5.69791, -14.4279)
 mesh = SubResource("BoxMesh_b2ffs")
 
 [node name="Node3D4" type="Node3D" parent="."]
