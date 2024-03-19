@@ -7,7 +7,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7oaw"]
 diffuse_mode = 1
 specular_mode = 1
-albedo_color = Color(0.831373, 0.831373, 0.831373, 1)
+albedo_color = Color(0.901961, 0.890196, 0.870588, 1)
 albedo_texture = ExtResource("2_et7mp")
 heightmap_texture = ExtResource("3_aja20")
 texture_filter = 1
