@@ -65,7 +65,7 @@ albedo_texture = ExtResource("8_2jy3q")
 texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ehq2"]
-size = Vector3(35.647, 6.6, 0.467654)
+size = Vector3(32.6873, 6.6, 0.467654)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ea6c"]
 transparency = 1
@@ -584,7 +584,7 @@ material = SubResource("StandardMaterial3D_2avwr")
 transform = Transform3D(-0.888001, 0, -8.74228e-08, 0, 1, 0, 7.76315e-08, 0, -1, 5.66013, 0, 29.3675)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Room/Walls/Wall2"]
-transform = Transform3D(0.999997, 0, -4.26326e-14, 0, 1, 0, 4.9738e-14, 0, 0.999997, 2.65906, 3.07227, 0.0465164)
+transform = Transform3D(0.999997, 0, -4.26326e-14, 0, 1, 0, 5.68434e-14, 0, 0.999997, 1.1792, 3.07227, 0.0465164)
 shape = SubResource("BoxShape3D_8ehq2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Walls/Wall2"]
