@@ -8,7 +8,7 @@ size = Vector3(1.87848, 3.28889, 0.0418701)
 
 [sub_resource type="Animation" id="Animation_u7gni"]
 resource_name = "Close"
-length = 0.7
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,7 +16,7 @@ tracks/0/path = NodePath("DoorSprite:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
+"times": PackedFloat32Array(2.7, 2.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -2.87979, 0), Vector3(0, 0, 0)]
