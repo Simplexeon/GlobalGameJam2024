@@ -391,7 +391,7 @@ transform = Transform3D(1.45856, 0, 1.36843, 0, 2, 0, -1.36843, 0, 1.45856, -6.1
 
 [node name="SpotLight3D" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.19669, 6.12744, -10.6821)
-light_color = Color(0.980392, 0.831373, 0.764706, 1)
+light_color = Color(0.882353, 0.870588, 0.815686, 1)
 light_energy = 1.2
 light_indirect_energy = 3.0
 light_specular = 0.2
@@ -405,7 +405,7 @@ spot_angle = 89.18
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.19669, 6.12744, 0.782186)
-light_color = Color(0.980392, 0.831373, 0.764706, 1)
+light_color = Color(0.882353, 0.870588, 0.815686, 1)
 light_energy = 1.2
 light_indirect_energy = 3.0
 light_specular = 0.2
@@ -419,7 +419,7 @@ spot_angle = 89.18
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.19669, 6.12744, 10.1068)
-light_color = Color(0.980392, 0.831373, 0.764706, 1)
+light_color = Color(0.882353, 0.870588, 0.815686, 1)
 light_energy = 1.2
 light_indirect_energy = 3.0
 light_specular = 0.2
@@ -433,7 +433,7 @@ spot_angle = 89.18
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.57745, 6.12744, 10.1068)
-light_color = Color(0.980392, 0.831373, 0.764706, 1)
+light_color = Color(0.882353, 0.870588, 0.815686, 1)
 light_energy = 1.2
 light_indirect_energy = 3.0
 light_specular = 0.2
@@ -447,7 +447,7 @@ spot_angle = 89.18
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.2711, 6.12744, 21.8914)
-light_color = Color(0.980392, 0.831373, 0.764706, 1)
+light_color = Color(0.882353, 0.870588, 0.815686, 1)
 light_energy = 1.2
 light_indirect_energy = 3.0
 light_specular = 0.2
@@ -461,7 +461,7 @@ spot_angle = 89.18
 
 [node name="SpotLight3D8" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.73226, 6.12744, 21.8914)
-light_color = Color(0.980392, 0.831373, 0.764706, 1)
+light_color = Color(0.882353, 0.870588, 0.815686, 1)
 light_energy = 1.2
 light_indirect_energy = 3.0
 light_specular = 0.2
@@ -475,7 +475,7 @@ spot_angle = 89.18
 
 [node name="SpotLight3D10" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.8825, 6.12744, 9.17086)
-light_color = Color(0.980392, 0.831373, 0.764706, 1)
+light_color = Color(0.882353, 0.870588, 0.815686, 1)
 light_energy = 1.2
 light_indirect_energy = 3.0
 light_specular = 0.2
@@ -489,7 +489,7 @@ spot_angle = 89.18
 
 [node name="SpotLight3D11" type="SpotLight3D" parent="World/Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.8825, 6.12744, -9.8461)
-light_color = Color(0.980392, 0.831373, 0.764706, 1)
+light_color = Color(0.882353, 0.870588, 0.815686, 1)
 light_energy = 1.2
 light_indirect_energy = 3.0
 light_specular = 0.2
@@ -511,8 +511,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, 0)
 shape = SubResource("WorldBoundaryShape3D_kk3vg")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Floor"]
-transform = Transform3D(0.999996, 0, 0, 0, 1, 0, 0, 0, 1, -1.48188, -0.0910449, 0.643986)
-size = Vector3(21.3292, 0.182617, 29.2572)
+transform = Transform3D(0.375854, 0, 0, 0, 1, 0, 0, 0, 0.323994, -7.03901, -0.0910449, -9.32514)
+size = Vector3(27.4108, 0.182617, 29.2572)
+material = ExtResource("1_m82ih")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/Room/Floor"]
+transform = Transform3D(0.375854, 0, 0, 0, 1, 0, 0, 0, 0.323994, -7.03901, -0.0910449, 10.399)
+size = Vector3(27.4108, 0.182617, 30.504)
+material = ExtResource("1_m82ih")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/Room/Floor"]
+transform = Transform3D(0.375854, 0, 0, 0, 1, 0, 0, 0, 0.323994, -7.03901, -0.0910449, 0.430037)
+size = Vector3(27.4108, 0.182617, 31.1051)
+material = ExtResource("1_m82ih")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="World/Room/Floor"]
+transform = Transform3D(0.375854, 0, 0, 0, 1, 0, 0, 0, 0.323994, 3.65924, -0.0910449, 0.450167)
+size = Vector3(29.6278, 0.182617, 30.9808)
+material = ExtResource("1_m82ih")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="World/Room/Floor"]
+transform = Transform3D(0.375854, 0, 0, 0, 1, 0, 0, 0, 0.323994, 3.64936, -0.0910449, 10.4215)
+size = Vector3(29.5103, 0.182617, 30.7994)
+material = ExtResource("1_m82ih")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Room/Floor"]
+transform = Transform3D(0.375854, 0, 0, 0, 1, 0, 0, 0, 0.323994, 3.64126, -0.0910449, -9.32514)
+size = Vector3(29.4639, 0.182617, 29.2572)
 material = ExtResource("1_m82ih")
 
 [node name="Floor2" type="StaticBody3D" parent="World/Room"]
@@ -522,8 +547,23 @@ transform = Transform3D(1.46959, 0, 0, 0, 0.906594, 0, 0, 0, 1.5645, 5.48643, 6.
 shape = SubResource("WorldBoundaryShape3D_tc3re")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Floor2"]
-transform = Transform3D(1, 0, 0, 0, 0.999989, 0, 0, 0, 1, -1.13391, -0.417552, 0.45834)
-size = Vector3(22.3602, 0.182617, 29.1166)
+transform = Transform3D(0.419234, 0, 0, 0, 0.999944, 0, 0, 0, 0.308465, 4.30231, -0.417552, -6.3898)
+size = Vector3(26.0634, 0.182617, 48.0837)
+material = SubResource("StandardMaterial3D_vvqga")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Room/Floor2"]
+transform = Transform3D(0.419234, 0, 0, 0, 0.99996, 0, 0, 0, 0.308465, 4.30133, -0.417552, 7.98669)
+size = Vector3(26.0681, 0.182617, 45.1206)
+material = SubResource("StandardMaterial3D_vvqga")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/Room/Floor2"]
+transform = Transform3D(-0.419234, 0, -2.69669e-08, 0, 0.99995, 0, 3.66506e-08, 0, -0.308465, -6.59022, -0.417552, 8.00625)
+size = Vector3(25.8593, 0.182617, 44.9938)
+material = SubResource("StandardMaterial3D_vvqga")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/Room/Floor2"]
+transform = Transform3D(0.419234, 0, 0, 0, 0.999969, 0, 0, 0, 0.308465, -6.58636, -0.417552, -6.40533)
+size = Vector3(25.8777, 0.182617, 48.3227)
 material = SubResource("StandardMaterial3D_vvqga")
 
 [node name="Walls" type="Node3D" parent="World/Room"]
