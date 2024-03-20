@@ -40,6 +40,8 @@ var MoveState = moveNormal;
 @onready var GrabBox : Area3D = $Body/Hands/GrabBox;
 @onready var Footstep : AudioStreamPlayer3D = $FootstepSound;
 @onready var HurtSound : AudioStreamPlayer3D = $HurtSound;
+@onready var GoodDayForStaples : AudioStreamPlayer3D = $BradyOuttakes;
+var oneLook : bool = true;
 var player : CharacterBody3D;
 var graph : Graph;
 
@@ -151,6 +153,11 @@ func moveNormal() -> void:
 		PlayerRaycast.target_position = player.global_position - PlayerRaycast.global_position;
 		if(PlayerRaycast.is_colliding()):
 			if(PlayerRaycast.get_collider() is Player):
+				#Brady Outtakes
+				if(randi_range(1, 100) <= 15 && oneLook):
+					GoodDayForStaples.play();
+					oneLook = false;
+					
 				MoveState = movePlayer;
 	rotation_degrees.x = 0;
 	rotation_degrees.z = 0; 
@@ -175,10 +182,15 @@ func movePlayer() -> void:
 	
 	BodySprite.look_at(player.global_position);
 	PlayerRaycast.target_position = player.global_position - PlayerRaycast.global_position;
+	
+	
+			
 	if(!PlayerRaycast.is_colliding()):
 		MoveState = moveNormal;
+		oneLook = true;
 	elif(!PlayerRaycast.get_collider().is_in_group("Player")):
 		MoveState = moveNormal;
+		oneLook = true;
 
 
 func _on_PlayerGrabbed() -> void:
