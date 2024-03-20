@@ -36,7 +36,7 @@ texture = ExtResource("1_xowd6")
 hframes = 6
 script = ExtResource("2_pqjk1")
 BulletSpeed = 8.0
-Cooldown = 0.3
+Cooldown = 0.5
 
 [node name="StapleSpawn" type="Node3D" parent="."]
 transform = Transform3D(0.990268, 0, 0.139173, 0, 1, 0, -0.139173, 0, 0.990268, -0.269314, 0.186, -0.104201)

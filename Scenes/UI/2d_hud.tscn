@@ -123,7 +123,7 @@ visible = false
 texture = ExtResource("13_1u7v6")
 
 [node name="Timer" type="Timer" parent="STAPLE HIM"]
-wait_time = 0.9
+wait_time = 1.2
 autostart = true
 
 [node name="Sound" type="AudioStreamPlayer" parent="STAPLE HIM"]

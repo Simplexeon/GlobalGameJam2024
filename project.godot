@@ -14,7 +14,7 @@ config/name="GlobalGameJam2024"
 run/main_scene="res://Scenes/Menus/MainMenu/real_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://Art/Thubnail.png"
 
 [autoload]
 

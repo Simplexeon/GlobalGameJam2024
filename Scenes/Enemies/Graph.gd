@@ -134,7 +134,6 @@ func CreateGraph(start : Vertex):
 	ResetPaths();
 	
 	var current : Vertex = start;
-	print(current);
 	current.distance = 0;
 	current.permanent = true;
 	

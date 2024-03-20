@@ -121,7 +121,7 @@ stream_9/weight = 1.0
 
 [node name="Enemy" type="CharacterBody3D" groups=["CPlayerGrabbed", "Enemies"]]
 disable_mode = 2
-collision_layer = 5
+collision_layer = 4
 velocity = Vector3(0, -9.8, 0)
 wall_min_slide_angle = 0.141372
 floor_constant_speed = true
@@ -136,6 +136,7 @@ HP = 1
 StapleSpeed = 25.0
 StapleHeightOffset = 0.04
 FindNextPoint = 10.0
+PlayerSeeDistance = 10.0
 GrabDistance = 3.0
 GrabSpeed = 4.0
 GrabScale = 7.0
@@ -152,6 +153,7 @@ disabled = true
 [node name="Body" type="Sprite3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 billboard = 2
+alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("2_0exdy")
 hframes = 3
@@ -159,6 +161,7 @@ hframes = 3
 [node name="Hands" type="Sprite3D" parent="Body"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.23167, -0.34)
 billboard = 1
+alpha_cut = 1
 texture_filter = 0
 render_priority = 2
 texture = ExtResource("3_coaxh")

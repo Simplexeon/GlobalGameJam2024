@@ -7,6 +7,7 @@ class_name Enemy
 @export var StapleSpeed : float;
 @export var StapleHeightOffset : float;
 @export var FindNextPoint : float;
+@export var PlayerSeeDistance : float;
 @export var GrabDistance : float;
 @export var GrabSpeed : float;
 @export var GrabScale : float;
@@ -115,6 +116,7 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	BloodParticles.emitting = true;
 	MoveState = moveStapled;
 	HurtSound.play();
+	PlayerRaycast.enabled = false;
 	get_tree().call_group("CEnemyDied", "_on_EnemyDied", worker_name, points);
 	GrabBox.set_deferred("monitoring", false);
 	GrabBox.set_deferred("monitorable", false);
@@ -150,7 +152,7 @@ func moveNormal() -> void:
 	
 	if(player != null):
 		BodySprite.look_at(player.global_position);
-		PlayerRaycast.target_position = player.global_position - PlayerRaycast.global_position;
+		PlayerRaycast.target_position = (player.global_position - PlayerRaycast.global_position).normalized() * PlayerSeeDistance;
 		if(PlayerRaycast.is_colliding()):
 			if(PlayerRaycast.get_collider() is Player):
 				#Brady Outtakes
@@ -181,10 +183,8 @@ func movePlayer() -> void:
 	velocity = target_dir * Speed;
 	
 	BodySprite.look_at(player.global_position);
-	PlayerRaycast.target_position = player.global_position - PlayerRaycast.global_position;
+	PlayerRaycast.target_position = (player.global_position - PlayerRaycast.global_position).normalized() * PlayerSeeDistance;
 	
-	
-			
 	if(!PlayerRaycast.is_colliding()):
 		MoveState = moveNormal;
 		oneLook = true;

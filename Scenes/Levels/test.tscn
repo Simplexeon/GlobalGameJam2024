@@ -68,14 +68,18 @@ texture_filter = 0
 size = Vector3(41.375, 6.6, 0.467654)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ea6c"]
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 depth_draw_mode = 1
 specular_mode = 2
 albedo_texture = ExtResource("9_c27vf")
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjmy5"]
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 depth_draw_mode = 1
 specular_mode = 2
 albedo_texture = ExtResource("11_j7e02")
