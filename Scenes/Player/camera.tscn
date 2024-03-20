@@ -108,6 +108,7 @@ transform = Transform3D(0.396834, 0, -0.0502304, 0, 0.4, 0, 0.0502304, 0, 0.3968
 no_depth_test = true
 render_priority = 3
 frame = 5
+Cooldown = 0.3
 
 [node name="UIViewport" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.46719)

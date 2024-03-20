@@ -385,6 +385,12 @@ transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -2.089
 [node name="CubicleWall15" parent="World/Cubicles" instance=ExtResource("6_k588h")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.703229, 1.8, -10.6117)
 
+[node name="CubicleWall22" parent="World/Cubicles" instance=ExtResource("6_k588h")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 3.28721, 1.8, -12.5942)
+
+[node name="CubicleWall23" parent="World/Cubicles" instance=ExtResource("6_k588h")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1.19367, 4.8441, 1.80657, -14.1845)
+
 [node name="CubicleWall16" parent="World/Cubicles" instance=ExtResource("6_k588h")]
 transform = Transform3D(1.32069, 0, -1.50193, 0, 2, 0, 1.50193, 0, 1.32069, 0.886705, 1.8, 8.46936)
 
@@ -832,10 +838,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 5.82708, 0.02, 0.079284
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 0.946856, 0.02, -7.32365)
 
 [node name="FilingCabinet20" parent="World/FileCabinets" instance=ExtResource("18_6wwbo")]
-transform = Transform3D(0.399164, 0, -0.0258478, 0, 0.4, 0, 0.0258478, 0, 0.399164, 1.54431, 0.02, -15.1598)
-
-[node name="FilingCabinet21" parent="World/FileCabinets" instance=ExtResource("18_6wwbo")]
-transform = Transform3D(0.399164, 0, -0.0258478, 0, 0.4, 0, 0.0258478, 0, 0.399164, 1.54431, 0.02, -13.7563)
+transform = Transform3D(-0.369773, 0, -0.152538, 0, 0.4, 0, 0.152538, 0, -0.369773, 3.69037, 0.0281429, -14.5797)
 
 [node name="FilingCabinet3" parent="World/FileCabinets" instance=ExtResource("18_6wwbo")]
 transform = Transform3D(-0.247912, 0, 0.313911, 0, 0.4, 0, -0.313911, 0, -0.247912, -0.997844, 0.02, 8.61009)
@@ -1253,6 +1256,10 @@ mesh = SubResource("QuadMesh_bmkf0")
 transform = Transform3D(-3.99836e-08, 0, 1, 0, 1.27757, 0, -0.914718, 0, -4.37114e-08, 1.85271, 2.23597, 1.77652)
 mesh = SubResource("QuadMesh_bmkf0")
 
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="World/Paper/Type6"]
+transform = Transform3D(-3.99836e-08, 0, 1, 0, 1.27757, 0, -0.914718, 0, -4.37114e-08, 4.89213, 2.23597, -14.4843)
+mesh = SubResource("QuadMesh_bmkf0")
+
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="World/Paper/Type6"]
 transform = Transform3D(0.765648, 0, 0, 0, 1.09422, 0, 0, 0, 1, 12.4132, 2.54429, -8.19564)
 mesh = SubResource("QuadMesh_bmkf0")
@@ -1392,6 +1399,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06668, 1.50078, -8.53563)
 [node name="Pot13" parent="World/DeskPlant" instance=ExtResource("29_lmu1t")]
 transform = Transform3D(0.709681, 0, -0.704523, 0, 1, 0, 0.704523, 0, 0.709681, 1.10665, 6.49095e-05, -8.53563)
 
+[node name="Pot15" parent="World/DeskPlant" instance=ExtResource("29_lmu1t")]
+transform = Transform3D(0.709681, 0, -0.704523, 0, 1, 0, 0.704523, 0, 0.709681, 1.10665, 6.49095e-05, -10.997)
+
 [node name="Pot3" parent="World/DeskPlant" instance=ExtResource("29_lmu1t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39676, 1.50078, 18.4682)
 
@@ -1443,13 +1453,16 @@ transform = Transform3D(-0.999967, 0, -0.00818551, 0, 1, 0, 0.00818551, 0, -0.99
 transform = Transform3D(-0.00176273, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00176273, -0.0951443, 0, -9.38069)
 
 [node name="Pot12" parent="World/BEEGPlant" instance=ExtResource("30_klb7q")]
-transform = Transform3D(0.69995, 0, -0.714191, 0, 1, 0, 0.714191, 0, 0.69995, -0.0951443, 0, -14.7987)
+transform = Transform3D(-0.591422, 0, -0.806362, 0, 1, 0, 0.806362, 0, -0.591422, 1.31302, 0, -13.4054)
 
 [node name="Pot13" parent="World/BEEGPlant" instance=ExtResource("30_klb7q")]
 transform = Transform3D(0.848334, 0, 0.52946, 0, 1, 0, -0.52946, 0, 0.848334, 1.37864, 0, -11.8608)
 
+[node name="Pot15" parent="World/BEEGPlant" instance=ExtResource("30_klb7q")]
+transform = Transform3D(0.848334, 0, 0.52946, 0, 1, 0, -0.52946, 0, 0.848334, 4.19204, 0, -11.8608)
+
 [node name="Pot14" parent="World/BEEGPlant" instance=ExtResource("30_klb7q")]
-transform = Transform3D(0.742245, 0, -0.670128, 0, 1, 0, 0.670128, 0, 0.742245, 1.19012, 0, -9.85314)
+transform = Transform3D(-0.673205, 0, -0.739455, 0, 1, 0, 0.739455, 0, -0.673205, 1.19012, 0, -9.85314)
 
 [node name="Pot3" parent="World/BEEGPlant" instance=ExtResource("30_klb7q")]
 transform = Transform3D(0.635755, 0, -0.771891, 0, 1, 0, 0.771891, 0, 0.635755, 9.59734, 0, 15.3428)

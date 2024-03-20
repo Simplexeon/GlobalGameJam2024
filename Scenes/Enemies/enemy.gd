@@ -37,7 +37,7 @@ var MoveState = moveNormal;
 @onready var VertexChecker : VertexChecker3D = $VertexChecker;
 @onready var BloodParticles : CPUParticles3D = $CPUParticles3D;
 @onready var HandSprite : Sprite3D = $Body/Hands;
-@onready var PlayerRaycast : RayCast3D = $PlayerRaycast;
+@onready var PlayerRaycast : ShapeCast3D = $PlayerRaycast;
 @onready var GrabBox : Area3D = $Body/Hands/GrabBox;
 @onready var Footstep : AudioStreamPlayer3D = $FootstepSound;
 @onready var HurtSound : AudioStreamPlayer3D = $HurtSound;
@@ -153,14 +153,13 @@ func moveNormal() -> void:
 	if(player != null):
 		BodySprite.look_at(player.global_position);
 		PlayerRaycast.target_position = (player.global_position - PlayerRaycast.global_position).normalized() * PlayerSeeDistance;
-		if(PlayerRaycast.is_colliding()):
-			if(PlayerRaycast.get_collider() is Player):
-				#Brady Outtakes
-				if(randi_range(1, 100) <= 15 && oneLook):
-					GoodDayForStaples.play();
-					oneLook = false;
-					
-				MoveState = movePlayer;
+		if(checkPlayerFirst()):
+			print("now following player");
+			#Brady Outtakes
+			if(randi_range(1, 100) <= 15 && oneLook):
+				GoodDayForStaples.play();
+				oneLook = false;
+			MoveState = movePlayer;
 	rotation_degrees.x = 0;
 	rotation_degrees.z = 0; 
 	
@@ -185,10 +184,7 @@ func movePlayer() -> void:
 	BodySprite.look_at(player.global_position);
 	PlayerRaycast.target_position = (player.global_position - PlayerRaycast.global_position).normalized() * PlayerSeeDistance;
 	
-	if(!PlayerRaycast.is_colliding()):
-		MoveState = moveNormal;
-		oneLook = true;
-	elif(!PlayerRaycast.get_collider().is_in_group("Player")):
+	if(!checkPlayerFirst()):
 		MoveState = moveNormal;
 		oneLook = true;
 
@@ -196,3 +192,10 @@ func movePlayer() -> void:
 func _on_PlayerGrabbed() -> void:
 	queue_free();
 
+
+func checkPlayerFirst() -> bool:
+	if(!PlayerRaycast.is_colliding()):
+		return false;
+	
+	
+	return true;
