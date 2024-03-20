@@ -1,16 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7may1kghdavs"]
+[gd_scene load_steps=10 format=3 uid="uid://b7may1kghdavs"]
 
 [ext_resource type="ArrayMesh" uid="uid://crjapi5heua4e" path="res://Art/Environment/ComputerTextures/ComputerPaint.obj" id="1_ce72o"]
 [ext_resource type="Script" path="res://Scenes/Objects/Computer.gd" id="1_whxnh"]
-[ext_resource type="Texture2D" uid="uid://cbna53vjuv2n5" path="res://Art/Environment/ComputerTextures/ComputerPaint_initialShadingGroup_BaseColor.png" id="2_n3ym8"]
+[ext_resource type="Texture2D" uid="uid://dbq0ist6ej2ra" path="res://Art/Environment/UpdatedComputerTextures/ComputerPaint_initialShadingGroup_BaseColor.png" id="3_2x1ej"]
 [ext_resource type="Texture2D" uid="uid://bhsmpgqyulyul" path="res://Art/Environment/ComputerTextures/ComputerPaint_initialShadingGroup_Height.png" id="3_mwxwg"]
 [ext_resource type="Texture2D" uid="uid://s3gn46d0iqra" path="res://Art/Environment/ComputerTextures/ComputerPaint_initialShadingGroup_Normal.png" id="4_wm043"]
+[ext_resource type="Texture2D" uid="uid://dpsda0u10t20e" path="res://Art/Environment/UpdatedComputerTextures/ComputerPaint_initialShadingGroup_Roughness.png" id="6_xxnfl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8uuv7"]
 diffuse_mode = 1
-albedo_color = Color(0.968627, 0.654902, 1, 1)
-albedo_texture = ExtResource("2_n3ym8")
+albedo_texture = ExtResource("3_2x1ej")
 metallic = 0.68
+roughness_texture = ExtResource("6_xxnfl")
 normal_enabled = true
 normal_texture = ExtResource("4_wm043")
 heightmap_enabled = true
