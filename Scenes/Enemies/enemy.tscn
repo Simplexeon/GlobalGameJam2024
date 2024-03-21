@@ -53,7 +53,7 @@ radial_segments = 4
 rings = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_15f2i"]
-size = Vector3(0.5, 1, 0.2)
+size = Vector3(0.35, 0.35, 0.35)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3u3ee"]
 random_pitch = 3.0
@@ -209,6 +209,7 @@ target_position = Vector3(0, 0, -15)
 margin = 0.2
 max_results = 6
 collision_mask = 3
+debug_shape_custom_color = Color(0.968627, 0.0431373, 1, 1)
 
 [node name="FootstepSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.43867, 0)

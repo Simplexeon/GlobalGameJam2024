@@ -152,9 +152,8 @@ func moveNormal() -> void:
 	
 	if(player != null):
 		BodySprite.look_at(player.global_position);
-		PlayerRaycast.target_position = (player.global_position - PlayerRaycast.global_position).normalized() * PlayerSeeDistance;
+		PlayerRaycast.target_position = (player.global_position - PlayerRaycast.global_position).normalized() * PlayerSeeDistance + Vector3(0, 1, 0);
 		if(checkPlayerFirst()):
-			print("now following player");
 			#Brady Outtakes
 			if(randi_range(1, 100) <= 15 && oneLook):
 				GoodDayForStaples.play();
@@ -182,7 +181,7 @@ func movePlayer() -> void:
 	velocity = target_dir * Speed;
 	
 	BodySprite.look_at(player.global_position);
-	PlayerRaycast.target_position = (player.global_position - PlayerRaycast.global_position).normalized() * PlayerSeeDistance;
+	PlayerRaycast.target_position = (player.global_position - PlayerRaycast.global_position).normalized() * PlayerSeeDistance + Vector3(0, 1, 0);
 	
 	if(!checkPlayerFirst()):
 		MoveState = moveNormal;
@@ -197,5 +196,12 @@ func checkPlayerFirst() -> bool:
 	if(!PlayerRaycast.is_colliding()):
 		return false;
 	
+	var i : int = 0;
+	var collisions : int = PlayerRaycast.get_collision_count();
+	while(i < collisions):
+		var current_collider : Node = PlayerRaycast.get_collider(i);
+		if(current_collider is Player):
+			return true;
+		i += 1;
 	
-	return true;
+	return false;
