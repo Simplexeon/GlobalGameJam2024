@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://b6aus34iogfrd"]
+[gd_scene load_steps=83 format=3 uid="uid://b6aus34iogfrd"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/Graph.gd" id="1_cpa6v"]
 [ext_resource type="Script" path="res://Scenes/Levels/test.gd" id="1_eff21"]
@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://dlyjp31xclva7" path="res://Scenes/Objects/FilingCabinet.tscn" id="18_6wwbo"]
 [ext_resource type="Script" path="res://Scenes/Enemies/GrabBox.gd" id="18_e6gtx"]
 [ext_resource type="Texture2D" uid="uid://d04ikwxhq4mlu" path="res://Art/Environment/PaperParticles/Paper1.png" id="19_iwqwm"]
-[ext_resource type="PackedScene" uid="uid://64mlfhbptu5x" path="res://Scenes/Graph/vertex_checker.tscn" id="19_peeng"]
 [ext_resource type="PackedScene" uid="uid://b7may1kghdavs" path="res://Scenes/Objects/Computer.tscn" id="19_x7twh"]
 [ext_resource type="Texture2D" uid="uid://en033r8t1tp8" path="res://Art/Environment/PaperParticles/Paper2.png" id="20_al0lf"]
 [ext_resource type="Material" uid="uid://30ltx810aof8" path="res://Materials/blood.tres" id="20_gjy7y"]
@@ -43,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://bfjl28ltfuruf" path="res://Art/Environment/PaperParticles/Paper10.png" id="28_u34vi"]
 [ext_resource type="PackedScene" uid="uid://05b28clfkjjw" path="res://Scenes/Objects/Pot.tscn" id="29_lmu1t"]
 [ext_resource type="PackedScene" uid="uid://b8idbwvne41n1" path="res://Scenes/Objects/BEEGPot.tscn" id="30_klb7q"]
+[ext_resource type="Script" path="res://Scenes/Enemies/VertexChecker.gd" id="35_i2snx"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kk3vg"]
 
@@ -155,6 +155,9 @@ size = Vector3(0.01, 1.18506, 0.001)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_loyq3"]
 radius = 0.391042
 height = 1.89427
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0dehe"]
+radius = 7.31609
 
 [sub_resource type="SphereMesh" id="SphereMesh_1ot23"]
 material = ExtResource("20_gjy7y")
@@ -707,10 +710,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.59384, 0, 17.2363)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2739, 0, 17.2363)
 
 [node name="Vertex13" parent="World/Graph" instance=ExtResource("2_b2amw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2739, 0, 24.4512)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2739, 0, 23.6886)
 
 [node name="Vertex14" parent="World/Graph" instance=ExtResource("2_b2amw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45962, 0, 27.8337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46869, 0, 28.1311)
 
 [node name="Vertex15" parent="World/Graph" instance=ExtResource("2_b2amw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59749, 0, 24.4512)
@@ -818,13 +821,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.78584, 0, -14.2624)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5283, -0.0350142, -14.4656)
 
 [node name="Vertex50" parent="World/Graph" instance=ExtResource("2_b2amw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4605, 0, 25.8498)
+transform = Transform3D(0.998354, 0, 0, 0, 0.998354, 0, 0, 0, 0.998354, -11.9787, 0, 25.8498)
 
 [node name="Vertex51" parent="World/Graph" instance=ExtResource("2_b2amw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2352, 0, -9.56824)
 
 [node name="Vertex52" parent="World/Graph" instance=ExtResource("2_b2amw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2352, 0, -7.00148)
+
+[node name="Vertex53" parent="World/Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5318, 0, 30.0742)
+
+[node name="Vertex54" parent="World/Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5544, 0, 28.3336)
+
+[node name="Vertex55" parent="World/Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2291, 0, -18.242)
+
+[node name="Vertex56" parent="World/Graph" instance=ExtResource("2_b2amw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9668, -0.0350142, -14.4656)
 
 [node name="FileCabinets" type="Node3D" parent="World"]
 
@@ -880,13 +895,10 @@ transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -5.0228, 0.02, 22.1878)
 
 [node name="FilingCabinet22" parent="World/FileCabinets" instance=ExtResource("18_6wwbo")]
-transform = Transform3D(0.299693, 0, -0.264922, 0, 0.4, 0, 0.264922, 0, 0.299693, -10.7652, 0.02, 24.1535)
+transform = Transform3D(0.299693, 0, -0.264922, 0, 0.4, 0, 0.264922, 0, 0.299693, -11.0064, 0.02, 24.1535)
 
 [node name="FilingCabinet23" parent="World/FileCabinets" instance=ExtResource("18_6wwbo")]
-transform = Transform3D(-0.0684896, 0, -0.394093, 0, 0.4, 0, 0.394093, 0, -0.0684896, -9.74255, 0.02, 24.1535)
-
-[node name="FilingCabinet24" parent="World/FileCabinets" instance=ExtResource("18_6wwbo")]
-transform = Transform3D(0.0906129, 0, 0.389601, 0, 0.4, 0, -0.389601, 0, 0.0906129, -8.44701, 0.02, 23.8466)
+transform = Transform3D(-0.0684896, 0, -0.394093, 0, 0.4, 0, 0.394093, 0, -0.0684896, -9.93976, 0.02, 24.1535)
 
 [node name="FilingCabinet16" parent="World/FileCabinets" instance=ExtResource("18_6wwbo")]
 transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, -3.96046, 0.02, 21.3155)
@@ -1530,7 +1542,13 @@ script = ExtResource("18_e6gtx")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.0829581, -0.198381)
 shape = SubResource("CapsuleShape3D_loyq3")
 
-[node name="VertexChecker" parent="Dad" instance=ExtResource("19_peeng")]
+[node name="VertexChecker" type="Area3D" parent="Dad"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("35_i2snx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dad/VertexChecker"]
+shape = SubResource("SphereShape3D_0dehe")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Dad"]
 emitting = false

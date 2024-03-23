@@ -127,7 +127,11 @@ func Connect():
 	AddEdge(verteces[47], verteces[48]);
 	AddEdge(verteces[49], verteces[20]);
 	AddEdge(verteces[49], verteces[22]);	
-	AddEdge(verteces[2], verteces[50]);
+	AddEdge(verteces[2], verteces[50]);	
+	AddEdge(verteces[20], verteces[52]);	
+	AddEdge(verteces[13], verteces[53]);	
+	AddEdge(verteces[1], verteces[54]);	
+	AddEdge(verteces[48], verteces[55]);
 	pass
 	
 func CreateGraph(start : Vertex):
