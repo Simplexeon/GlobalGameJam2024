@@ -124,6 +124,7 @@ stream_9/weight = 1.0
 [node name="Enemy" type="CharacterBody3D" groups=["CCutsceneBegin", "CPlayerGrabbed", "Enemies"]]
 disable_mode = 2
 collision_layer = 4
+collision_mask = 5
 velocity = Vector3(0, -9.8, 0)
 wall_min_slide_angle = 0.141372
 floor_constant_speed = true

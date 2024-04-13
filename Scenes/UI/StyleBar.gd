@@ -9,7 +9,7 @@ extends Sprite2D
 # Object Vars
 var current_style : float = 0.0 :
 	set(value):
-		current_style = clampf(value, 0.0, 100.0);
+		current_style = clampf(value, 0.0, 0.0);
 		region_rect = Rect2(0, 0, int((texture.get_width() - 1) * (current_style / 100.0)), 100)
 
 # Component Vars

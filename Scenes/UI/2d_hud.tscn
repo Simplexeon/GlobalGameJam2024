@@ -51,10 +51,10 @@ StyleDecay = 2.5
 KillMessages = Array[String](["got stapled!", "was pinned down!", "got fixed to the wall.", "is in a sticky situation.", "needs to get some metal removed."])
 
 [node name="KillFeed" type="VBoxContainer" parent="Control/Center/StyleBar"]
-offset_left = -479.0
-offset_top = 6.0
-offset_right = 71.0
-offset_bottom = 306.0
+offset_left = -467.0
+offset_top = -38.0
+offset_right = 83.0
+offset_bottom = 262.0
 
 [node name="WaveIndicator" type="Sprite2D" parent="Control/Center" groups=["CPlayerGrabbed", "CWaveChanged"]]
 position = Vector2(438, -219)
