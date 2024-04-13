@@ -17,12 +17,13 @@ var move_dir : Vector3 = Vector3.ZERO;
 var stapled : bool = false;
 var stuck : bool = false;
 var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity");
-var next_path_pos = Vector3.ZERO;
+var next_path_pos = null;
 var hand_offset : Vector3 = Vector3.ZERO;
 var worker_name : String = names[randi_range(0, names.size() - 1)];
 var points = randi_range(10, 30);
 var moved : Vector3 = Vector3.ZERO;
 
+var nextVertex : Vertex = null;
 
 const names : Array[String] = ["Jack", "Steven", "Ryan", "Brady", "Rob", "Ben", "Jebediah", "Gordon", "Stacy", "Sharon", "Megan", "Janice", "Pam", "Dwight", "Mary", "Linda", "Eliza", "Emma"];
 
@@ -122,12 +123,16 @@ func _on_Stapled(staple_pos : Vector3) -> void:
 	GrabBox.set_deferred("monitorable", false);
 
 func _on_update_movement_timeout() -> void:
-	VertexChecker.updateVertex();
-	if(VertexChecker.closest_vertex == null):
+	if(MoveState == moveStapled):
 		return;
-	if(VertexChecker.closest_vertex.previousVertex == null):
+	var closest : Vertex;
+	closest = await(VertexChecker.updateVertex());
+	if(closest == null):
 		return;
-	next_path_pos = VertexChecker.closest_vertex.previousVertex.global_position;
+	if(closest.previousVertex == null):
+		return;
+	nextVertex = closest.previousVertex;
+	next_path_pos = closest.previousVertex.global_position;
 	
 
 # Functions
@@ -135,12 +140,18 @@ func _on_update_movement_timeout() -> void:
 func moveNormal() -> void:
 	velocity = Vector3.ZERO;
 	
-	var target_vector : Vector3 = (next_path_pos - global_position);
+	var target_vector : Vector3;
+	if(next_path_pos != null):
+		target_vector = (next_path_pos - global_position);
+	else:
+		target_vector = Vector3.ZERO - global_position;
+	
 	target_vector -= Vector3(0, target_vector.y, 0);
 	target_vector = target_vector.normalized() * Speed;
 	
-	
-	if((next_path_pos - (global_position + target_vector)).length() <= FindNextPoint):
+	if(next_path_pos == null):
+		_on_update_movement_timeout();
+	elif((next_path_pos - (global_position + target_vector)).length() <= FindNextPoint):
 		_on_update_movement_timeout();
 	
 	velocity += target_vector;
@@ -189,6 +200,9 @@ func movePlayer() -> void:
 
 
 func _on_PlayerGrabbed() -> void:
+	queue_free();
+
+func _on_CutsceneBegin() -> void:
 	queue_free();
 
 

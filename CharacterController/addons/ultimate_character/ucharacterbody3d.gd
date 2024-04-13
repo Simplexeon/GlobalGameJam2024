@@ -106,9 +106,6 @@ func _physics_process(delta):
 		# Get input direction
 		var input_dir = Input.get_vector(LEFT, RIGHT, FORWARD, BACKWARD)
 		
-		
-		
-		
 		# Handle head bob.
 		head_bob_current_intensity = head_bob_intensity * 2
 		head_bob_index += head_bob_walking_speed * delta

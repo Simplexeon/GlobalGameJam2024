@@ -35,7 +35,8 @@ var wave_data : Array;
 # Processes
 
 func _ready():
-	doors = get_children();var data = json_file.data;
+	doors = get_children();
+	var data = json_file.data;
 	wave_data = data["wave_data"];
 	SetNextSpawn();
 

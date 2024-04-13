@@ -45,14 +45,10 @@ func Connect():
 	
 	AddEdge(verteces[0], verteces[51]);
 	AddEdge(verteces[0], verteces[3]);
-	#AddEdge(verteces[1], verteces[50]);
 	AddEdge(verteces[1], verteces[2]);
 	AddEdge(verteces[2], verteces[3]);
 	AddEdge(verteces[2], verteces[42]);
 	AddEdge(verteces[3], verteces[4]);
-	AddEdge(verteces[3], verteces[4]);
-	#AddEdge(verteces[4], verteces[6]);
-	#AddEdge(verteces[4], verteces[7]);
 	AddEdge(verteces[4], verteces[8]);
 	AddEdge(verteces[5], verteces[6]);
 	AddEdge(verteces[6], verteces[7]);
@@ -126,12 +122,13 @@ func Connect():
 	AddEdge(verteces[46], verteces[48]);
 	AddEdge(verteces[47], verteces[48]);
 	AddEdge(verteces[49], verteces[20]);
-	AddEdge(verteces[49], verteces[22]);	
-	AddEdge(verteces[2], verteces[50]);	
-	AddEdge(verteces[20], verteces[52]);	
-	AddEdge(verteces[13], verteces[53]);	
-	AddEdge(verteces[1], verteces[54]);	
+	AddEdge(verteces[49], verteces[22]);
+	AddEdge(verteces[2], verteces[50]);
+	AddEdge(verteces[20], verteces[52]);
+	AddEdge(verteces[13], verteces[53]);
+	AddEdge(verteces[1], verteces[54]);
 	AddEdge(verteces[48], verteces[55]);
+	AddEdge(verteces[50], verteces[51]);
 	pass
 	
 func CreateGraph(start : Vertex):

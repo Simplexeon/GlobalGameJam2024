@@ -99,7 +99,6 @@ stream_6/stream = ExtResource("23_0nefg")
 stream_6/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_csliw"]
-random_pitch = 2.0
 streams_count = 10
 stream_0/stream = ExtResource("24_44f1c")
 stream_0/weight = 1.0
@@ -122,7 +121,7 @@ stream_8/weight = 1.0
 stream_9/stream = ExtResource("33_8tqh2")
 stream_9/weight = 1.0
 
-[node name="Enemy" type="CharacterBody3D" groups=["CPlayerGrabbed", "Enemies"]]
+[node name="Enemy" type="CharacterBody3D" groups=["CCutsceneBegin", "CPlayerGrabbed", "Enemies"]]
 disable_mode = 2
 collision_layer = 4
 velocity = Vector3(0, -9.8, 0)
@@ -134,7 +133,7 @@ platform_floor_layers = 4294901761
 platform_wall_layers = 1
 safe_margin = 0.08
 script = ExtResource("1_jncxg")
-Speed = 3.0
+Speed = 3.2
 HP = 1
 StapleSpeed = 25.0
 StapleHeightOffset = 0.04
@@ -226,8 +225,9 @@ max_distance = 40.0
 [node name="BradyOuttakes" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.212217, 0)
 stream = SubResource("AudioStreamRandomizer_csliw")
-volume_db = -5.0
-max_db = 2.0
+volume_db = -15.0
+unit_size = 20.0
+max_db = 1.0
 max_distance = 20.0
 
 [connection signal="body_entered" from="Body/Hands/GrabBox" to="Body/Hands/GrabBox" method="_on_body_entered"]
