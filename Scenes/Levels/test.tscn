@@ -65,7 +65,7 @@ albedo_texture = ExtResource("8_2jy3q")
 texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ehq2"]
-size = Vector3(41.375, 6.6, 0.467654)
+size = Vector3(42.7405, 6.6, 0.467654)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ea6c"]
 transparency = 2
@@ -603,7 +603,7 @@ material = SubResource("StandardMaterial3D_2avwr")
 transform = Transform3D(-0.888001, 0, -8.74228e-08, 0, 1, 0, 7.76315e-08, 0, -1, 5.66013, 0, 29.3675)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Room/Walls/Wall2"]
-transform = Transform3D(0.999997, 0, -4.26326e-14, 0, 1, 0, 5.68434e-14, 0, 0.999997, -3.19056, 3.07227, 0.0465164)
+transform = Transform3D(0.999997, 0, -4.26326e-14, 0, 1, 0, 6.39488e-14, 0, 0.999997, -3.73319, 3.07227, 0.0465164)
 shape = SubResource("BoxShape3D_8ehq2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Walls/Wall2"]
@@ -615,7 +615,7 @@ material = SubResource("StandardMaterial3D_2ea6c")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.5068, 0, -1.9507)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Room/Walls/Wall4"]
-transform = Transform3D(0.999997, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999997, 6.66254, 3.07227, -7.21095)
+transform = Transform3D(0.999997, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999997, 7.18116, 3.07227, -7.21095)
 shape = SubResource("BoxShape3D_8ehq2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Walls/Wall4"]
@@ -627,7 +627,7 @@ material = SubResource("StandardMaterial3D_mjmy5")
 transform = Transform3D(-4.14939e-08, 0, -1, 0, 1, 0, 0.949265, 0, -4.37114e-08, -19.4415, 0, -0.213095)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Room/Walls/Wall5"]
-transform = Transform3D(0.999997, 0, -3.19744e-14, 0, 1, 0, 3.55271e-14, 0, 0.999997, 7.77875, 3.07227, -7.28828)
+transform = Transform3D(0.999997, 0, -3.19744e-14, 0, 1, 0, 3.19744e-14, 0, 0.999997, 7.79169, 3.07227, -7.28828)
 shape = SubResource("BoxShape3D_8ehq2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Room/Walls/Wall5"]
